@@ -9,76 +9,140 @@
  */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "elix_hero": {
+      "type": "elix-hero",
+      "settings": {
+        "eyebrow": "ELIX LABS",
+        "heading": "Research peptides for focused discovery.",
+        "text": "<p>Explore rigorously sourced peptides, clear documentation, and lab-first resources built for modern research teams.</p>",
+        "primary_label": "Shop peptides",
+        "primary_link": "shopify://collections/all",
+        "secondary_label": "Our standards",
+        "secondary_link": "shopify://pages/about",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "elix_categories": {
+      "type": "elix-categories",
+      "blocks": {
+        "research_peptides": {
+          "type": "category",
+          "settings": {
+            "title": "Research peptides",
+            "text": "High-purity compounds for in-vitro research applications.",
+            "link": "shopify://collections/all"
+          }
+        },
+        "new_arrivals": {
+          "type": "category",
+          "settings": {
+            "title": "New arrivals",
+            "text": "Recently added materials and updated catalog selections.",
+            "link": "shopify://collections/all"
+          }
+        },
+        "lab_resources": {
+          "type": "category",
+          "settings": {
+            "title": "Lab resources",
+            "text": "Guidance, specifications, and handling notes for research teams.",
+            "link": "shopify://pages/contact"
+          }
+        }
+      },
+      "block_order": ["research_peptides", "new_arrivals", "lab_resources"],
+      "settings": {
+        "eyebrow": "Shop by category",
+        "heading": "Find the right peptide for your protocol."
+      }
+    },
+    "elix_featured_peptides": {
+      "type": "elix-featured-peptides",
+      "settings": {
+        "eyebrow": "Featured peptides",
+        "heading": "Popular selections from ELIX LABS.",
+        "collection": "all",
+        "products_to_show": 4,
+        "button_label": "View all peptides",
+        "button_link": "shopify://collections/all"
+      }
+    },
+    "elix_science": {
+      "type": "elix-science",
+      "settings": {
+        "eyebrow": "Science-led standards",
+        "heading": "Documentation and quality controls for confident research.",
+        "text": "<p>ELIX LABS centers every product page around clear specifications, transparent handling guidance, and research-use context so your team can evaluate materials quickly.</p><p>Our catalog is built for qualified laboratory research only and is not intended for human consumption.</p>",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "elix_faq": {
+      "type": "elix-faq",
+      "blocks": {
+        "research_use": {
+          "type": "faq",
+          "settings": {
+            "question": "Are ELIX LABS products for research use only?",
+            "answer": "<p>Yes. Products are intended for qualified laboratory research and are not for human consumption.</p>"
+          }
+        },
+        "documentation": {
+          "type": "faq",
+          "settings": {
+            "question": "Where can I find product documentation?",
+            "answer": "<p>Review the details on each product page or contact ELIX LABS for available specifications and handling information.</p>"
+          }
+        },
+        "shipping": {
+          "type": "faq",
+          "settings": {
+            "question": "How should research materials be handled after delivery?",
+            "answer": "<p>Follow the storage and handling guidance supplied with the material and use appropriate laboratory controls.</p>"
+          }
+        }
+      },
+      "block_order": ["research_use", "documentation", "shipping"],
+      "settings": {
+        "eyebrow": "FAQ",
+        "heading": "Answers before you order."
+      }
+    },
+    "elix_newsletter": {
+      "type": "newsletter",
       "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "heading": "Stay current with ELIX LABS.",
+            "heading_size": "h1"
           }
         },
-        "button": {
-          "type": "buttons",
+        "paragraph": {
+          "type": "paragraph",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "text": "<p>Get product updates, research resources, and availability notes in your inbox.</p>"
           }
+        },
+        "email_form": {
+          "type": "email_form",
+          "settings": {}
         }
       },
-      "block_order": [
-        "heading",
-        "button"
-      ],
+      "block_order": ["heading", "paragraph", "email_form"],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
-      }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 56,
+        "padding_bottom": 64
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "elix_hero",
+    "elix_categories",
+    "elix_featured_peptides",
+    "elix_science",
+    "elix_faq",
+    "elix_newsletter"
   ]
 }
