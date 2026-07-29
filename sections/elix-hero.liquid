@@ -1,9 +1,57 @@
 {{ 'elix-luxury.css' | asset_url | stylesheet_tag }}
-<section class="elix-lux elix-hero elix-hero--{{ section.id }}">
-  <div class="elix-hero__particles" aria-hidden="true"></div><div class="elix-wrap elix-hero__grid">
-    <div class="elix-hero__copy"><p class="elix-eyebrow">{{ section.settings.eyebrow | escape }}</p><h1 class="elix-title">{{ section.settings.heading | newline_to_br }}</h1><div class="elix-copy">{{ section.settings.text }}</div><div class="elix-hero__actions"><a class="elix-btn" href="{{ section.settings.primary_link | default: routes.all_products_collection_url }}">{{ section.settings.primary_label | escape }}</a><a class="elix-btn elix-btn--ghost" href="{{ section.settings.secondary_link | default: routes.collections_url }}">{{ section.settings.secondary_label | escape }}</a></div><div class="elix-hero__badges">{% for block in section.blocks %}<span {{ block.shopify_attributes }}>{{ block.settings.icon }} {{ block.settings.text }}</span>{% endfor %}</div></div>
-    <div class="elix-hero__visual"><div class="elix-dna" aria-hidden="true">{% for i in (1..14) %}<i style="--i:{{ i }}"></i>{% endfor %}</div><div class="elix-bottle">{% if section.settings.product_image != blank %}{{ section.settings.product_image | image_url: width: 720 | image_tag: loading: 'eager', widths: '360,540,720', alt: section.settings.heading }}{% else %}<div class="elix-bottle__mock"><b>ELIX</b><span>LABS</span></div>{% endif %}</div></div>
+
+<section class="elix-lux elix-hero elix-hero--{{ section.id }}" aria-labelledby="ElixHeroTitle-{{ section.id }}">
+  <div class="elix-hero__mesh" aria-hidden="true"></div>
+  <div class="elix-wrap elix-hero__grid">
+    <div class="elix-hero__copy">
+      <p class="elix-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      <h1 id="ElixHeroTitle-{{ section.id }}" class="elix-title">{{ section.settings.heading | escape | newline_to_br }}</h1>
+      <div class="elix-copy">{{ section.settings.text }}</div>
+      <div class="elix-hero__actions">
+        <a class="elix-btn" href="{{ section.settings.primary_link | default: routes.all_products_collection_url }}">{{ section.settings.primary_label | escape }} <span aria-hidden="true">→</span></a>
+        <a class="elix-btn elix-btn--ghost" href="{{ section.settings.secondary_link | default: routes.collections_url }}">{{ section.settings.secondary_label | escape }}</a>
+      </div>
+      <div class="elix-hero__badges" aria-label="ELIX LABS trust signals">
+        {% for block in section.blocks %}
+          <span {{ block.shopify_attributes }}><b>{{ block.settings.icon }}</b>{{ block.settings.text }}</span>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="elix-hero__visual">
+      <div class="elix-hero__halo" aria-hidden="true"></div>
+      <div class="elix-hero__molecule" aria-hidden="true">
+        {% for i in (1..10) %}<i style="--i:{{ i }}"></i>{% endfor %}
+      </div>
+      <div class="elix-bottle" aria-label="Premium ELIX LABS product presentation">
+        {% if section.settings.product_image != blank %}
+          {%- assign hero_image_alt = section.settings.product_image.alt | default: section.settings.heading -%}
+          {{ section.settings.product_image | image_url: width: 900 | image_tag: loading: 'eager', widths: '420,640,900', alt: hero_image_alt }}
+        {% else %}
+          <div class="elix-bottle__mock">
+            <span class="elix-bottle__cap"></span>
+            <div class="elix-bottle__label">
+              <small>ELIX LABS</small>
+              <b>BPC-157</b>
+              <em>99% PURITY</em>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
   </div>
 </section>
-<style>.elix-hero--{{section.id}}{min-height:82rem;display:grid;align-items:center;background:radial-gradient(circle at 70% 20%,rgba(75,117,255,.32),transparent 32%),radial-gradient(circle at 35% 70%,rgba(139,92,246,.24),transparent 34%),#050505}.elix-hero--{{section.id}} .elix-hero__grid{display:grid;grid-template-columns:1.02fr .98fr;gap:4rem;align-items:center;padding:10rem 0}.elix-hero__actions{display:flex;gap:1.2rem;flex-wrap:wrap;margin-top:3.2rem}.elix-hero__badges{display:flex;gap:1rem;flex-wrap:wrap;margin-top:3rem}.elix-hero__badges span{padding:1rem 1.3rem;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(255,255,255,.06);animation:rise 5s ease-in-out infinite}.elix-hero__visual{position:relative;min-height:58rem}.elix-bottle{position:absolute;inset:8% 8% 0;display:grid;place-items:center;filter:drop-shadow(0 40px 80px rgba(75,117,255,.38))}.elix-bottle img{max-height:58rem;width:auto;max-width:100%;object-fit:contain}.elix-bottle__mock{width:23rem;height:46rem;border-radius:4rem 4rem 2rem 2rem;background:linear-gradient(120deg,#101010,#27273a 44%,#090909);border:1px solid rgba(255,255,255,.2);display:grid;place-items:center;color:#fff;font-size:4rem;letter-spacing:.1em}.elix-bottle__mock span{font-size:1.3rem;color:#7DE2FC}.elix-dna{position:absolute;inset:0;opacity:.75}.elix-dna i{position:absolute;left:50%;top:calc(var(--i)*6%);width:18rem;height:2px;background:linear-gradient(90deg,#4B75FF,#7DE2FC);transform:translateX(-50%) rotate(calc(var(--i)*18deg));box-shadow:0 0 22px #4B75FF;animation:pulse 3s ease-in-out infinite}.elix-dna i:before,.elix-dna i:after{content:"";position:absolute;top:-5px;width:12px;height:12px;border-radius:50%;background:#fff;box-shadow:0 0 18px #7DE2FC}.elix-dna i:before{left:0}.elix-dna i:after{right:0}@keyframes pulse{50%{opacity:.35;transform:translateX(-50%) rotate(calc(var(--i)*18deg)) scale(.92)}}@keyframes rise{50%{transform:translateY(-5px)}}@media(max-width:900px){.elix-hero--{{section.id}} .elix-hero__grid{grid-template-columns:1fr}.elix-hero__visual{min-height:42rem}.elix-hero--{{section.id}}{min-height:auto}}</style>
-{% schema %}{"name":"ELIX premium hero","tag":"section","class":"section","settings":[{"type":"text","id":"eyebrow","label":"Eyebrow","default":"ELIX LABS BIOTECH"},{"type":"textarea","id":"heading","label":"Heading","default":"PRECISION PEPTIDES.\nREAL RESULTS."},{"type":"richtext","id":"text","label":"Subtitle","default":"<p>Pharmaceutical-grade research peptides engineered for modern laboratories, transparent protocols and uncompromising quality.</p>"},{"type":"image_picker","id":"product_image","label":"Product bottle image"},{"type":"text","id":"primary_label","label":"Primary button","default":"Shop Peptides"},{"type":"url","id":"primary_link","label":"Primary link"},{"type":"text","id":"secondary_label","label":"Secondary button","default":"Browse Categories"},{"type":"url","id":"secondary_link","label":"Secondary link"}],"blocks":[{"type":"badge","name":"Trust badge","settings":[{"type":"text","id":"icon","label":"Icon","default":"🧪"},{"type":"text","id":"text","label":"Text","default":"Lab tested"}]}],"presets":[{"name":"ELIX premium hero","blocks":[{"type":"badge","settings":{"icon":"🧪","text":"Lab Tested"}},{"type":"badge","settings":{"icon":"⚡","text":"Fast Dispatch"}},{"type":"badge","settings":{"icon":"💎","text":"High Purity"}}]}]}{% endschema %}
+
+<style>
+  .elix-hero--{{ section.id }}{min-height:84rem;display:grid;align-items:center;background:linear-gradient(120deg,#030408 0%,#071224 52%,#05030a 100%)}
+  .elix-hero--{{ section.id }} .elix-hero__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(34rem,.92fr);gap:clamp(3rem,6vw,7rem);align-items:center;padding:clamp(7rem,9vw,11rem) 0}
+  .elix-hero__mesh{position:absolute;inset:0;opacity:.55;background-image:linear-gradient(rgba(102,230,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(139,92,246,.055) 1px,transparent 1px);background-size:7rem 7rem;mask-image:radial-gradient(circle at 70% 38%,#000,transparent 66%)}
+  .elix-hero__copy{max-width:68rem}.elix-hero__actions{display:flex;gap:1.2rem;flex-wrap:wrap;margin-top:3.2rem}.elix-hero__badges{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:3.2rem}.elix-hero__badges span{display:flex;align-items:center;gap:.8rem;padding:1.15rem 1.25rem;border:1px solid rgba(255,255,255,.14);border-radius:1.6rem;background:rgba(255,255,255,.055);color:rgba(255,255,255,.78);backdrop-filter:blur(14px)}.elix-hero__badges b{color:#66e6ff}
+  .elix-hero__visual{position:relative;min-height:58rem;display:grid;place-items:center}.elix-hero__halo{position:absolute;width:min(52rem,86vw);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(102,230,255,.14),transparent 57%);border:1px solid rgba(102,230,255,.28);box-shadow:inset 0 0 85px rgba(139,92,246,.18),0 0 90px rgba(40,120,255,.18)}.elix-hero__halo:after{content:"";position:absolute;inset:2rem;border-radius:inherit;border:1px solid rgba(240,32,255,.25);clip-path:polygon(46% 0,100% 0,100% 100%,54% 100%)}
+  .elix-hero__molecule{position:absolute;inset:4%;opacity:.42}.elix-hero__molecule i{position:absolute;left:calc(10% + var(--i)*7%);top:calc(7% + var(--i)*7%);width:9rem;height:1px;background:linear-gradient(90deg,#2878ff,#f020ff);transform:rotate(calc(var(--i)*23deg));box-shadow:0 0 18px rgba(102,230,255,.8)}.elix-hero__molecule i:before,.elix-hero__molecule i:after{content:"";position:absolute;top:-.42rem;width:.9rem;height:.9rem;border:1px solid #66e6ff;border-radius:50%;background:#071224}.elix-hero__molecule i:before{left:0}.elix-hero__molecule i:after{right:0}.elix-bottle{position:relative;z-index:1;display:grid;place-items:center;filter:drop-shadow(0 38px 75px rgba(40,120,255,.38))}.elix-bottle img{max-height:58rem;width:auto;max-width:100%;object-fit:contain}.elix-bottle__mock{width:24rem;height:48rem;padding:5rem 2rem 2rem;border:1px solid rgba(255,255,255,.22);border-radius:5rem 5rem 2.8rem 2.8rem;background:linear-gradient(100deg,rgba(255,255,255,.24),rgba(255,255,255,.07) 18%,rgba(0,0,0,.84) 48%,rgba(102,230,255,.16));box-shadow:inset 2rem 0 4rem rgba(102,230,255,.12),inset -2rem 0 4rem rgba(139,92,246,.16)}.elix-bottle__cap{position:absolute;top:0;left:50%;width:16rem;height:5.2rem;border-radius:1rem;transform:translate(-50%,-36%);background:linear-gradient(90deg,#030408,#393d48,#030408);border:1px solid rgba(255,255,255,.18)}.elix-bottle__label{height:27rem;margin-top:9rem;border-radius:1.6rem;background:linear-gradient(135deg,#030408,#11182a);border:1px solid rgba(255,255,255,.14);display:grid;place-items:center;text-align:center}.elix-bottle__label small{letter-spacing:.32em}.elix-bottle__label b{font-size:3.4rem}.elix-bottle__label em{padding:.55rem 1.2rem;border-radius:999px;background:linear-gradient(90deg,#2878ff,#f020ff);font-style:normal;font-weight:800}
+  @media(max-width:900px){.elix-hero--{{ section.id }}{min-height:auto}.elix-hero--{{ section.id }} .elix-hero__grid{grid-template-columns:1fr;padding:6.4rem 0}.elix-hero__badges{grid-template-columns:1fr}.elix-hero__visual{min-height:42rem;order:-1}.elix-bottle img{max-height:42rem}.elix-bottle__mock{height:36rem;width:18rem}.elix-bottle__label{margin-top:5rem;height:22rem}}
+</style>
+
+{% schema %}
+{"name":"ELIX premium hero","tag":"section","class":"section","settings":[{"type":"text","id":"eyebrow","label":"Eyebrow","default":"ELIX LABS BIOTECH"},{"type":"textarea","id":"heading","label":"Heading","default":"PRECISION PEPTIDES.\nREAL RESULTS."},{"type":"richtext","id":"text","label":"Subtitle","default":"<p>Pharmaceutical-grade research peptides engineered for modern laboratories, transparent protocols and uncompromising quality.</p>"},{"type":"image_picker","id":"product_image","label":"Product bottle image"},{"type":"text","id":"primary_label","label":"Primary button","default":"Shop Peptides"},{"type":"url","id":"primary_link","label":"Primary link"},{"type":"text","id":"secondary_label","label":"Secondary button","default":"Browse Categories"},{"type":"url","id":"secondary_link","label":"Secondary link"}],"blocks":[{"type":"badge","name":"Trust badge","settings":[{"type":"text","id":"icon","label":"Icon","default":"🧪"},{"type":"text","id":"text","label":"Text","default":"Lab tested"}]}],"presets":[{"name":"ELIX premium hero","blocks":[{"type":"badge","settings":{"icon":"🧪","text":"Lab Tested"}},{"type":"badge","settings":{"icon":"⚡","text":"Fast Dispatch"}},{"type":"badge","settings":{"icon":"💎","text":"High Purity"}}]}]}
+{% endschema %}
