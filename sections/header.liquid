@@ -81,6 +81,32 @@
     padding: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px 3rem {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px 3rem;
   }
 
+  .section-header.elix-header--over-hero {
+    margin-bottom: calc(-1 * var(--header-height));
+  }
+
+  .elix-header--over-hero .header-wrapper {
+    background: rgba(2, 4, 10, 0.78);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgb(255, 255, 255);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    transition: background-color 280ms ease, border-color 280ms ease, backdrop-filter 280ms ease;
+  }
+
+  .elix-header--over-hero.elix-header--hero-visible .header-wrapper {
+    background: transparent;
+    border-bottom-color: transparent;
+    -webkit-backdrop-filter: blur(0);
+    backdrop-filter: blur(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .elix-header--over-hero .header-wrapper {
+      transition: none;
+    }
+  }
+
   .section-header {
     position: sticky; /* This is for fixing a Safari z-index issue. PR #2147 */
     margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
@@ -121,6 +147,9 @@
 <{{ header_tag }}
   {% if header_tag == 'sticky-header' %}
     data-sticky-type="{{ section.settings.sticky_header_type }}"
+  {% endif %}
+  {% if request.page_type == 'index' %}
+    data-overlay-hero
   {% endif %}
   class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}"
 >
@@ -424,6 +453,32 @@
   }
 
   customElements.define('sticky-header', StickyHeader);
+
+  const initializeHeroHeader = () => {
+    const wrapper = document.querySelector('[data-overlay-hero]');
+    const hero = document.querySelector('#MainContent .elix-hero');
+
+    if (!wrapper || !hero) return;
+
+    const sectionHeader = wrapper.closest('.section-header');
+    if (!sectionHeader) return;
+
+    sectionHeader.classList.add('elix-header--over-hero', 'elix-header--hero-visible');
+    document.documentElement.style.setProperty('--header-height', `${sectionHeader.offsetHeight}px`);
+
+    const heroObserver = new IntersectionObserver(
+      ([entry]) => sectionHeader.classList.toggle('elix-header--hero-visible', entry.isIntersecting),
+      { rootMargin: `-${sectionHeader.offsetHeight}px 0px 0px 0px`, threshold: 0 }
+    );
+
+    heroObserver.observe(hero);
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeHeroHeader, { once: true });
+  } else {
+    initializeHeroHeader();
+  }
 {% endjavascript %}
 
 <script type="application/ld+json">
