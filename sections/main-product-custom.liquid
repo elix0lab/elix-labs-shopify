@@ -1,0 +1,130 @@
+{{ 'section-main-product-custom.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'main-product-custom.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign product_form_id = 'ElixProductForm-' | append: section.id
+  assign subtitle = product.metafields.custom.subtitle | default: section.settings.subtitle
+-%}
+
+<section class="elix-product" id="ElixProduct-{{ section.id }}" data-section-id="{{ section.id }}">
+  <script type="application/json" data-elix-variants>{{ product.variants | json }}</script>
+  <div class="elix-product__aurora" aria-hidden="true"></div>
+  <div class="elix-shell">
+    <div class="elix-hero elix-reveal">
+      <div class="elix-gallery" data-elix-gallery>
+        <div class="elix-gallery__stage">
+          {%- if product.media.size > 0 -%}
+            {%- for media in product.media -%}
+              <div class="elix-gallery__media{% if forloop.first %} is-active{% endif %}" data-media-id="{{ media.id }}" {% unless forloop.first %}hidden{% endunless %}>
+                {%- case media.media_type -%}
+                  {%- when 'image' -%}
+                    {%- if forloop.first -%}{%- assign media_loading = 'eager' -%}{%- else -%}{%- assign media_loading = 'lazy' -%}{%- endif -%}
+                    {{ media | image_url: width: 1400 | image_tag: loading: media_loading, widths: '480, 720, 960, 1200, 1400', sizes: '(min-width: 990px) 50vw, 100vw', alt: media.alt | default: product.title }}
+                  {%- when 'video', 'external_video' -%}
+                    {{ media | media_tag: image_size: '1200x', controls: true }}
+                  {%- when 'model' -%}
+                    {{ media | media_tag: image_size: '1200x', toggleable: true }}
+                {%- endcase -%}
+              </div>
+            {%- endfor -%}
+          {%- else -%}
+            {{ 'product-1' | placeholder_svg_tag: 'elix-placeholder' }}
+          {%- endif -%}
+        </div>
+        {%- if product.media.size > 1 -%}
+          <div class="elix-gallery__thumbs" role="tablist" aria-label="{{ 'products.product.media.gallery_viewer' | t | escape }}">
+            {%- for media in product.media limit: 4 -%}
+              <button class="elix-gallery__thumb{% if forloop.first %} is-active{% endif %}" type="button" role="tab" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" data-media-target="{{ media.id }}">
+                {{ media.preview_image | image_url: width: 240 | image_tag: loading: 'lazy', alt: media.alt | default: product.title }}
+              </button>
+            {%- endfor -%}
+            {%- if product.media.size > 4 -%}<span class="elix-gallery__more">+{{ product.media.size | minus: 4 }}<small>{{ section.settings.more_label }}</small></span>{%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="elix-buy">
+        <nav class="elix-breadcrumb" aria-label="Breadcrumb"><a href="{{ routes.root_url }}">{{ section.settings.home_label }}</a><span>›</span><a href="{{ product.collections.first.url | default: routes.all_products_collection_url }}">{{ product.collections.first.title | default: section.settings.products_label }}</a><span>›</span><span>{{ product.title }}</span></nav>
+        <h1>{{ product.title }}</h1><span class="elix-rule"></span>
+        {%- if subtitle != blank -%}<div class="elix-buy__subtitle">{{ subtitle }}</div>{%- endif -%}
+
+        <div class="elix-trust-cards">
+          {%- for block in section.blocks -%}{%- if block.type == 'trust_badge' -%}
+            <div class="elix-mini-card" {{ block.shopify_attributes }}>{% render 'elix-icon', icon: block.settings.icon %}<span>{{ block.settings.title }}</span></div>
+          {%- endif -%}{%- endfor -%}
+        </div>
+
+        {%- form 'product', product, id: product_form_id, class: 'elix-form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+          <input type="hidden" name="id" value="{{ current_variant.id }}" data-variant-id>
+          {%- unless product.has_only_default_variant -%}
+            {%- for option in product.options_with_values -%}
+              <fieldset class="elix-options" data-option-index="{{ forloop.index0 }}"><legend>{{ option.name }}</legend>
+                <div class="elix-options__values">{%- for value in option.values -%}<button type="button" class="elix-option{% if option.selected_value == value %} is-active{% endif %}" data-option-value="{{ value | escape }}" aria-pressed="{% if option.selected_value == value %}true{% else %}false{% endif %}">{{ value }}</button>{%- endfor -%}</div>
+              </fieldset>
+            {%- endfor -%}
+          {%- endunless -%}
+          <div class="elix-price" data-elix-price>{{ current_variant.price | money }}</div>
+          <p class="elix-tax">{{ section.settings.tax_text }}</p>
+          <div class="elix-purchase-row">
+            <div class="elix-quantity"><button type="button" data-qty-minus aria-label="Decrease quantity">−</button><input name="quantity" value="1" min="1" type="number" aria-label="Quantity"><button type="button" data-qty-plus aria-label="Increase quantity">+</button></div>
+            <button class="elix-cta" type="submit" name="add" {% unless current_variant.available %}disabled{% endunless %}><span data-add-text>{% if current_variant.available %}{{ section.settings.cart_label }}{% else %}{{ 'products.product.sold_out' | t }}{% endif %}</span></button>
+          </div>
+          <div class="elix-form-message" role="status" aria-live="polite"></div>
+        {%- endform -%}
+        <div class="elix-inline-trust">{%- for block in section.blocks -%}{%- if block.type == 'checkout_trust' -%}<span {{ block.shopify_attributes }}>{% render 'elix-icon', icon: block.settings.icon %}{{ block.settings.title }}</span>{%- endif -%}{%- endfor -%}</div>
+      </div>
+    </div>
+
+    <article class="elix-panel elix-mechanism elix-reveal">
+      <div class="elix-mechanism__intro"><h2>{{ section.settings.mechanism_title }}</h2><span class="elix-rule"></span><div class="rte">{{ section.settings.mechanism_text }}</div></div>
+      <div class="elix-mechanism__visual">
+        {%- if section.settings.mechanism_image != blank -%}{{ section.settings.mechanism_image | image_url: width: 800 | image_tag: loading: 'lazy', alt: section.settings.mechanism_title }}{%- else -%}
+          <svg viewBox="0 0 260 360" role="img" aria-label="DNA helix illustration"><defs><linearGradient id="dna-{{ section.id }}" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ec20ca"/><stop offset=".5" stop-color="#7a21ff"/><stop offset="1" stop-color="#008cff"/></linearGradient></defs><path d="M60 0C230 80 30 130 200 210S40 300 210 360M200 0C30 80 230 130 60 210S220 300 50 360" fill="none" stroke="url(#dna-{{ section.id }})" stroke-width="14" stroke-linecap="round"/><g stroke="#6946ff" stroke-width="3" opacity=".8"><path d="M78 25h105M65 67h140M75 110h112M77 154h108M69 200h130M75 247h112M70 293h126M67 335h136"/></g></svg>
+        {%- endif -%}
+      </div>
+      <div class="elix-receptors">{%- for block in section.blocks -%}{%- if block.type == 'receptor' -%}<div class="elix-receptor" {{ block.shopify_attributes }}><span class="elix-receptor__icon">{% render 'elix-icon', icon: block.settings.icon %}</span><div><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p></div></div>{%- endif -%}{%- endfor -%}</div>
+    </article>
+
+    <section class="elix-panel elix-reveal"><h2>{{ section.settings.applications_title }}</h2><span class="elix-rule"></span><div class="elix-apps">{%- for block in section.blocks -%}{%- if block.type == 'application' -%}<div class="elix-app" {{ block.shopify_attributes }}>{% render 'elix-icon', icon: block.settings.icon %}<div><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p></div></div>{%- endif -%}{%- endfor -%}</div></section>
+
+    <section class="elix-panel elix-reveal"><h2>{{ section.settings.included_title }}</h2><span class="elix-rule"></span><div class="elix-included">{%- for block in section.blocks -%}{%- if block.type == 'included' -%}<a class="elix-resource" href="{{ block.settings.link | default: '#' }}" {{ block.shopify_attributes }}><span class="elix-resource__icon">{% render 'elix-icon', icon: block.settings.icon %}</span><div><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p><strong>{{ block.settings.link_label }}</strong></div></a>{%- endif -%}{%- endfor -%}</div><div class="elix-digital">{% render 'elix-icon', icon: 'lock' %}<strong>{{ section.settings.digital_title }}</strong><i></i><span>{{ section.settings.digital_text }}</span></div></section>
+
+    <div class="elix-duo elix-reveal">
+      <section class="elix-panel"><h2>{{ section.settings.quality_title }}</h2><span class="elix-rule"></span><div class="elix-quality">{%- for block in section.blocks -%}{%- if block.type == 'quality' -%}<div {{ block.shopify_attributes }}>{% render 'elix-icon', icon: block.settings.icon %}<span>{{ block.settings.title }}</span></div>{%- endif -%}{%- endfor -%}</div></section>
+      <section class="elix-panel"><h2>{{ section.settings.storage_title }}</h2><span class="elix-rule"></span><div class="elix-storage">{%- for block in section.blocks -%}{%- if block.type == 'storage' -%}<div {{ block.shopify_attributes }}>{% render 'elix-icon', icon: block.settings.icon %}<span><strong>{{ block.settings.title }}</strong>{{ block.settings.text }}</span></div>{%- endif -%}{%- endfor -%}</div></section>
+    </div>
+
+    <section class="elix-panel elix-faq elix-reveal"><h2>{{ section.settings.faq_title }}</h2><span class="elix-rule"></span>{%- for block in section.blocks -%}{%- if block.type == 'faq' -%}<details {{ block.shopify_attributes }}><summary><span>{{ block.settings.question }}</span><i aria-hidden="true"></i></summary><div class="rte">{{ block.settings.answer }}</div></details>{%- endif -%}{%- endfor -%}</section>
+    <div class="elix-bottom-trust elix-reveal">{%- for block in section.blocks -%}{%- if block.type == 'bottom_trust' -%}<div class="elix-bottom-card" {{ block.shopify_attributes }}><span>{% render 'elix-icon', icon: block.settings.icon %}</span><div><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p></div></div>{%- endif -%}{%- endfor -%}</div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "ELIX custom product",
+  "tag": "section",
+  "class": "section-elix-product",
+  "settings": [
+    {"type":"text","id":"home_label","label":"Breadcrumb home","default":"Home"},{"type":"text","id":"products_label","label":"Breadcrumb products","default":"Peptides"},{"type":"text","id":"more_label","label":"More media label","default":"More"},
+    {"type":"text","id":"subtitle","label":"Product subtitle fallback","default":"Triple Agonist | GLP-1 | GIP | Glucagon Receptor Research Grade | ≥99% Purity | Lyophilized Powder"},
+    {"type":"text","id":"tax_text","label":"Price note","default":"Tax included. Shipping calculated at checkout."},{"type":"text","id":"cart_label","label":"Add to cart label","default":"Add to cart"},
+    {"type":"text","id":"mechanism_title","label":"Mechanism title","default":"Mechanism of Action"},{"type":"richtext","id":"mechanism_text","label":"Mechanism description","default":"<p>Describe the product's researched biological mechanism, target pathways and scientific context here.</p>"},{"type":"image_picker","id":"mechanism_image","label":"Mechanism illustration"},
+    {"type":"text","id":"applications_title","label":"Applications heading","default":"Potential Research Applications"},{"type":"text","id":"included_title","label":"Included heading","default":"Included With Your Order"},
+    {"type":"text","id":"digital_title","label":"Digital access title","default":"Instant Digital Access"},{"type":"text","id":"digital_text","label":"Digital access text","default":"Available immediately after your order is confirmed."},
+    {"type":"text","id":"quality_title","label":"Quality heading","default":"Quality Assurance & Testing"},{"type":"text","id":"storage_title","label":"Storage heading","default":"Storage & Handling"},{"type":"text","id":"faq_title","label":"FAQ heading","default":"FAQ"}
+  ],
+  "blocks": [
+    {"type":"trust_badge","name":"Purchase trust badge","limit":3,"settings":[{"type":"select","id":"icon","label":"Icon","default":"flask","options":[{"value":"flask","label":"Laboratory"},{"value":"snowflake","label":"Snowflake"},{"value":"certificate","label":"Certificate"}]},{"type":"text","id":"title","label":"Text","default":"Third-party tested"}]},
+    {"type":"checkout_trust","name":"Checkout trust item","limit":3,"settings":[{"type":"select","id":"icon","label":"Icon","default":"lock","options":[{"value":"lock","label":"Lock"},{"value":"box","label":"Box"},{"value":"globe","label":"Globe"}]},{"type":"text","id":"title","label":"Text","default":"Secure Checkout"}]},
+    {"type":"receptor","name":"Receptor card","limit":2,"settings":[{"type":"select","id":"icon","label":"Icon","default":"molecule","options":[{"value":"molecule","label":"Molecule"},{"value":"dna","label":"DNA"},{"value":"flask","label":"Laboratory"}]},{"type":"text","id":"title","label":"Title","default":"GLP-1 Receptor"},{"type":"textarea","id":"text","label":"Description","default":"May support nutrient utilization and insulin sensitivity as part of metabolic processes."}]},
+    {"type":"application","name":"Research application","limit":4,"settings":[{"type":"select","id":"icon","label":"Icon","default":"clipboard","options":[{"value":"clipboard","label":"Clipboard"},{"value":"molecule","label":"Molecule"},{"value":"flame","label":"Flame"},{"value":"drop","label":"Drop"}]},{"type":"text","id":"title","label":"Title","default":"Weight Management"},{"type":"text","id":"text","label":"Subtitle","default":"Research"}]},
+    {"type":"included","name":"Included resource","limit":4,"settings":[{"type":"select","id":"icon","label":"Icon","default":"book","options":[{"value":"book","label":"Book"},{"value":"dropper","label":"Dropper"},{"value":"certificate","label":"Document"},{"value":"dna","label":"DNA"}]},{"type":"text","id":"title","label":"Title","default":"Reconstitution Guide"},{"type":"textarea","id":"text","label":"Description","default":"How to prepare your peptide safely."},{"type":"text","id":"link_label","label":"Link label","default":"PDF Guide"},{"type":"url","id":"link","label":"File or page link"}]},
+    {"type":"quality","name":"Quality item","limit":5,"settings":[{"type":"select","id":"icon","label":"Icon","default":"flask","options":[{"value":"flask","label":"Flask"},{"value":"certificate","label":"Certificate"},{"value":"shield","label":"Shield"},{"value":"clipboard","label":"Clipboard"}]},{"type":"text","id":"title","label":"Text","default":"Third-Party Analytical Testing"}]},
+    {"type":"storage","name":"Storage item","limit":3,"settings":[{"type":"select","id":"icon","label":"Icon","default":"snowflake","options":[{"value":"snowflake","label":"Snowflake"},{"value":"bottle","label":"Bottle"},{"value":"hand","label":"Hand"}]},{"type":"text","id":"title","label":"Title","default":"Before Reconstitution"},{"type":"textarea","id":"text","label":"Description","default":"Store refrigerated. Protect from light and moisture."}]},
+    {"type":"faq","name":"FAQ item","settings":[{"type":"text","id":"question","label":"Question","default":"What is this product?"},{"type":"richtext","id":"answer","label":"Answer","default":"<p>Add a clear, research-focused answer here.</p>"}]},
+    {"type":"bottom_trust","name":"Bottom trust card","limit":4,"settings":[{"type":"select","id":"icon","label":"Icon","default":"molecule","options":[{"value":"molecule","label":"Molecule"},{"value":"shield","label":"Shield"},{"value":"globe","label":"Globe"},{"value":"star","label":"Star"}]},{"type":"text","id":"title","label":"Title","default":"Precision Science"},{"type":"textarea","id":"text","label":"Subtitle","default":"Advanced peptide research backed by innovation."}]}
+  ],
+  "presets": [{"name":"ELIX custom product"}]
+}
+{% endschema %}
