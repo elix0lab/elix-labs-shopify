@@ -1,0 +1,381 @@
+/*
+ * CJC-1295 product template. Assign only to the CJC-1295 product.
+ * The approved ELIX product hierarchy is preserved.
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product-cjc1295",
+      "blocks": {
+        "badge_lab": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "flask",
+            "title": "Third-Party Tested"
+          }
+        },
+        "badge_cold": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "snowflake",
+            "title": "Cold Chain Shipping"
+          }
+        },
+        "badge_coa": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "certificate",
+            "title": "COA Included"
+          }
+        },
+        "checkout_secure": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "lock",
+            "title": "Secure Checkout"
+          }
+        },
+        "checkout_pack": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "box",
+            "title": "Discreet Packaging"
+          }
+        },
+        "checkout_world": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "globe",
+            "title": "Worldwide Shipping"
+          }
+        },
+        "receptor_glp": {
+          "type": "receptor",
+          "settings": {
+            "icon": "dna",
+            "title": "Growth Hormone Release",
+            "text": "Supports sustained endogenous GH signalling through GHRH receptor activation."
+          }
+        },
+        "receptor_gcg": {
+          "type": "receptor",
+          "settings": {
+            "icon": "molecule",
+            "title": "Muscle Growth Research",
+            "text": "Investigated for its role in supporting anabolic signalling and protein synthesis pathways."
+          }
+        },
+        "app_0": {
+          "type": "application",
+          "settings": {
+            "icon": "molecule",
+            "title": "Muscle Growth Research",
+            "text": "Anabolic signalling and protein synthesis pathway models."
+          }
+        },
+        "app_1": {
+          "type": "application",
+          "settings": {
+            "icon": "clipboard",
+            "title": "Recovery & Repair Research",
+            "text": "Post-exercise recovery and tissue adaptation models."
+          }
+        },
+        "app_2": {
+          "type": "application",
+          "settings": {
+            "icon": "flask",
+            "title": "Fat Metabolism Research",
+            "text": "Downstream metabolic effects associated with GH signalling."
+          }
+        },
+        "app_3": {
+          "type": "application",
+          "settings": {
+            "icon": "dna",
+            "title": "Bone Density Research",
+            "text": "Skeletal remodelling and bone-density pathway models."
+          }
+        },
+        "inc_0": {
+          "type": "included",
+          "settings": {
+            "icon": "book",
+            "title": "Reconstitution Guide",
+            "text": "Laboratory preparation and handling guidance for lyophilized CJC-1295.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_1": {
+          "type": "included",
+          "settings": {
+            "icon": "dropper",
+            "title": "Research Dosing Guide",
+            "text": "Research-oriented concentration and protocol planning reference.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_2": {
+          "type": "included",
+          "settings": {
+            "icon": "certificate",
+            "title": "Clinical Research Digest",
+            "text": "A concise digest of published CJC-1295 research contexts and findings.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_3": {
+          "type": "included",
+          "settings": {
+            "icon": "dna",
+            "title": "Mechanism of Action",
+            "text": "Scientific overview of GHRH receptor activation and downstream signalling.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "quality_0": {
+          "type": "quality",
+          "settings": {
+            "icon": "flask",
+            "title": "Third-Party Analytical Testing"
+          }
+        },
+        "quality_1": {
+          "type": "quality",
+          "settings": {
+            "icon": "certificate",
+            "title": "HPLC Verification"
+          }
+        },
+        "quality_2": {
+          "type": "quality",
+          "settings": {
+            "icon": "certificate",
+            "title": "Certificate of Analysis (COA)"
+          }
+        },
+        "quality_3": {
+          "type": "quality",
+          "settings": {
+            "icon": "shield",
+            "title": "Batch Traceability"
+          }
+        },
+        "quality_4": {
+          "type": "quality",
+          "settings": {
+            "icon": "shield",
+            "title": "Sterility Controls"
+          }
+        },
+        "storage_0": {
+          "type": "storage",
+          "settings": {
+            "icon": "snowflake",
+            "title": "Before Reconstitution",
+            "text": "Keep the sealed lyophilized CJC-1295 vial refrigerated at 2–8°C and protected from light and moisture."
+          }
+        },
+        "storage_1": {
+          "type": "storage",
+          "settings": {
+            "icon": "bottle",
+            "title": "After Reconstitution",
+            "text": "After laboratory reconstitution, store at 2–8°C and follow the documented research protocol and stability window."
+          }
+        },
+        "storage_2": {
+          "type": "storage",
+          "settings": {
+            "icon": "hand",
+            "title": "General Handling",
+            "text": "For laboratory research only. Use aseptic technique and avoid repeated temperature cycling."
+          }
+        },
+        "faq_0": {
+          "type": "faq",
+          "settings": {
+            "question": "What is CJC-1295?",
+            "answer": "<p>CJC-1295 is a synthetic growth hormone releasing hormone analogue studied in controlled laboratory models of endocrine signalling.</p>"
+          }
+        },
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "How does CJC-1295 work?",
+            "answer": "<p>Research examines its activation of GHRH receptors and the resulting prolonged stimulation of endogenous growth hormone signalling.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "What purity level is provided?",
+            "answer": "<p>ELIX LABS CJC-1295 is supplied at ≥99% purity, supported by batch-specific analytical documentation.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Is a Certificate of Analysis included?",
+            "answer": "<p>Yes. A batch-specific Certificate of Analysis documents identity, purity and relevant analytical results.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "How should it be stored?",
+            "answer": "<p>Keep the sealed lyophilized vial refrigerated at 2–8°C and protected from light and moisture. Follow the applicable protocol after reconstitution.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "What is lyophilized powder?",
+            "answer": "<p>Lyophilization is a controlled freeze-drying process that removes water and leaves the peptide in a dry form for laboratory storage and preparation.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq",
+          "settings": {
+            "question": "Is this product intended for laboratory research only?",
+            "answer": "<p>Yes. It is supplied exclusively for laboratory research and is not intended for human or veterinary use, diagnosis or treatment.</p>"
+          }
+        },
+        "faq_7": {
+          "type": "faq",
+          "settings": {
+            "question": "How is it shipped?",
+            "answer": "<p>CJC-1295 is securely packed using ELIX LABS cold-chain shipping procedures and discreet protective packaging.</p>"
+          }
+        },
+        "faq_8": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "<p>International availability depends on carrier coverage, destination requirements and local regulations. Available destinations are shown at checkout.</p>"
+          }
+        },
+        "bottom_0": {
+          "type": "bottom_trust",
+          "settings": {
+            "icon": "molecule",
+            "title": "Precision Science",
+            "text": "Advanced peptide research backed by innovation."
+          }
+        },
+        "bottom_1": {
+          "type": "bottom_trust",
+          "settings": {
+            "icon": "shield",
+            "title": "Premium Quality",
+            "text": "Highest purity peptides with rigorous quality control."
+          }
+        },
+        "bottom_2": {
+          "type": "bottom_trust",
+          "settings": {
+            "icon": "globe",
+            "title": "Global Delivery",
+            "text": "Fast, secure, and discreet worldwide shipping."
+          }
+        },
+        "bottom_3": {
+          "type": "bottom_trust",
+          "settings": {
+            "icon": "star",
+            "title": "Research Excellence",
+            "text": "Committed to advancing peptide science."
+          }
+        },
+        "mechanism_regeneration": {
+          "type": "receptor",
+          "settings": {
+            "icon": "shield",
+            "title": "Recovery Research",
+            "text": "Studied for post-exercise recovery and tissue adaptation."
+          }
+        },
+        "mechanism_signalling": {
+          "type": "receptor",
+          "settings": {
+            "icon": "flask",
+            "title": "Fat Metabolism",
+            "text": "Research explores downstream metabolic effects associated with increased GH signalling."
+          }
+        },
+        "app_4": {
+          "type": "application",
+          "settings": {
+            "icon": "flask",
+            "title": "Performance Enhancement Research",
+            "text": "Endocrine signalling and physiological performance models."
+          }
+        },
+        "faq_9": {
+          "type": "faq",
+          "settings": {
+            "question": "How can I access the COA?",
+            "answer": "<p>The batch-specific COA is included with the order documentation and can be accessed through the provided digital research resources.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "badge_lab",
+        "badge_cold",
+        "badge_coa",
+        "checkout_secure",
+        "checkout_pack",
+        "checkout_world",
+        "receptor_glp",
+        "receptor_gcg",
+        "mechanism_regeneration",
+        "mechanism_signalling",
+        "app_0",
+        "app_1",
+        "app_2",
+        "app_3",
+        "app_4",
+        "inc_0",
+        "inc_1",
+        "inc_2",
+        "inc_3",
+        "quality_0",
+        "quality_1",
+        "quality_2",
+        "quality_3",
+        "quality_4",
+        "storage_0",
+        "storage_1",
+        "storage_2",
+        "faq_0",
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7",
+        "faq_8",
+        "faq_9",
+        "bottom_0",
+        "bottom_1",
+        "bottom_2",
+        "bottom_3"
+      ],
+      "settings": {
+        "subtitle": "Growth Hormone Releasing Hormone Analog | Research Grade | ≥99% Purity | Lyophilized Powder",
+        "accent_color": "#E31B23",
+        "accent_secondary": "#B51218",
+        "glow_color": "#FF4A52",
+        "border_color": "rgba(227,27,35,.28)",
+        "mechanism_title": "Mechanism of Action",
+        "mechanism_intro": "CJC-1295 is a synthetic growth hormone releasing hormone (GHRH) analogue investigated for its prolonged stimulation of endogenous growth hormone secretion. Research focuses on endocrine signalling, recovery, body composition and anabolic pathways.",
+        "applications_title": "Potential Research Applications",
+        "included_title": "Included With Your Order"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
