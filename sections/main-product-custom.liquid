@@ -78,13 +78,13 @@
 
     <section class="elix-panel elix-mechanism elix-reveal">
       <h2>{{ section.settings.mechanism_title }}</h2><span class="elix-rule"></span>
-      {%- if section.settings.mechanism_image != blank -%}
-        <div class="elix-mechanism__image">
-          {{ section.settings.mechanism_image | image_url: width: 2400 | image_tag: loading: 'lazy', widths: '600, 900, 1200, 1600, 2000, 2400', sizes: '(min-width: 1500px) 1400px, calc(100vw - 48px)', alt: section.settings.mechanism_title }}
-        </div>
-      {%- else -%}
-        <div class="elix-mechanism__empty">{{ section.settings.mechanism_empty_text }}</div>
-      {%- endif -%}
+      <div class="elix-mechanism__image">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0944/3082/2736/files/mecha-reta.png?v=1785456147"
+          alt="Retatrutide Mechanism of Action"
+          style="width: 100%; height: auto; display: block; object-fit: contain; border-radius: inherit;"
+        >
+      </div>
     </section>
 
     <section class="elix-panel elix-reveal"><h2>{{ section.settings.applications_title }}</h2><span class="elix-rule"></span><div class="elix-apps">{%- for block in section.blocks -%}{%- if block.type == 'application' -%}<div class="elix-app" {{ block.shopify_attributes }}>{% render 'elix-icon', icon: block.settings.icon %}<div><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p></div></div>{%- endif -%}{%- endfor -%}</div></section>
