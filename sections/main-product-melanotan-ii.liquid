@@ -1,0 +1,159 @@
+{{ 'section-main-product-melanotan-ii.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'main-product-custom.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign product_form_id = 'ElixProductForm-' | append: section.id
+  assign subtitle = product.metafields.custom.elix_subtitle | default: product.metafields.custom.subtitle | default: section.settings.subtitle
+  assign category = product.metafields.custom.elix_category | default: section.settings.category_label
+  assign category_url = product.collections.first.url | default: routes.all_products_collection_url
+  assign accent_color = product.metafields.custom.elix_accent_color | default: section.settings.accent_color
+  assign accent_secondary = product.metafields.custom.elix_accent_secondary | default: section.settings.accent_secondary
+  assign glow_color = product.metafields.custom.elix_glow_color | default: section.settings.glow_color
+  assign border_color = product.metafields.custom.elix_border_color | default: section.settings.border_color
+  assign mechanism_image_url = 'https://cdn.shopify.com/s/files/1/0944/3082/2736/files/mecha-melaton.png?v=1785533818'
+  assign mechanism_intro = product.metafields.custom.elix_mechanism_intro | default: section.settings.mechanism_intro
+  assign badge_items = product.metafields.custom.elix_badges.value
+  assign benefit_items = product.metafields.custom.elix_benefits.value
+  assign document_items = product.metafields.custom.elix_documents.value
+  assign faq_items = product.metafields.custom.elix_faq.value
+  assign application_count = 0
+  assign document_count = 0
+  assign faq_count = 0
+  for block in section.blocks
+    if block.type == 'application' and block.settings.title != blank
+      assign application_count = application_count | plus: 1
+    elsif block.type == 'included' and block.settings.title != blank
+      assign document_count = document_count | plus: 1
+    elsif block.type == 'faq' and block.settings.question != blank
+      assign faq_count = faq_count | plus: 1
+    endif
+  endfor
+-%}
+
+<section class="elix-product elix-product--melanotan-ii" id="ElixProduct-{{ section.id }}" data-section-id="{{ section.id }}" style="--elix-accent-color: {{ accent_color }}; --elix-accent-secondary: {{ accent_secondary }}; --elix-glow-color: {{ glow_color }}; --elix-border-color: {{ border_color }};">
+  <script type="application/json" data-elix-variants>{{ product.variants | json }}</script>
+  <div class="elix-product__aurora" aria-hidden="true"></div>
+  <div class="elix-shell">
+    <div class="elix-hero elix-reveal">
+      <div class="elix-gallery" data-elix-gallery>
+        <div class="elix-gallery__stage">
+          {%- if product.media.size > 0 -%}
+            {%- for media in product.media -%}
+              <div class="elix-gallery__media{% if forloop.first %} is-active{% endif %}" data-media-id="{{ media.id }}" {% unless forloop.first %}hidden{% endunless %}>
+                {%- case media.media_type -%}
+                  {%- when 'image' -%}
+                    {%- if forloop.first -%}{%- assign media_loading = 'eager' -%}{%- else -%}{%- assign media_loading = 'lazy' -%}{%- endif -%}
+                    {{ media | image_url: width: 1400 | image_tag: loading: media_loading, widths: '480, 720, 960, 1200, 1400', sizes: '(min-width: 990px) 50vw, 100vw', alt: media.alt | default: product.title }}
+                  {%- when 'video', 'external_video' -%}
+                    {{ media | media_tag: image_size: '1200x', controls: true }}
+                  {%- when 'model' -%}
+                    {{ media | media_tag: image_size: '1200x', toggleable: true }}
+                {%- endcase -%}
+              </div>
+            {%- endfor -%}
+          {%- else -%}
+            {{ 'product-1' | placeholder_svg_tag: 'elix-placeholder' }}
+          {%- endif -%}
+        </div>
+        {%- if product.media.size > 1 -%}
+          <div class="elix-gallery__thumbs" role="tablist" aria-label="{{ 'products.product.media.gallery_viewer' | t | escape }}">
+            {%- for media in product.media limit: 4 -%}
+              <button class="elix-gallery__thumb{% if forloop.first %} is-active{% endif %}" type="button" role="tab" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" data-media-target="{{ media.id }}">
+                {{ media.preview_image | image_url: width: 240 | image_tag: loading: 'lazy', alt: media.alt | default: product.title }}
+              </button>
+            {%- endfor -%}
+            {%- if product.media.size > 4 -%}<span class="elix-gallery__more">+{{ product.media.size | minus: 4 }}<small>{{ section.settings.more_label }}</small></span>{%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="elix-buy">
+        <nav class="elix-breadcrumb" aria-label="Breadcrumb"><a href="{{ routes.root_url }}">{{ section.settings.home_label }}</a><span>›</span><a href="{{ routes.all_products_collection_url }}">{{ section.settings.products_label }}</a><span>›</span><a href="{{ category_url }}">{{ category }}</a><span>›</span><span>{{ product.title }}</span></nav>
+        <h1>{{ product.title }}</h1><span class="elix-rule"></span>
+        {%- if subtitle != blank -%}<div class="elix-buy__subtitle">{{ subtitle }}</div>{%- endif -%}
+        <p class="elix-buy__description">{{ section.settings.hero_description }}</p>
+        <p class="elix-buy__research-note">{{ section.settings.research_note }}</p>
+
+        <div class="elix-trust-cards">
+          {%- if badge_items != blank -%}
+            {%- for item in badge_items -%}{%- assign icon_name = item.icon.value | default: 'flask' -%}<div class="elix-mini-card">{% render 'elix-icon', icon: icon_name %}<span>{{ item.label.value | default: item.title.value }}</span></div>{%- endfor -%}
+          {%- else -%}{%- for block in section.blocks -%}{%- if block.type == 'trust_badge' and block.settings.title != blank -%}
+            <div class="elix-mini-card" {{ block.shopify_attributes }}>{% render 'elix-icon', icon: block.settings.icon %}<span>{{ block.settings.title }}</span></div>
+          {%- endif -%}{%- endfor -%}{%- endif -%}
+        </div>
+
+        {%- form 'product', product, id: product_form_id, class: 'elix-form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+          <input type="hidden" name="id" value="{{ current_variant.id }}" data-variant-id>
+          {%- unless product.has_only_default_variant -%}
+            {%- for option in product.options_with_values -%}
+              <fieldset class="elix-options" data-option-index="{{ forloop.index0 }}"><legend>{{ option.name }}</legend>
+                <div class="elix-options__values">{%- for value in option.values -%}<button type="button" class="elix-option{% if option.selected_value == value %} is-active{% endif %}" data-option-value="{{ value | escape }}" aria-pressed="{% if option.selected_value == value %}true{% else %}false{% endif %}">{{ value }}</button>{%- endfor -%}</div>
+              </fieldset>
+            {%- endfor -%}
+          {%- endunless -%}
+          <div class="elix-price" data-elix-price>{{ current_variant.price | money }}</div>
+          <p class="elix-tax">{{ section.settings.tax_text }}</p>
+          <div class="elix-purchase-row">
+            <div class="elix-quantity"><button type="button" data-qty-minus aria-label="Decrease quantity">−</button><input name="quantity" value="1" min="1" type="number" aria-label="Quantity"><button type="button" data-qty-plus aria-label="Increase quantity">+</button></div>
+            <button class="elix-cta" type="submit" name="add" {% unless current_variant.available %}disabled{% endunless %}><span data-add-text>{% if current_variant.available %}{{ section.settings.cart_label }}{% else %}{{ 'products.product.sold_out' | t }}{% endif %}</span></button>
+          </div>
+          <div class="elix-form-message" role="status" aria-live="polite"></div>
+        {%- endform -%}
+        <div class="elix-inline-trust">{%- for block in section.blocks -%}{%- if block.type == 'checkout_trust' -%}<span {{ block.shopify_attributes }}>{% render 'elix-icon', icon: block.settings.icon %}{{ block.settings.title }}</span>{%- endif -%}{%- endfor -%}</div>
+      </div>
+    </div>
+
+    <section class="elix-panel elix-mechanism elix-reveal">
+      <h2>{{ section.settings.mechanism_title }}</h2><span class="elix-rule"></span>
+      {%- if mechanism_intro != blank -%}<p class="elix-mechanism__intro">{{ mechanism_intro }}</p>{%- endif -%}
+      <div class="elix-mechanism__image">
+        <img src="{{ mechanism_image_url }}" srcset="{{ mechanism_image_url }}&amp;width=750 750w, {{ mechanism_image_url }}&amp;width=1100 1100w, {{ mechanism_image_url }}&amp;width=1500 1500w, {{ mechanism_image_url }}&amp;width=2200 2200w" sizes="(min-width: 750px) calc(100vw - 56px), calc(100vw - 28px)" alt="{{ section.settings.mechanism_title | escape }}" loading="lazy">
+      </div>
+      <div class="elix-mechanism__features">{%- for block in section.blocks -%}{%- if block.type == 'receptor' -%}<article class="elix-mechanism__feature" {{ block.shopify_attributes }}><span>{% render 'elix-icon', icon: block.settings.icon %}</span><div><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p></div></article>{%- endif -%}{%- endfor -%}</div>
+    </section>
+
+    {%- if benefit_items != blank or application_count > 0 -%}<section class="elix-panel elix-reveal"><h2>{{ section.settings.applications_title }}</h2><span class="elix-rule"></span><div class="elix-apps">{%- if benefit_items != blank -%}{%- for item in benefit_items -%}{%- assign icon_name = item.icon.value | default: 'clipboard' -%}<div class="elix-app">{% render 'elix-icon', icon: icon_name %}<div><h3>{{ item.title.value }}</h3>{%- if item.text.value != blank -%}<p>{{ item.text.value }}</p>{%- endif -%}</div></div>{%- endfor -%}{%- else -%}{%- for block in section.blocks -%}{%- if block.type == 'application' and block.settings.title != blank -%}<div class="elix-app" {{ block.shopify_attributes }}>{% render 'elix-icon', icon: block.settings.icon %}<div><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p></div></div>{%- endif -%}{%- endfor -%}{%- endif -%}</div></section>{%- endif -%}
+
+    {%- if document_items != blank or document_count > 0 -%}<section class="elix-panel elix-reveal"><h2>{{ section.settings.included_title }}</h2><span class="elix-rule"></span><div class="elix-included">{%- if document_items != blank -%}{%- for item in document_items -%}{%- assign icon_name = item.icon.value | default: 'certificate' -%}<a class="elix-resource" href="{{ item.file.value.url | default: item.link.value }}"><span class="elix-resource__icon">{% render 'elix-icon', icon: icon_name %}</span><div><h3>{{ item.title.value }}</h3>{%- if item.text.value != blank -%}<p>{{ item.text.value }}</p>{%- endif -%}<strong>{{ item.link_label.value }}</strong></div></a>{%- endfor -%}{%- else -%}{%- for block in section.blocks -%}{%- if block.type == 'included' and block.settings.title != blank -%}<a class="elix-resource"{% if block.settings.link != blank %} href="{{ block.settings.link }}"{% endif %} {{ block.shopify_attributes }}><span class="elix-resource__icon">{% render 'elix-icon', icon: block.settings.icon %}</span><div><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p><strong>{{ block.settings.link_label }}</strong></div></a>{%- endif -%}{%- endfor -%}{%- endif -%}</div><div class="elix-digital">{% render 'elix-icon', icon: 'lock' %}<strong>{{ section.settings.digital_title }}</strong><i></i><span>{{ section.settings.digital_text }}</span></div></section>{%- endif -%}
+
+    <div class="elix-duo elix-reveal">
+      <section class="elix-panel"><h2>{{ section.settings.quality_title }}</h2><span class="elix-rule"></span><div class="elix-quality">{%- for block in section.blocks -%}{%- if block.type == 'quality' -%}<div {{ block.shopify_attributes }}>{% render 'elix-icon', icon: block.settings.icon %}<span>{{ block.settings.title }}</span></div>{%- endif -%}{%- endfor -%}</div></section>
+      <section class="elix-panel"><h2>{{ section.settings.storage_title }}</h2><span class="elix-rule"></span><div class="elix-storage">{%- for block in section.blocks -%}{%- if block.type == 'storage' -%}<div {{ block.shopify_attributes }}>{% render 'elix-icon', icon: block.settings.icon %}<span><strong>{{ block.settings.title }}</strong>{{ block.settings.text }}</span></div>{%- endif -%}{%- endfor -%}</div></section>
+    </div>
+
+    {%- if faq_items != blank or faq_count > 0 -%}<section class="elix-panel elix-faq elix-reveal"><h2>{{ section.settings.faq_title }}</h2><span class="elix-rule"></span>{%- if faq_items != blank -%}{%- for item in faq_items -%}<details><summary><span>{{ item.question.value }}</span><i aria-hidden="true"></i></summary><div class="rte">{{ item.answer | metafield_tag }}</div></details>{%- endfor -%}{%- else -%}{%- for block in section.blocks -%}{%- if block.type == 'faq' and block.settings.question != blank -%}<details {{ block.shopify_attributes }}><summary><span>{{ block.settings.question }}</span><i aria-hidden="true"></i></summary><div class="rte">{{ block.settings.answer }}</div></details>{%- endif -%}{%- endfor -%}{%- endif -%}</section>{%- endif -%}
+    <div class="elix-bottom-trust elix-reveal">{%- for block in section.blocks -%}{%- if block.type == 'bottom_trust' -%}<div class="elix-bottom-card" {{ block.shopify_attributes }}><span>{% render 'elix-icon', icon: block.settings.icon %}</span><div><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p></div></div>{%- endif -%}{%- endfor -%}</div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "ELIX Melanotan II product",
+  "tag": "section",
+  "class": "section-elix-product",
+  "settings": [
+    {"type":"text","id":"home_label","label":"Breadcrumb home","default":"Home"},{"type":"text","id":"products_label","label":"Breadcrumb products","default":"Peptides"},{"type":"text","id":"category_label","label":"Product category","default":"Tanning & Pigmentation"},{"type":"text","id":"more_label","label":"More media label","default":"More"},
+    {"type":"text","id":"subtitle","label":"Product subtitle fallback","default":"Synthetic Peptide | Alpha-MSH Analog · Research Grade | Lyophilized Powder"},{"type":"textarea","id":"hero_description","label":"Hero description","default":"Melanotan II is a synthetic cyclic peptide analogue of alpha-melanocyte-stimulating hormone, investigated for its interaction with melanocortin receptors and its role in pigmentation-related signalling pathways."},{"type":"text","id":"research_note","label":"Research-only note","default":"Developed exclusively for controlled laboratory and analytical research."},
+    {"type":"text","id":"tax_text","label":"Price note","default":"Tax included. Shipping calculated at checkout."},{"type":"text","id":"cart_label","label":"Add to cart label","default":"Add to cart"},
+    {"type":"image_picker","id":"mechanism_image","label":"Mechanism image fallback"},{"type":"textarea","id":"mechanism_intro","label":"Mechanism introduction","default":"Melanotan II is a synthetic analogue of alpha-melanocyte-stimulating hormone studied for its activity at melanocortin receptors, particularly MC1R. Laboratory research examines downstream cAMP signalling, melanogenic gene expression and eumelanin synthesis."},
+    {"type":"text","id":"accent_color","label":"Accent color fallback","default":"#FF7A00"},{"type":"text","id":"accent_secondary","label":"Secondary accent fallback","default":"#D95700"},{"type":"text","id":"glow_color","label":"Glow color fallback","default":"#FF9A24"},{"type":"text","id":"border_color","label":"Border color fallback","default":"rgba(255,138,24,.42)"},
+    {"type":"text","id":"mechanism_title","label":"Mechanism title","default":"Mechanism of Action"},
+    {"type":"text","id":"applications_title","label":"Applications heading","default":"Potential Research Applications"},{"type":"text","id":"included_title","label":"Included heading","default":"Included With Your Order"},
+    {"type":"text","id":"digital_title","label":"Digital access title","default":"Instant Digital Access"},{"type":"text","id":"digital_text","label":"Digital access text","default":"Available immediately after your order is confirmed."},
+    {"type":"text","id":"quality_title","label":"Quality heading","default":"Quality Assurance & Testing"},{"type":"text","id":"storage_title","label":"Storage heading","default":"Storage & Handling"},{"type":"text","id":"faq_title","label":"FAQ heading","default":"FAQ"}
+  ],
+  "blocks": [
+    {"type":"trust_badge","name":"Purchase trust badge","limit":3,"settings":[{"type":"select","id":"icon","label":"Icon","default":"flask","options":[{"value":"flask","label":"Laboratory"},{"value":"snowflake","label":"Snowflake"},{"value":"certificate","label":"Certificate"}]},{"type":"text","id":"title","label":"Text","default":"Third-party tested"}]},
+    {"type":"checkout_trust","name":"Checkout trust item","limit":3,"settings":[{"type":"select","id":"icon","label":"Icon","default":"lock","options":[{"value":"lock","label":"Lock"},{"value":"box","label":"Box"},{"value":"globe","label":"Globe"}]},{"type":"text","id":"title","label":"Text","default":"Secure Checkout"}]},
+    {"type":"receptor","name":"Mechanism feature","limit":4,"settings":[{"type":"select","id":"icon","label":"Icon","default":"molecule","options":[{"value":"molecule","label":"Molecule"},{"value":"dna","label":"DNA"},{"value":"flask","label":"Laboratory"},{"value":"shield","label":"Shield"}]},{"type":"text","id":"title","label":"Title","default":"Melanocortin Signalling"},{"type":"textarea","id":"text","label":"Description","default":"Research examines melanocortin-receptor activity and downstream cAMP signalling."}]},
+    {"type":"application","name":"Research application","limit":5,"settings":[{"type":"select","id":"icon","label":"Icon","default":"clipboard","options":[{"value":"clipboard","label":"Clipboard"},{"value":"molecule","label":"Molecule"},{"value":"flame","label":"Flame"},{"value":"drop","label":"Drop"},{"value":"dna","label":"DNA"},{"value":"flask","label":"Laboratory"}]},{"type":"text","id":"title","label":"Title","default":"Pigmentation Research"},{"type":"text","id":"text","label":"Subtitle","default":"Research"}]},
+    {"type":"included","name":"Included resource","limit":4,"settings":[{"type":"select","id":"icon","label":"Icon","default":"book","options":[{"value":"book","label":"Book"},{"value":"dropper","label":"Dropper"},{"value":"certificate","label":"Document"},{"value":"dna","label":"DNA"}]},{"type":"text","id":"title","label":"Title","default":"Reconstitution Guide"},{"type":"textarea","id":"text","label":"Description","default":"General laboratory preparation and handling information."},{"type":"text","id":"link_label","label":"Link label","default":"PDF Guide"},{"type":"url","id":"link","label":"File or page link"}]},
+    {"type":"quality","name":"Quality item","limit":5,"settings":[{"type":"select","id":"icon","label":"Icon","default":"flask","options":[{"value":"flask","label":"Flask"},{"value":"certificate","label":"Certificate"},{"value":"shield","label":"Shield"},{"value":"clipboard","label":"Clipboard"}]},{"type":"text","id":"title","label":"Text","default":"Third-Party Analytical Testing"}]},
+    {"type":"storage","name":"Storage item","limit":3,"settings":[{"type":"select","id":"icon","label":"Icon","default":"snowflake","options":[{"value":"snowflake","label":"Snowflake"},{"value":"bottle","label":"Bottle"},{"value":"hand","label":"Hand"}]},{"type":"text","id":"title","label":"Title","default":"Before Reconstitution"},{"type":"textarea","id":"text","label":"Description","default":"Store refrigerated. Protect from light and moisture."}]},
+    {"type":"faq","name":"FAQ item","settings":[{"type":"text","id":"question","label":"Question","default":"What is this product?"},{"type":"richtext","id":"answer","label":"Answer","default":"<p>Add a clear, research-focused answer here.</p>"}]},
+    {"type":"bottom_trust","name":"Bottom trust card","limit":4,"settings":[{"type":"select","id":"icon","label":"Icon","default":"molecule","options":[{"value":"molecule","label":"Molecule"},{"value":"shield","label":"Shield"},{"value":"globe","label":"Globe"},{"value":"star","label":"Star"}]},{"type":"text","id":"title","label":"Title","default":"Precision Science"},{"type":"textarea","id":"text","label":"Subtitle","default":"Advanced peptide research backed by innovation."}]}
+  ],
+  "presets": [{"name":"ELIX Melanotan II product"}]
+}
+{% endschema %}

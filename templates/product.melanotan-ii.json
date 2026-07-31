@@ -1,0 +1,345 @@
+/* Dedicated Melanotan II product template. Assign only to the Melanotan II product. */
+{
+  "sections": {
+    "main": {
+      "type": "main-product-melanotan-ii",
+      "blocks": {
+        "badge_lab": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "flask",
+            "title": "Third-Party Tested"
+          }
+        },
+        "badge_cold": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "snowflake",
+            "title": "Cold Chain Shipping"
+          }
+        },
+        "badge_coa": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "certificate",
+            "title": "COA Included"
+          }
+        },
+        "checkout_secure": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "lock",
+            "title": "Secure Checkout"
+          }
+        },
+        "checkout_pack": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "box",
+            "title": "Discreet Packaging"
+          }
+        },
+        "checkout_world": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "globe",
+            "title": "Worldwide Shipping"
+          }
+        },
+        "app_0": {
+          "type": "application",
+          "settings": {
+            "icon": "molecule",
+            "title": "Skin Pigmentation Research",
+            "text": "Study of melanocortin signalling and pigment synthesis pathways."
+          }
+        },
+        "app_1": {
+          "type": "application",
+          "settings": {
+            "icon": "flask",
+            "title": "UV Response Research",
+            "text": "Investigation of cellular responses associated with melanin expression."
+          }
+        },
+        "app_2": {
+          "type": "application",
+          "settings": {
+            "icon": "drop",
+            "title": "Melanogenesis Research",
+            "text": "Analysis of eumelanin production and melanocyte activity."
+          }
+        },
+        "app_3": {
+          "type": "application",
+          "settings": {
+            "icon": "dna",
+            "title": "Melanocortin Pathway Research",
+            "text": "Research involving MC1R activation and downstream cAMP signalling."
+          }
+        },
+        "app_4": {
+          "type": "application",
+          "settings": {
+            "icon": "clipboard",
+            "title": "Cosmetic Science Research",
+            "text": "Analytical research into pigmentation-related biochemical pathways."
+          }
+        },
+        "inc_0": {
+          "type": "included",
+          "settings": {
+            "icon": "book",
+            "title": "Reconstitution Guide",
+            "text": "General laboratory preparation and handling information.",
+            "link_label": "PDF GUIDE"
+          }
+        },
+        "inc_1": {
+          "type": "included",
+          "settings": {
+            "icon": "dropper",
+            "title": "Research Protocol Guide",
+            "text": "Structured documentation for controlled laboratory research.",
+            "link_label": "PDF GUIDE"
+          }
+        },
+        "inc_2": {
+          "type": "included",
+          "settings": {
+            "icon": "certificate",
+            "title": "Research Digest",
+            "text": "Selected scientific references and pathway summaries.",
+            "link_label": "PDF GUIDE"
+          }
+        },
+        "inc_3": {
+          "type": "included",
+          "settings": {
+            "icon": "dna",
+            "title": "Mechanism of Action",
+            "text": "Visual overview of Melanotan II and melanocortin signalling.",
+            "link_label": "PDF GUIDE"
+          }
+        },
+        "quality_0": {
+          "type": "quality",
+          "settings": {
+            "icon": "flask",
+            "title": "Third-Party Analytical Testing"
+          }
+        },
+        "quality_1": {
+          "type": "quality",
+          "settings": {
+            "icon": "certificate",
+            "title": "HPLC Verification"
+          }
+        },
+        "quality_2": {
+          "type": "quality",
+          "settings": {
+            "icon": "certificate",
+            "title": "Certificate of Analysis"
+          }
+        },
+        "quality_3": {
+          "type": "quality",
+          "settings": {
+            "icon": "shield",
+            "title": "Batch Traceability"
+          }
+        },
+        "quality_4": {
+          "type": "quality",
+          "settings": {
+            "icon": "shield",
+            "title": "Sterility Controls"
+          }
+        },
+        "storage_0": {
+          "type": "storage",
+          "settings": {
+            "icon": "snowflake",
+            "title": "Before Reconstitution",
+            "text": "Store the sealed lyophilized material under the conditions shown on the product label and applicable analytical documentation. Protect from light, moisture and repeated temperature changes."
+          }
+        },
+        "storage_1": {
+          "type": "storage",
+          "settings": {
+            "icon": "bottle",
+            "title": "After Reconstitution",
+            "text": "Follow the validated laboratory protocol associated with the selected solvent, concentration and research method. Avoid repeated freeze-thaw cycles."
+          }
+        },
+        "storage_2": {
+          "type": "storage",
+          "settings": {
+            "icon": "hand",
+            "title": "General Handling",
+            "text": "For controlled laboratory research only. Use appropriate aseptic technique, protective equipment and clean laboratory procedures."
+          }
+        },
+        "faq_0": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Melanotan II?",
+            "answer": "<p>Melanotan II is a synthetic cyclic analogue of alpha-melanocyte-stimulating hormone studied for its activity at melanocortin receptors and its influence on pigmentation-related signalling pathways.</p>"
+          }
+        },
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "How does Melanotan II work in laboratory research?",
+            "answer": "<p>Research commonly examines its interaction with melanocortin receptors, including MC1R, and the resulting activation of intracellular cAMP signalling associated with melanogenic pathways.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "What research areas are commonly associated with Melanotan II?",
+            "answer": "<p>Common areas include melanocortin receptor signalling, melanocyte biology, eumelanin synthesis, pigmentation pathways and related cosmetic-science research.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Melanotan II intended for human use?",
+            "answer": "<p>No. The ELIX LABS product is supplied exclusively for controlled laboratory and analytical research and is not intended for human consumption or clinical use.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "What does lyophilized powder mean?",
+            "answer": "<p>Lyophilization is a freeze-drying process used to remove water from a material and improve its stability during controlled storage and transport.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "Is a Certificate of Analysis included?",
+            "answer": "<p>Available analytical documentation is displayed or supplied according to the specific product batch and ELIX LABS quality-control process.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq",
+          "settings": {
+            "question": "How should the unopened product be stored?",
+            "answer": "<p>Follow the storage conditions shown on the product label and accompanying analytical documentation, while protecting the vial from light, moisture and unnecessary temperature fluctuations.</p>"
+          }
+        },
+        "faq_7": {
+          "type": "faq",
+          "settings": {
+            "question": "How is Melanotan II shipped?",
+            "answer": "<p>Orders are prepared using discreet protective packaging and the shipping method selected for the destination and product requirements.</p>"
+          }
+        },
+        "faq_8": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I request batch documentation before ordering?",
+            "answer": "<p>Available batch documentation may be requested from ELIX LABS support, subject to the documentation associated with current inventory.</p>"
+          }
+        },
+        "faq_9": {
+          "type": "faq",
+          "settings": {
+            "question": "Does ELIX LABS ship internationally?",
+            "answer": "<p>International availability depends on destination, carrier access and applicable local restrictions. The checkout process displays the available options for the selected address.</p>"
+          }
+        },
+        "bottom_0": {
+          "type": "bottom_trust",
+          "settings": {
+            "icon": "molecule",
+            "title": "Precision Science",
+            "text": "Advanced peptide research backed by innovation."
+          }
+        },
+        "bottom_1": {
+          "type": "bottom_trust",
+          "settings": {
+            "icon": "shield",
+            "title": "Quality Focus",
+            "text": "Analytical documentation and careful quality-control processes."
+          }
+        },
+        "bottom_2": {
+          "type": "bottom_trust",
+          "settings": {
+            "icon": "globe",
+            "title": "Global Delivery",
+            "text": "Secure, discreet shipping where available."
+          }
+        },
+        "bottom_3": {
+          "type": "bottom_trust",
+          "settings": {
+            "icon": "star",
+            "title": "Research Excellence",
+            "text": "Committed to advancing peptide science."
+          }
+        }
+      },
+      "block_order": [
+        "badge_lab",
+        "badge_cold",
+        "badge_coa",
+        "checkout_secure",
+        "checkout_pack",
+        "checkout_world",
+        "app_0",
+        "app_1",
+        "app_2",
+        "app_3",
+        "app_4",
+        "inc_0",
+        "inc_1",
+        "inc_2",
+        "inc_3",
+        "quality_0",
+        "quality_1",
+        "quality_2",
+        "quality_3",
+        "quality_4",
+        "storage_0",
+        "storage_1",
+        "storage_2",
+        "faq_0",
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7",
+        "faq_8",
+        "faq_9",
+        "bottom_0",
+        "bottom_1",
+        "bottom_2",
+        "bottom_3"
+      ],
+      "settings": {
+        "category_label": "Tanning & Pigmentation",
+        "subtitle": "Synthetic Peptide | Alpha-MSH Analog · Research Grade | Lyophilized Powder",
+        "hero_description": "Melanotan II is a synthetic cyclic peptide analogue of alpha-melanocyte-stimulating hormone, investigated for its interaction with melanocortin receptors and its role in pigmentation-related signalling pathways.",
+        "research_note": "Developed exclusively for controlled laboratory and analytical research.",
+        "accent_color": "#FF7A00",
+        "accent_secondary": "#D95700",
+        "glow_color": "#FF9A24",
+        "border_color": "rgba(255,138,24,.42)",
+        "mechanism_title": "Mechanism of Action",
+        "mechanism_intro": "Melanotan II is a synthetic analogue of alpha-melanocyte-stimulating hormone studied for its activity at melanocortin receptors, particularly MC1R. Laboratory research examines downstream cAMP signalling, melanogenic gene expression and eumelanin synthesis.",
+        "applications_title": "Potential Research Applications",
+        "included_title": "Included With Your Order"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
