@@ -1,0 +1,373 @@
+/*
+ * BPC-157 product template. Assign only to the BPC-157 product.
+ * The approved ELIX product hierarchy is preserved.
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product-bpc157",
+      "blocks": {
+        "badge_lab": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "flask",
+            "title": "Third-Party Tested"
+          }
+        },
+        "badge_cold": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "snowflake",
+            "title": "Cold Chain Shipping"
+          }
+        },
+        "badge_coa": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "certificate",
+            "title": "COA Included"
+          }
+        },
+        "checkout_secure": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "lock",
+            "title": "Secure Checkout"
+          }
+        },
+        "checkout_pack": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "box",
+            "title": "Discreet Packaging"
+          }
+        },
+        "checkout_world": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "globe",
+            "title": "Worldwide Shipping"
+          }
+        },
+        "receptor_glp": {
+          "type": "receptor",
+          "settings": {
+            "icon": "dna",
+            "title": "Angiogenesis",
+            "text": "Investigated for signalling associated with new microvascular formation and nutrient delivery in tissue-repair models."
+          }
+        },
+        "receptor_gcg": {
+          "type": "receptor",
+          "settings": {
+            "icon": "shield",
+            "title": "Anti-inflammatory Response",
+            "text": "Studied for its interaction with inflammatory mediators and cellular stress responses in controlled research settings."
+          }
+        },
+        "app_0": {
+          "type": "application",
+          "settings": {
+            "icon": "clipboard",
+            "title": "Tendon & Ligament Research",
+            "text": "Connective-tissue remodelling and tensile recovery models."
+          }
+        },
+        "app_1": {
+          "type": "application",
+          "settings": {
+            "icon": "molecule",
+            "title": "Muscle Recovery Research",
+            "text": "Muscle-fibre repair and cellular recovery pathways."
+          }
+        },
+        "app_2": {
+          "type": "application",
+          "settings": {
+            "icon": "drop",
+            "title": "Gastrointestinal Research",
+            "text": "Mucosal integrity and gastrointestinal signalling models."
+          }
+        },
+        "app_3": {
+          "type": "application",
+          "settings": {
+            "icon": "dna",
+            "title": "Joint & Cartilage Research",
+            "text": "Cartilage, joint and extracellular-matrix research."
+          }
+        },
+        "inc_0": {
+          "type": "included",
+          "settings": {
+            "icon": "book",
+            "title": "BPC-157 Reconstitution Guide",
+            "text": "Laboratory preparation and handling guidance.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_1": {
+          "type": "included",
+          "settings": {
+            "icon": "dropper",
+            "title": "BPC-157 Research Guide",
+            "text": "Research-oriented preparation and documentation reference.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_2": {
+          "type": "included",
+          "settings": {
+            "icon": "certificate",
+            "title": "BPC-157 Certificate of Analysis",
+            "text": "Batch-specific purity and analytical testing results.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_3": {
+          "type": "included",
+          "settings": {
+            "icon": "dna",
+            "title": "BPC-157 Mechanism Brief",
+            "text": "A concise overview of investigated cellular pathways.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "quality_0": {
+          "type": "quality",
+          "settings": {
+            "icon": "flask",
+            "title": "Third-Party Analytical Testing"
+          }
+        },
+        "quality_1": {
+          "type": "quality",
+          "settings": {
+            "icon": "certificate",
+            "title": "HPLC Verification"
+          }
+        },
+        "quality_2": {
+          "type": "quality",
+          "settings": {
+            "icon": "certificate",
+            "title": "Certificate of Analysis (COA)"
+          }
+        },
+        "quality_3": {
+          "type": "quality",
+          "settings": {
+            "icon": "shield",
+            "title": "Batch Traceability"
+          }
+        },
+        "quality_4": {
+          "type": "quality",
+          "settings": {
+            "icon": "shield",
+            "title": "Sterility Controls"
+          }
+        },
+        "storage_0": {
+          "type": "storage",
+          "settings": {
+            "icon": "snowflake",
+            "title": "Before Reconstitution",
+            "text": "Keep the lyophilized vial refrigerated at 2–8°C, sealed and protected from light and moisture."
+          }
+        },
+        "storage_1": {
+          "type": "storage",
+          "settings": {
+            "icon": "bottle",
+            "title": "After Reconstitution",
+            "text": "After laboratory reconstitution, store at 2–8°C and follow the documented research protocol and stability window."
+          }
+        },
+        "storage_2": {
+          "type": "storage",
+          "settings": {
+            "icon": "hand",
+            "title": "General Handling",
+            "text": "For laboratory research only. Use aseptic technique and avoid repeated temperature cycling."
+          }
+        },
+        "faq_0": {
+          "type": "faq",
+          "settings": {
+            "question": "What is BPC-157?",
+            "answer": "<p>BPC-157 is a synthetic 15-amino-acid peptide studied in preclinical research involving repair signalling, angiogenesis and tissue integrity.</p>"
+          }
+        },
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "How should BPC-157 be stored?",
+            "answer": "<p>Keep the sealed lyophilized vial refrigerated at 2–8°C and protected from light and moisture. After laboratory reconstitution, follow the applicable protocol and stability window.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is included with the product?",
+            "answer": "<p>The order includes the selected BPC-157 vial, batch identification, a Certificate of Analysis and access to the listed digital research documents.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Is a Certificate of Analysis included?",
+            "answer": "<p>Yes. A batch-specific Certificate of Analysis is supplied to document identity, purity and relevant analytical results.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "What purity level is provided?",
+            "answer": "<p>ELIX LABS BPC-157 is supplied at ≥99% purity, supported by batch-specific analytical documentation.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "What is lyophilized powder?",
+            "answer": "<p>Lyophilization is a freeze-drying process that removes water under controlled conditions, leaving the peptide in a dry form for laboratory storage and preparation.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq",
+          "settings": {
+            "question": "How is the peptide shipped?",
+            "answer": "<p>BPC-157 is securely packed for transit using ELIX LABS cold-chain shipping procedures and discreet protective packaging.</p>"
+          }
+        },
+        "faq_7": {
+          "type": "faq",
+          "settings": {
+            "question": "Is this intended for laboratory research only?",
+            "answer": "<p>Yes. This product is supplied exclusively for laboratory research and is not intended for human or veterinary use, diagnosis or treatment.</p>"
+          }
+        },
+        "faq_8": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship internationally?",
+            "answer": "<p>International availability depends on destination-specific carrier service and import requirements. Review checkout availability and local regulations before ordering.</p>"
+          }
+        },
+        "bottom_0": {
+          "type": "bottom_trust",
+          "settings": {
+            "icon": "molecule",
+            "title": "Precision Science",
+            "text": "Advanced peptide research backed by innovation."
+          }
+        },
+        "bottom_1": {
+          "type": "bottom_trust",
+          "settings": {
+            "icon": "shield",
+            "title": "Premium Quality",
+            "text": "Highest purity peptides with rigorous quality control."
+          }
+        },
+        "bottom_2": {
+          "type": "bottom_trust",
+          "settings": {
+            "icon": "globe",
+            "title": "Global Delivery",
+            "text": "Fast, secure, and discreet worldwide shipping."
+          }
+        },
+        "bottom_3": {
+          "type": "bottom_trust",
+          "settings": {
+            "icon": "star",
+            "title": "Research Excellence",
+            "text": "Committed to advancing peptide science."
+          }
+        },
+        "mechanism_regeneration": {
+          "type": "receptor",
+          "settings": {
+            "icon": "molecule",
+            "title": "Tissue Regeneration",
+            "text": "Research explores connective-tissue remodelling across tendon, ligament, muscle and gastrointestinal models."
+          }
+        },
+        "mechanism_signalling": {
+          "type": "receptor",
+          "settings": {
+            "icon": "flask",
+            "title": "Cellular Repair Signalling",
+            "text": "Examined for modulation of growth-factor, nitric-oxide and cell-migration pathways involved in repair signalling."
+          }
+        },
+        "app_4": {
+          "type": "application",
+          "settings": {
+            "icon": "flask",
+            "title": "Wound Healing Research",
+            "text": "Cell migration, angiogenesis and tissue-closure models."
+          }
+        }
+      },
+      "block_order": [
+        "badge_lab",
+        "badge_cold",
+        "badge_coa",
+        "checkout_secure",
+        "checkout_pack",
+        "checkout_world",
+        "receptor_glp",
+        "receptor_gcg",
+        "mechanism_regeneration",
+        "mechanism_signalling",
+        "app_0",
+        "app_1",
+        "app_2",
+        "app_3",
+        "app_4",
+        "inc_0",
+        "inc_1",
+        "inc_2",
+        "inc_3",
+        "quality_0",
+        "quality_1",
+        "quality_2",
+        "quality_3",
+        "quality_4",
+        "storage_0",
+        "storage_1",
+        "storage_2",
+        "faq_0",
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7",
+        "faq_8",
+        "bottom_0",
+        "bottom_1",
+        "bottom_2",
+        "bottom_3"
+      ],
+      "settings": {
+        "subtitle": "Body Protection Compound 157 | Research Grade | ≥99% Purity | Lyophilized Powder",
+        "accent_color": "#1DA8FF",
+        "accent_secondary": "#3C82FF",
+        "glow_color": "#73D9FF",
+        "border_color": "rgba(29,168,255,.28)",
+        "mechanism_title": "Mechanism of Action",
+        "mechanism_intro": "BPC-157 is a synthetic peptide widely studied for its role in tissue repair, angiogenesis and regenerative cellular signalling. Current research investigates its potential effects on connective tissues, gastrointestinal integrity and inflammatory pathways.",
+        "applications_title": "Potential Research Applications",
+        "included_title": "Included With Your Order"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
