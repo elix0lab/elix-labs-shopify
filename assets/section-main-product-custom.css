@@ -1,11 +1,15 @@
 .section-elix-product {
+  --elix-accent-color: #a72bff;
+  --elix-accent-secondary: #087dff;
+  --elix-glow-color: #ed24bd;
+  --elix-border-color: rgba(137, 113, 221, .24);
   --elix-bg: #02050f;
   --elix-panel: rgba(5, 10, 25, .88);
-  --elix-border: rgba(137, 113, 221, .24);
+  --elix-border: var(--elix-border-color);
   --elix-border-hover: rgba(163, 83, 255, .48);
-  --elix-purple: #a72bff;
-  --elix-blue: #087dff;
-  --elix-pink: #ed24bd;
+  --elix-purple: var(--elix-accent-color);
+  --elix-blue: var(--elix-accent-secondary);
+  --elix-pink: var(--elix-glow-color);
   --elix-text: #fff;
   --elix-muted: #b8bbca;
   background-color: var(--elix-bg);

@@ -4,10 +4,33 @@
 {%- liquid
   assign current_variant = product.selected_or_first_available_variant
   assign product_form_id = 'ElixProductForm-' | append: section.id
-  assign subtitle = product.metafields.custom.subtitle | default: section.settings.subtitle
+  assign subtitle = product.metafields.custom.elix_subtitle | default: product.metafields.custom.subtitle | default: section.settings.subtitle
+  assign category = product.metafields.custom.elix_category | default: product.collections.first.title | default: section.settings.products_label
+  assign category_url = product.collections.first.url | default: routes.all_products_collection_url
+  assign accent_color = product.metafields.custom.elix_accent_color | default: section.settings.accent_color
+  assign accent_secondary = product.metafields.custom.elix_accent_secondary | default: section.settings.accent_secondary
+  assign glow_color = product.metafields.custom.elix_glow_color | default: section.settings.glow_color
+  assign border_color = product.metafields.custom.elix_border_color | default: section.settings.border_color
+  assign mechanism_image = product.metafields.custom.elix_mechanism_image.value | default: section.settings.mechanism_image
+  assign badge_items = product.metafields.custom.elix_badges.value
+  assign benefit_items = product.metafields.custom.elix_benefits.value
+  assign document_items = product.metafields.custom.elix_documents.value
+  assign faq_items = product.metafields.custom.elix_faq.value
+  assign application_count = 0
+  assign document_count = 0
+  assign faq_count = 0
+  for block in section.blocks
+    if block.type == 'application' and block.settings.title != blank
+      assign application_count = application_count | plus: 1
+    elsif block.type == 'included' and block.settings.title != blank
+      assign document_count = document_count | plus: 1
+    elsif block.type == 'faq' and block.settings.question != blank
+      assign faq_count = faq_count | plus: 1
+    endif
+  endfor
 -%}
 
-<section class="elix-product" id="ElixProduct-{{ section.id }}" data-section-id="{{ section.id }}">
+<section class="elix-product" id="ElixProduct-{{ section.id }}" data-section-id="{{ section.id }}" style="--elix-accent-color: {{ accent_color }}; --elix-accent-secondary: {{ accent_secondary }}; --elix-glow-color: {{ glow_color }}; --elix-border-color: {{ border_color }};">
   <script type="application/json" data-elix-variants>{{ product.variants | json }}</script>
   <div class="elix-product__aurora" aria-hidden="true"></div>
   <div class="elix-shell">
@@ -45,14 +68,16 @@
       </div>
 
       <div class="elix-buy">
-        <nav class="elix-breadcrumb" aria-label="Breadcrumb"><a href="{{ routes.root_url }}">{{ section.settings.home_label }}</a><span>›</span><a href="{{ product.collections.first.url | default: routes.all_products_collection_url }}">{{ product.collections.first.title | default: section.settings.products_label }}</a><span>›</span><span>{{ product.title }}</span></nav>
+        <nav class="elix-breadcrumb" aria-label="Breadcrumb"><a href="{{ routes.root_url }}">{{ section.settings.home_label }}</a><span>›</span><a href="{{ category_url }}">{{ category }}</a><span>›</span><span>{{ product.title }}</span></nav>
         <h1>{{ product.title }}</h1><span class="elix-rule"></span>
         {%- if subtitle != blank -%}<div class="elix-buy__subtitle">{{ subtitle }}</div>{%- endif -%}
 
         <div class="elix-trust-cards">
-          {%- for block in section.blocks -%}{%- if block.type == 'trust_badge' -%}
+          {%- if badge_items != blank -%}
+            {%- for item in badge_items -%}{%- assign icon_name = item.icon.value | default: 'flask' -%}<div class="elix-mini-card">{% render 'elix-icon', icon: icon_name %}<span>{{ item.label.value | default: item.title.value }}</span></div>{%- endfor -%}
+          {%- else -%}{%- for block in section.blocks -%}{%- if block.type == 'trust_badge' and block.settings.title != blank -%}
             <div class="elix-mini-card" {{ block.shopify_attributes }}>{% render 'elix-icon', icon: block.settings.icon %}<span>{{ block.settings.title }}</span></div>
-          {%- endif -%}{%- endfor -%}
+          {%- endif -%}{%- endfor -%}{%- endif -%}
         </div>
 
         {%- form 'product', product, id: product_form_id, class: 'elix-form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
@@ -76,27 +101,23 @@
       </div>
     </div>
 
-    <section class="elix-panel elix-mechanism elix-reveal">
+    {%- if mechanism_image != blank -%}<section class="elix-panel elix-mechanism elix-reveal">
       <h2>{{ section.settings.mechanism_title }}</h2><span class="elix-rule"></span>
       <div class="elix-mechanism__image">
-        <img
-          src="https://cdn.shopify.com/s/files/1/0944/3082/2736/files/mecha-reta.png?v=1785456147"
-          alt="Retatrutide Mechanism of Action"
-          style="width: 100%; height: auto; display: block; object-fit: contain; border-radius: inherit;"
-        >
+        {{ mechanism_image | image_url: width: 2200 | image_tag: loading: 'lazy', widths: '750, 1100, 1500, 2200', sizes: '(min-width: 750px) calc(100vw - 56px), calc(100vw - 28px)', alt: section.settings.mechanism_title }}
       </div>
-    </section>
+    </section>{%- endif -%}
 
-    <section class="elix-panel elix-reveal"><h2>{{ section.settings.applications_title }}</h2><span class="elix-rule"></span><div class="elix-apps">{%- for block in section.blocks -%}{%- if block.type == 'application' -%}<div class="elix-app" {{ block.shopify_attributes }}>{% render 'elix-icon', icon: block.settings.icon %}<div><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p></div></div>{%- endif -%}{%- endfor -%}</div></section>
+    {%- if benefit_items != blank or application_count > 0 -%}<section class="elix-panel elix-reveal"><h2>{{ section.settings.applications_title }}</h2><span class="elix-rule"></span><div class="elix-apps">{%- if benefit_items != blank -%}{%- for item in benefit_items -%}{%- assign icon_name = item.icon.value | default: 'clipboard' -%}<div class="elix-app">{% render 'elix-icon', icon: icon_name %}<div><h3>{{ item.title.value }}</h3>{%- if item.text.value != blank -%}<p>{{ item.text.value }}</p>{%- endif -%}</div></div>{%- endfor -%}{%- else -%}{%- for block in section.blocks -%}{%- if block.type == 'application' and block.settings.title != blank -%}<div class="elix-app" {{ block.shopify_attributes }}>{% render 'elix-icon', icon: block.settings.icon %}<div><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p></div></div>{%- endif -%}{%- endfor -%}{%- endif -%}</div></section>{%- endif -%}
 
-    <section class="elix-panel elix-reveal"><h2>{{ section.settings.included_title }}</h2><span class="elix-rule"></span><div class="elix-included">{%- for block in section.blocks -%}{%- if block.type == 'included' -%}<a class="elix-resource" href="{{ block.settings.link | default: '#' }}" {{ block.shopify_attributes }}><span class="elix-resource__icon">{% render 'elix-icon', icon: block.settings.icon %}</span><div><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p><strong>{{ block.settings.link_label }}</strong></div></a>{%- endif -%}{%- endfor -%}</div><div class="elix-digital">{% render 'elix-icon', icon: 'lock' %}<strong>{{ section.settings.digital_title }}</strong><i></i><span>{{ section.settings.digital_text }}</span></div></section>
+    {%- if document_items != blank or document_count > 0 -%}<section class="elix-panel elix-reveal"><h2>{{ section.settings.included_title }}</h2><span class="elix-rule"></span><div class="elix-included">{%- if document_items != blank -%}{%- for item in document_items -%}{%- assign icon_name = item.icon.value | default: 'certificate' -%}<a class="elix-resource" href="{{ item.file.value.url | default: item.link.value }}"><span class="elix-resource__icon">{% render 'elix-icon', icon: icon_name %}</span><div><h3>{{ item.title.value }}</h3>{%- if item.text.value != blank -%}<p>{{ item.text.value }}</p>{%- endif -%}<strong>{{ item.link_label.value }}</strong></div></a>{%- endfor -%}{%- else -%}{%- for block in section.blocks -%}{%- if block.type == 'included' and block.settings.title != blank -%}<a class="elix-resource"{% if block.settings.link != blank %} href="{{ block.settings.link }}"{% endif %} {{ block.shopify_attributes }}><span class="elix-resource__icon">{% render 'elix-icon', icon: block.settings.icon %}</span><div><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p><strong>{{ block.settings.link_label }}</strong></div></a>{%- endif -%}{%- endfor -%}{%- endif -%}</div><div class="elix-digital">{% render 'elix-icon', icon: 'lock' %}<strong>{{ section.settings.digital_title }}</strong><i></i><span>{{ section.settings.digital_text }}</span></div></section>{%- endif -%}
 
     <div class="elix-duo elix-reveal">
       <section class="elix-panel"><h2>{{ section.settings.quality_title }}</h2><span class="elix-rule"></span><div class="elix-quality">{%- for block in section.blocks -%}{%- if block.type == 'quality' -%}<div {{ block.shopify_attributes }}>{% render 'elix-icon', icon: block.settings.icon %}<span>{{ block.settings.title }}</span></div>{%- endif -%}{%- endfor -%}</div></section>
       <section class="elix-panel"><h2>{{ section.settings.storage_title }}</h2><span class="elix-rule"></span><div class="elix-storage">{%- for block in section.blocks -%}{%- if block.type == 'storage' -%}<div {{ block.shopify_attributes }}>{% render 'elix-icon', icon: block.settings.icon %}<span><strong>{{ block.settings.title }}</strong>{{ block.settings.text }}</span></div>{%- endif -%}{%- endfor -%}</div></section>
     </div>
 
-    <section class="elix-panel elix-faq elix-reveal"><h2>{{ section.settings.faq_title }}</h2><span class="elix-rule"></span>{%- for block in section.blocks -%}{%- if block.type == 'faq' -%}<details {{ block.shopify_attributes }}><summary><span>{{ block.settings.question }}</span><i aria-hidden="true"></i></summary><div class="rte">{{ block.settings.answer }}</div></details>{%- endif -%}{%- endfor -%}</section>
+    {%- if faq_items != blank or faq_count > 0 -%}<section class="elix-panel elix-faq elix-reveal"><h2>{{ section.settings.faq_title }}</h2><span class="elix-rule"></span>{%- if faq_items != blank -%}{%- for item in faq_items -%}<details><summary><span>{{ item.question.value }}</span><i aria-hidden="true"></i></summary><div class="rte">{{ item.answer | metafield_tag }}</div></details>{%- endfor -%}{%- else -%}{%- for block in section.blocks -%}{%- if block.type == 'faq' and block.settings.question != blank -%}<details {{ block.shopify_attributes }}><summary><span>{{ block.settings.question }}</span><i aria-hidden="true"></i></summary><div class="rte">{{ block.settings.answer }}</div></details>{%- endif -%}{%- endfor -%}{%- endif -%}</section>{%- endif -%}
     <div class="elix-bottom-trust elix-reveal">{%- for block in section.blocks -%}{%- if block.type == 'bottom_trust' -%}<div class="elix-bottom-card" {{ block.shopify_attributes }}><span>{% render 'elix-icon', icon: block.settings.icon %}</span><div><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p></div></div>{%- endif -%}{%- endfor -%}</div>
   </div>
 </section>
@@ -110,6 +131,8 @@
     {"type":"text","id":"home_label","label":"Breadcrumb home","default":"Home"},{"type":"text","id":"products_label","label":"Breadcrumb products","default":"Peptides"},{"type":"text","id":"more_label","label":"More media label","default":"More"},
     {"type":"text","id":"subtitle","label":"Product subtitle fallback","default":"Triple Agonist | GLP-1 | GIP | Glucagon Receptor Research Grade | ≥99% Purity | Lyophilized Powder"},
     {"type":"text","id":"tax_text","label":"Price note","default":"Tax included. Shipping calculated at checkout."},{"type":"text","id":"cart_label","label":"Add to cart label","default":"Add to cart"},
+    {"type":"image_picker","id":"mechanism_image","label":"Mechanism image fallback"},
+    {"type":"text","id":"accent_color","label":"Accent color fallback","default":"#a72bff"},{"type":"text","id":"accent_secondary","label":"Secondary accent fallback","default":"#087dff"},{"type":"text","id":"glow_color","label":"Glow color fallback","default":"#ed24bd"},{"type":"text","id":"border_color","label":"Border color fallback","default":"rgba(137, 113, 221, .24)"},
     {"type":"text","id":"mechanism_title","label":"Mechanism title","default":"Mechanism of Action"},
     {"type":"text","id":"applications_title","label":"Applications heading","default":"Potential Research Applications"},{"type":"text","id":"included_title","label":"Included heading","default":"Included With Your Order"},
     {"type":"text","id":"digital_title","label":"Digital access title","default":"Instant Digital Access"},{"type":"text","id":"digital_text","label":"Digital access text","default":"Available immediately after your order is confirmed."},
