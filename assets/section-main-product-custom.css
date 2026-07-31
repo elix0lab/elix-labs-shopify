@@ -8,7 +8,16 @@
   --elix-pink: #ed24bd;
   --elix-text: #fff;
   --elix-muted: #b8bbca;
-  background: var(--elix-bg);
+  background-color: var(--elix-bg);
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(0, 102, 255, .16), transparent 28%),
+    radial-gradient(circle at 88% 12%, rgba(126, 34, 206, .15), transparent 30%),
+    radial-gradient(ellipse at 0 48%, rgba(18, 77, 184, .07), transparent 34%),
+    radial-gradient(ellipse at 100% 72%, rgba(105, 35, 184, .07), transparent 36%),
+    radial-gradient(circle at 50% 55%, rgba(64, 0, 140, .07), transparent 42%),
+    linear-gradient(180deg, #02040f 0%, #030515 45%, #02030c 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   color: var(--elix-text);
   font-family: var(--font-body-family);
   position: relative;
@@ -18,7 +27,7 @@
 .elix-product * { box-sizing: border-box; }
 .elix-product__aurora {
   position: absolute; inset: 0; z-index: -1; pointer-events: none;
-  background: radial-gradient(ellipse 48% 31% at 3% 17%, rgba(0, 91, 255, .18), transparent 70%), radial-gradient(ellipse 40% 28% at 99% 14%, rgba(119, 0, 255, .16), transparent 68%), radial-gradient(ellipse 38% 20% at 0 69%, rgba(212, 0, 190, .11), transparent 72%);
+  background: none;
 }
 .elix-shell { width: min(1480px, calc(100% - 56px)); margin: auto; }
 .elix-hero { display: grid; grid-template-columns: 1.09fr .91fr; min-height: 735px; margin-bottom: 22px; }
