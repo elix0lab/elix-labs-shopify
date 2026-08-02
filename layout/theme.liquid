@@ -18,6 +18,9 @@
     {%- if request.page_type == 'product' and product.handle == 'dihexa' -%}
       <title>Dihexa Research Compound | ELIX LABS</title>
       <meta name="description" content="Explore ELIX LABS Dihexa, a research compound investigated in preclinical HGF/c-Met signaling, synaptogenesis and neural plasticity studies. For laboratory research use only.">
+    {%- elsif request.page_type == 'product' and product.handle == 'selank' -%}
+      <title>Selank Research Peptide | ELIX LABS</title>
+      <meta name="description" content="Explore ELIX LABS Selank, a synthetic tuftsin analogue investigated in preclinical GABAergic signaling, neurotransmission and BDNF research. For laboratory research use only.">
     {%- else -%}
       <title>
         {{ page_title }}
