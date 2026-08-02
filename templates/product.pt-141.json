@@ -1,0 +1,431 @@
+/*
+ * Dedicated PT-141 product template. Assign only to the Shopify product with handle pt-141.
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product-pt141",
+      "blocks": {
+        "badge_lab": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "flask",
+            "title": "Third-Party Tested"
+          }
+        },
+        "badge_cold": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "snowflake",
+            "title": "Cold Chain Shipping"
+          }
+        },
+        "badge_coa": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "certificate",
+            "title": "COA Included"
+          }
+        },
+        "checkout_secure": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "lock",
+            "title": "Secure Checkout"
+          }
+        },
+        "checkout_pack": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "box",
+            "title": "Discreet Packaging"
+          }
+        },
+        "checkout_world": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "globe",
+            "title": "Worldwide Shipping"
+          }
+        },
+        "mechanism_receptors": {
+          "type": "receptor",
+          "settings": {
+            "icon": "molecule",
+            "title": "Multi-Receptor Profile",
+            "text": "Research describes agonist activity at MC1R, MC3R, MC4R and MC5R; the profile is not limited to MC4R."
+          }
+        },
+        "mechanism_mc4r": {
+          "type": "receptor",
+          "settings": {
+            "icon": "dna",
+            "title": "MC4R Research",
+            "text": "MC4R is particularly studied in central mechanisms associated with motivation and sexual-response pathways."
+          }
+        },
+        "mechanism_central": {
+          "type": "receptor",
+          "settings": {
+            "icon": "flask",
+            "title": "Central Signaling",
+            "text": "Research has explored hypothalamic and other neural networks rather than direct peripheral vasodilation identical to PDE5 inhibition."
+          }
+        },
+        "mechanism_limits": {
+          "type": "receptor",
+          "settings": {
+            "icon": "shield",
+            "title": "Mechanism Under Study",
+            "text": "Dopaminergic modulation has been hypothesized in selected regions, but the precise mechanism remains incompletely understood."
+          }
+        },
+        "app_identity": {
+          "type": "application",
+          "settings": {
+            "icon": "molecule",
+            "title": "Cyclic Research Peptide",
+            "text": "Bremelanotide is a synthetic cyclic peptide and α-MSH analogue related to the melanocortin family."
+          }
+        },
+        "app_profile": {
+          "type": "application",
+          "settings": {
+            "icon": "dna",
+            "title": "Melanocortin Pharmacology",
+            "text": "Experimental pharmacology examines activity across MC1R, MC3R, MC4R and MC5R."
+          }
+        },
+        "app_neural": {
+          "type": "application",
+          "settings": {
+            "icon": "flask",
+            "title": "Central Neural Pathways",
+            "text": "Research has explored hypothalamic and other networks related to motivation and sexual response."
+          }
+        },
+        "app_mechanism": {
+          "type": "application",
+          "settings": {
+            "icon": "clipboard",
+            "title": "Mechanistic Questions",
+            "text": "MC4R and possible dopaminergic pathway modulation remain active, model-dependent research topics."
+          }
+        },
+        "app_context": {
+          "type": "application",
+          "settings": {
+            "icon": "shield",
+            "title": "Research-Only Context",
+            "text": "Approved-drug evidence does not establish this product’s quality, safety, efficacy, bioavailability or equivalence."
+          }
+        },
+        "inc_0": {
+          "type": "included",
+          "settings": {
+            "icon": "book",
+            "title": "Reconstitution Guide",
+            "text": "How to prepare your peptide safely.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_1": {
+          "type": "included",
+          "settings": {
+            "icon": "dropper",
+            "title": "Research Dosing Guide",
+            "text": "Recommended research dosage protocols.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_2": {
+          "type": "included",
+          "settings": {
+            "icon": "certificate",
+            "title": "Clinical Research Digest",
+            "text": "Latest clinical research and key findings.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_3": {
+          "type": "included",
+          "settings": {
+            "icon": "dna",
+            "title": "Mechanism of Action",
+            "text": "Simple visual explanation of how it works.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "faq_0": {
+          "type": "faq",
+          "settings": {
+            "question": "What is PT-141?",
+            "answer": "<p>PT-141 is a research name for bremelanotide, a synthetic cyclic melanocortin peptide investigated in receptor signaling and central pathways associated with sexual motivation and response.</p>"
+          }
+        },
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is PT-141 the same compound as bremelanotide?",
+            "answer": "<p>PT-141 commonly refers to bremelanotide as a compound. That shared chemical name does not make every research product equivalent to an approved pharmaceutical formulation.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "Is PT-141 a peptide?",
+            "answer": "<p>Yes. Bremelanotide is a synthetic cyclic peptide related to the melanocortin family.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the structure of bremelanotide?",
+            "answer": "<p>Bremelanotide is a cyclic heptapeptide. Its constrained peptide structure is derived from melanocortin analogue research and differs from linear peptide hormones.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "How is PT-141 related to alpha-MSH?",
+            "answer": "<p>Bremelanotide is an analogue of alpha-melanocyte-stimulating hormone, or α-MSH, designed to interact with melanocortin signaling systems.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "What are melanocortin receptors?",
+            "answer": "<p>Melanocortin receptors are a family of G-protein-coupled receptors involved in diverse physiological signaling. Their functions vary by receptor subtype, tissue and experimental context.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq",
+          "settings": {
+            "question": "Which melanocortin receptors are associated with bremelanotide?",
+            "answer": "<p>Pharmacological research describes agonist activity at MC1R, MC3R, MC4R and MC5R. Activity is not limited to a single receptor subtype.</p>"
+          }
+        },
+        "faq_7": {
+          "type": "faq",
+          "settings": {
+            "question": "What is MC4R?",
+            "answer": "<p>MC4R is melanocortin 4 receptor, a centrally expressed receptor studied in neural circuits related to energy balance, motivation and aspects of sexual response.</p>"
+          }
+        },
+        "faq_8": {
+          "type": "faq",
+          "settings": {
+            "question": "How is MC4R studied in relation to sexual-response pathways?",
+            "answer": "<p>Experimental and clinical research has associated MC4R signaling with central networks involved in sexual motivation and response. Its exact contribution remains incompletely understood.</p>"
+          }
+        },
+        "faq_9": {
+          "type": "faq",
+          "settings": {
+            "question": "Does PT-141 work through the same mechanism as PDE5 inhibitors?",
+            "answer": "<p>No identical mechanism has been established. Bremelanotide research focuses on central melanocortin signaling, whereas PDE5 inhibitors act primarily through peripheral nitric-oxide and cyclic-GMP pathways.</p>"
+          }
+        },
+        "faq_10": {
+          "type": "faq",
+          "settings": {
+            "question": "Is PT-141 a vasodilator?",
+            "answer": "<p>Bremelanotide is not principally characterized as a direct peripheral vasodilator like a PDE5 inhibitor. Research instead emphasizes central neurological signaling, without establishing a complete mechanism.</p>"
+          }
+        },
+        "faq_11": {
+          "type": "faq",
+          "settings": {
+            "question": "How has PT-141 been studied in central nervous system signaling?",
+            "answer": "<p>Research has explored hypothalamic circuits and other brain networks associated with motivation and sexual response. Findings depend on the model and do not establish effects for this research product in humans.</p>"
+          }
+        },
+        "faq_12": {
+          "type": "faq",
+          "settings": {
+            "question": "Is dopamine involved in the proposed mechanism?",
+            "answer": "<p>Some research hypotheses involve modulation of dopaminergic pathways in selected brain regions. This remains an area of investigation and should not be interpreted as a universal or guaranteed dopamine effect.</p>"
+          }
+        },
+        "faq_13": {
+          "type": "faq",
+          "settings": {
+            "question": "Is the precise mechanism of bremelanotide completely understood?",
+            "answer": "<p>No. Melanocortin receptor activity and central neural pathways are implicated, but the precise mechanism influencing human sexual response remains incompletely understood.</p>"
+          }
+        },
+        "faq_14": {
+          "type": "faq",
+          "settings": {
+            "question": "Is bremelanotide an approved medicine?",
+            "answer": "<p>A specific pharmaceutical formulation of bremelanotide is FDA-approved as Vyleesi for a defined indication and conditions of use. That authorization does not extend automatically to PT-141 research products.</p>"
+          }
+        },
+        "faq_15": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Vyleesi?",
+            "answer": "<p>Vyleesi is a specific FDA-approved bremelanotide medicine indicated in the United States for certain premenopausal women with acquired, generalized hypoactive sexual desire disorder who meet its approved criteria. Its authorization is formulation-, quality-, indication- and use-specific.</p>"
+          }
+        },
+        "faq_16": {
+          "type": "faq",
+          "settings": {
+            "question": "Is ELIX LABS PT-141 the same product as Vyleesi?",
+            "answer": "<p>No. ELIX LABS PT-141 is not Vyleesi, an approved generic, or represented as pharmaceutically equivalent or bioequivalent to Vyleesi. Its quality, safety, efficacy and bioavailability as a medicine are not established.</p>"
+          }
+        },
+        "faq_17": {
+          "type": "faq",
+          "settings": {
+            "question": "Is PT-141 approved for men?",
+            "answer": "<p>Vyleesi's US approval does not include men. Research involving bremelanotide in male populations does not make ELIX LABS PT-141 an approved medicine or establish its safety or efficacy.</p>"
+          }
+        },
+        "faq_18": {
+          "type": "faq",
+          "settings": {
+            "question": "Is PT-141 approved to enhance sexual performance?",
+            "answer": "<p>No such approval applies to ELIX LABS PT-141. It is supplied only for laboratory research and is not represented as a performance-enhancement or therapeutic product.</p>"
+          }
+        },
+        "faq_19": {
+          "type": "faq",
+          "settings": {
+            "question": "Has bremelanotide been studied in men?",
+            "answer": "<p>Bremelanotide has been investigated in experimental and clinical settings involving men, but those studies do not establish approval, safety, efficacy or equivalence for the ELIX LABS research product.</p>"
+          }
+        },
+        "faq_20": {
+          "type": "faq",
+          "settings": {
+            "question": "Has bremelanotide been studied in women?",
+            "answer": "<p>Yes. A specific pharmaceutical formulation has been clinically studied and approved for a narrowly defined population of certain premenopausal women. Those data do not validate a distinct research product.</p>"
+          }
+        },
+        "faq_21": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the difference between PT-141 and Kisspeptin-10?",
+            "answer": "<p>PT-141 is a melanocortin analogue studied mainly in central neural pathways associated with motivation and sexual response. Kisspeptin-10 is a kisspeptin fragment studied at KISS1R and in hypothalamic-pituitary-gonadal-axis regulation. Their structures and research axes differ; this is not a usage recommendation.</p>"
+          }
+        },
+        "faq_22": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the difference between PT-141 and Gonadorelin?",
+            "answer": "<p>PT-141 is studied in relation to melanocortin receptors and central sexual-response circuits. Gonadorelin is synthetic GnRH studied at pituitary GnRH receptors and in LH and FSH release. PT-141 is not a GnRH substitute; this comparison is not a usage recommendation.</p>"
+          }
+        },
+        "faq_23": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the difference between PT-141 and Melanotan II?",
+            "answer": "<p>Both belong to the melanocortin analogue family, and bremelanotide emerged from research involving Melanotan II. Their profiles, research aims, studied formulations and regulatory contexts are not interchangeable. PT-141 is not presented primarily as a pigmentation product, and this is not a usage recommendation.</p>"
+          }
+        },
+        "faq_24": {
+          "type": "faq",
+          "settings": {
+            "question": "Does PT-141 directly increase testosterone?",
+            "answer": "<p>A direct, reliable increase in testosterone is not an established property of PT-141. Its principal research context concerns melanocortin and central neural signaling rather than direct gonadal stimulation.</p>"
+          }
+        },
+        "faq_25": {
+          "type": "faq",
+          "settings": {
+            "question": "What adverse effects have been reported with pharmaceutical bremelanotide?",
+            "answer": "<p>Documentation for the studied and approved pharmaceutical formulation reports nausea, injection-site reactions, headache, vomiting, flushing, transient blood-pressure increases, transient heart-rate decreases and focal hyperpigmentation in some cases. These data neither establish safety nor equivalence for ELIX LABS PT-141, which is not for human administration.</p>"
+          }
+        },
+        "faq_26": {
+          "type": "faq",
+          "settings": {
+            "question": "How should PT-141 be stored for laboratory research?",
+            "answer": "<p>Follow the batch-specific documentation supplied with the product and validated laboratory handling procedures. Do not apply Vyleesi storage instructions to this distinct research material.</p>"
+          }
+        },
+        "faq_27": {
+          "type": "faq",
+          "settings": {
+            "question": "Is the ELIX LABS PT-141 product intended for human use?",
+            "answer": "<p>No. For laboratory research use only. Not for human consumption. It is not intended for human administration, and human safety and efficacy are not established.</p>"
+          }
+        },
+        "faq_28": {
+          "type": "faq",
+          "settings": {
+            "question": "What documentation is included with the product?",
+            "answer": "<p>The product includes access to the four listed research resources and available batch-specific analytical documentation, including the Certificate of Analysis.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "badge_lab",
+        "badge_cold",
+        "badge_coa",
+        "checkout_secure",
+        "checkout_pack",
+        "checkout_world",
+        "mechanism_receptors",
+        "mechanism_mc4r",
+        "mechanism_central",
+        "mechanism_limits",
+        "app_identity",
+        "app_profile",
+        "app_neural",
+        "app_mechanism",
+        "app_context",
+        "inc_0",
+        "inc_1",
+        "inc_2",
+        "inc_3",
+        "faq_0",
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7",
+        "faq_8",
+        "faq_9",
+        "faq_10",
+        "faq_11",
+        "faq_12",
+        "faq_13",
+        "faq_14",
+        "faq_15",
+        "faq_16",
+        "faq_17",
+        "faq_18",
+        "faq_19",
+        "faq_20",
+        "faq_21",
+        "faq_22",
+        "faq_23",
+        "faq_24",
+        "faq_25",
+        "faq_26",
+        "faq_27",
+        "faq_28"
+      ],
+      "settings": {
+        "products_label": "Hormones & Sexual Health",
+        "subtitle": "Cyclic Melanocortin Research Peptide | Central Receptor Signaling Research",
+        "accent_color": "#FF2E9A",
+        "accent_secondary": "#D9157F",
+        "glow_color": "#FF4FB3",
+        "border_color": "rgba(255,46,154,.30)",
+        "mechanism_title": "Mechanism of Action",
+        "mechanism_intro": "PT-141, also known as bremelanotide, is a synthetic cyclic peptide and an analogue of alpha-melanocyte-stimulating hormone (α-MSH) in the melanocortin family. Pharmacological research describes agonist activity at MC1R, MC3R, MC4R and MC5R, with MC4R receiving particular attention in central mechanisms associated with motivation and sexual response. Research has explored hypothalamic and other brain networks, including hypotheses involving dopaminergic pathway modulation, rather than direct peripheral vasodilation identical to PDE5 inhibition. The precise mechanism remains incompletely understood. A specific bremelanotide formulation is FDA-approved as Vyleesi for certain premenopausal women with acquired, generalized hypoactive sexual desire disorder under defined conditions, but that authorization does not extend to this distinct research product. ELIX LABS PT-141 is not Vyleesi, an approved generic, or represented as equivalent or bioequivalent; its quality, safety, efficacy and bioavailability as a medicine are not established. For laboratory research use only. Not for human consumption.",
+        "applications_title": "PT-141 Research Overview",
+        "included_title": "What’s Included",
+        "faq_title": "PT-141 FAQ"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
