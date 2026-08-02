@@ -1,0 +1,280 @@
+/*
+ * TB-500 product template. Assign only to the existing Shopify product with handle tb-500.
+ * It intentionally reuses the approved BPC-157 page architecture.
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product-tb-500",
+      "blocks": {
+        "badge_lab": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "flask",
+            "title": "Third-Party Tested"
+          }
+        },
+        "badge_cold": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "snowflake",
+            "title": "Cold Chain Shipping"
+          }
+        },
+        "badge_coa": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "certificate",
+            "title": "COA Included"
+          }
+        },
+        "checkout_secure": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "lock",
+            "title": "Secure Checkout"
+          }
+        },
+        "checkout_pack": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "box",
+            "title": "Discreet Packaging"
+          }
+        },
+        "checkout_world": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "globe",
+            "title": "Worldwide Shipping"
+          }
+        },
+        "inc_0": {
+          "type": "included",
+          "settings": {
+            "icon": "book",
+            "title": "Reconstitution Guide",
+            "text": "How to prepare your peptide safely.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_1": {
+          "type": "included",
+          "settings": {
+            "icon": "dropper",
+            "title": "Research Dosing Guide",
+            "text": "Recommended research dosage protocols.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_2": {
+          "type": "included",
+          "settings": {
+            "icon": "certificate",
+            "title": "Clinical Research Digest",
+            "text": "Latest clinical research and key findings.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_3": {
+          "type": "included",
+          "settings": {
+            "icon": "dna",
+            "title": "Mechanism of Action",
+            "text": "Simple visual explanation of how it works.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "mechanism_actin": {
+          "type": "receptor",
+          "settings": {
+            "icon": "molecule",
+            "title": "Actin Dynamics",
+            "text": "Proposed interactions with actin are studied in relation to cytoskeletal organisation and cell movement."
+          }
+        },
+        "mechanism_migration": {
+          "type": "receptor",
+          "settings": {
+            "icon": "dna",
+            "title": "Cell Migration",
+            "text": "Preclinical models examine motility and migration during experimental tissue-repair processes."
+          }
+        },
+        "mechanism_vascular": {
+          "type": "receptor",
+          "settings": {
+            "icon": "flask",
+            "title": "Angiogenic Signalling",
+            "text": "New-vessel formation is investigated in selected models; relevance to humans is not established."
+          }
+        },
+        "mechanism_matrix": {
+          "type": "receptor",
+          "settings": {
+            "icon": "shield",
+            "title": "Matrix Remodelling",
+            "text": "Research explores extracellular-matrix organisation and selected inflammatory responses."
+          }
+        },
+        "app_cytoskeleton": {
+          "type": "application",
+          "settings": {
+            "icon": "molecule",
+            "title": "Cytoskeleton Research",
+            "text": "Actin organisation, polymerisation dynamics and cell-shape regulation in controlled models."
+          }
+        },
+        "app_migration": {
+          "type": "application",
+          "settings": {
+            "icon": "dna",
+            "title": "Cell Motility Research",
+            "text": "Migration and motility pathways associated with experimental repair responses."
+          }
+        },
+        "app_repair": {
+          "type": "application",
+          "settings": {
+            "icon": "clipboard",
+            "title": "Tissue-Repair Models",
+            "text": "Preclinical investigation of cellular survival, recovery and tissue remodelling."
+          }
+        },
+        "app_vascular": {
+          "type": "application",
+          "settings": {
+            "icon": "drop",
+            "title": "Angiogenesis Research",
+            "text": "Vascular signalling and new-vessel formation in selected experimental systems."
+          }
+        },
+        "app_inflammation": {
+          "type": "application",
+          "settings": {
+            "icon": "flask",
+            "title": "Inflammatory Signalling",
+            "text": "Modulation of selected inflammatory pathways in laboratory and preclinical models."
+          }
+        },
+        "faq_0": {
+          "type": "faq",
+          "settings": {
+            "question": "What is TB-500?",
+            "answer": "<p>TB-500 is commonly presented in research settings as a synthetic peptide fragment associated with the active region of thymosin beta-4. Commercial nomenclature and composition should be verified against batch-specific documentation.</p>"
+          }
+        },
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "How is TB-500 related to Thymosin Beta-4?",
+            "answer": "<p>TB-500 is described as being derived from, or associated with, a biologically active region of thymosin beta-4. Evidence concerning the full-length protein should not automatically be attributed to a shorter fragment.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "Are TB-500 and full-length Thymosin Beta-4 identical?",
+            "answer": "<p>No. Full-length thymosin beta-4 is a 43-amino-acid peptide, whereas TB-500 is generally described as a synthetic fragment or related research material. Their structures and evidence bases are not interchangeable.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "How is TB-500 studied in laboratory research?",
+            "answer": "<p>It is examined in biochemical assays, cell cultures and preclinical models addressing cytoskeletal dynamics, cell migration, angiogenesis and tissue remodelling. These models do not establish clinical efficacy.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "Which biological mechanisms are associated with TB-500?",
+            "answer": "<p>Proposed mechanisms include actin-related cytoskeletal regulation, cell motility, vascular signalling, extracellular-matrix remodelling and modulation of selected inflammatory responses.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the relationship between TB-500 and actin?",
+            "answer": "<p>Research linked to thymosin beta-4–derived sequences investigates interactions with actin and their potential influence on polymerisation, cytoskeletal organisation and cell movement. The precise activity of a given TB-500 material depends on its verified composition.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq",
+          "settings": {
+            "question": "How should lyophilized TB-500 be stored for research?",
+            "answer": "<p>Keep the sealed lyophilized material refrigerated at 2–8°C, dry and protected from light. Follow the batch documentation and the laboratory’s validated handling procedures.</p>"
+          }
+        },
+        "faq_7": {
+          "type": "faq",
+          "settings": {
+            "question": "Is TB-500 intended for human use?",
+            "answer": "<p>No. This product is supplied exclusively for laboratory research and is not intended for human or veterinary use, diagnosis, treatment or consumption.</p>"
+          }
+        },
+        "faq_8": {
+          "type": "faq",
+          "settings": {
+            "question": "Does TB-500 have the same research profile as BPC-157?",
+            "answer": "<p>No. They are distinct research compounds with different structures, proposed mechanisms and evidence bases. Findings for one should not be applied to the other.</p>"
+          }
+        },
+        "faq_9": {
+          "type": "faq",
+          "settings": {
+            "question": "What documentation is included with the product?",
+            "answer": "<p>The product includes access to the listed research resources and available batch-specific analytical documentation, including the Certificate of Analysis.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "badge_lab",
+        "badge_cold",
+        "badge_coa",
+        "checkout_secure",
+        "checkout_pack",
+        "checkout_world",
+        "mechanism_actin",
+        "mechanism_migration",
+        "mechanism_vascular",
+        "mechanism_matrix",
+        "app_cytoskeleton",
+        "app_migration",
+        "app_repair",
+        "app_vascular",
+        "app_inflammation",
+        "inc_0",
+        "inc_1",
+        "inc_2",
+        "inc_3",
+        "faq_0",
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7",
+        "faq_8",
+        "faq_9"
+      ],
+      "settings": {
+        "subtitle": "Thymosin Beta-4–Associated Fragment | Research Grade | Lyophilized Powder",
+        "accent_color": "#1DA8FF",
+        "accent_secondary": "#3C82FF",
+        "glow_color": "#73D9FF",
+        "border_color": "rgba(29,168,255,.28)",
+        "mechanism_title": "Mechanism of Action",
+        "mechanism_alt": "TB-500 proposed mechanism of action research diagram showing actin-related cytoskeletal dynamics",
+        "mechanism_intro": "TB-500 is commonly described in research contexts as a synthetic fragment associated with the active region of thymosin beta-4. Preclinical studies investigate actin-related cytoskeletal dynamics, cell migration, angiogenic signalling and tissue-remodelling processes; proposed mechanisms and model findings do not establish effects in humans.",
+        "applications_title": "TB-500 Research Overview",
+        "included_title": "What’s Included",
+        "faq_title": "TB-500 FAQ"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
