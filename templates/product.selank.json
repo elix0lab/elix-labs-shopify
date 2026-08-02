@@ -1,0 +1,343 @@
+/*
+ * Dedicated SELANK product template. Assign only to the Shopify product with handle selank.
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product-selank",
+      "blocks": {
+        "badge_lab": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "flask",
+            "title": "Third-Party Tested"
+          }
+        },
+        "badge_cold": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "snowflake",
+            "title": "Cold Chain Shipping"
+          }
+        },
+        "badge_coa": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "certificate",
+            "title": "COA Included"
+          }
+        },
+        "checkout_secure": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "lock",
+            "title": "Secure Checkout"
+          }
+        },
+        "checkout_pack": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "box",
+            "title": "Discreet Packaging"
+          }
+        },
+        "checkout_world": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "globe",
+            "title": "Worldwide Shipping"
+          }
+        },
+        "inc_0": {
+          "type": "included",
+          "settings": {
+            "icon": "book",
+            "title": "Reconstitution Guide",
+            "text": "How to prepare your peptide safely.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_1": {
+          "type": "included",
+          "settings": {
+            "icon": "dropper",
+            "title": "Research Dosing Guide",
+            "text": "Recommended research dosage protocols.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_2": {
+          "type": "included",
+          "settings": {
+            "icon": "certificate",
+            "title": "Clinical Research Digest",
+            "text": "Latest clinical research and key findings.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_3": {
+          "type": "included",
+          "settings": {
+            "icon": "dna",
+            "title": "Mechanism of Action",
+            "text": "Simple visual explanation of how it works.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "mechanism_gaba": {
+          "type": "receptor",
+          "settings": {
+            "icon": "molecule",
+            "title": "GABAergic Signaling",
+            "text": "Preclinical research has explored possible modulation of GABAergic activity or signaling; direct receptor agonism has not been established."
+          }
+        },
+        "mechanism_genes": {
+          "type": "receptor",
+          "settings": {
+            "icon": "dna",
+            "title": "Gene Expression",
+            "text": "Animal models have associated Selank with changes in the expression of selected genes involved in neurotransmission."
+          }
+        },
+        "mechanism_bdnf": {
+          "type": "receptor",
+          "settings": {
+            "icon": "flask",
+            "title": "BDNF Expression",
+            "text": "Animal research has investigated Selank in relation to BDNF expression, a marker studied across neural plasticity processes."
+          }
+        },
+        "mechanism_pathways": {
+          "type": "receptor",
+          "settings": {
+            "icon": "shield",
+            "title": "Mechanism Under Study",
+            "text": "The proposed pathways are complex and model-dependent, and the precise mechanism remains under investigation."
+          }
+        },
+        "app_identity": {
+          "type": "application",
+          "settings": {
+            "icon": "molecule",
+            "title": "Synthetic Heptapeptide",
+            "text": "Selank has the sequence Thr-Lys-Pro-Arg-Pro-Gly-Pro."
+          }
+        },
+        "app_tuftsin": {
+          "type": "application",
+          "settings": {
+            "icon": "dna",
+            "title": "Tuftsin Analogue",
+            "text": "A synthetic analogue of tuftsin, a natural peptide studied in immune regulation."
+          }
+        },
+        "app_neuro": {
+          "type": "application",
+          "settings": {
+            "icon": "flask",
+            "title": "Neurotransmission Research",
+            "text": "Experimental models examine associations with GABAergic signaling and neurotransmission-related gene expression."
+          }
+        },
+        "app_plasticity": {
+          "type": "application",
+          "settings": {
+            "icon": "clipboard",
+            "title": "Neural Plasticity Models",
+            "text": "Animal studies have explored BDNF expression and processes associated with neuronal plasticity."
+          }
+        },
+        "app_evidence": {
+          "type": "application",
+          "settings": {
+            "icon": "shield",
+            "title": "Preclinical Evidence",
+            "text": "Stress responses, selected cognitive processes and immune pathways have been explored, but human efficacy and safety are not established."
+          }
+        },
+        "faq_0": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Selank?",
+            "answer": "<p>Selank is a synthetic tuftsin analogue investigated in laboratory and preclinical models involving neurotransmission, stress responses and selected immune pathways.</p>"
+          }
+        },
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Selank a peptide?",
+            "answer": "<p>Yes. Selank is a synthetic heptapeptide composed of seven amino-acid residues.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the amino acid sequence of Selank?",
+            "answer": "<p>Its sequence is Thr-Lys-Pro-Arg-Pro-Gly-Pro.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "How is Selank related to tuftsin?",
+            "answer": "<p>Selank is described in the literature as a synthetic analogue derived from the natural peptide tuftsin.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "What is tuftsin?",
+            "answer": "<p>Tuftsin is a naturally occurring peptide studied, among other contexts, for roles in immune regulation.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "How is Selank studied in relation to GABAergic signaling?",
+            "answer": "<p>Preclinical research suggests that Selank may influence GABAergic activity or signaling through complex, model-dependent mechanisms that remain under investigation.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq",
+          "settings": {
+            "question": "Does Selank act directly on GABA-A receptors?",
+            "answer": "<p>A direct, confirmed GABA-A receptor agonist action has not been established. Experimental findings instead support continued study of more complex interactions with GABAergic neurotransmission.</p>"
+          }
+        },
+        "faq_7": {
+          "type": "faq",
+          "settings": {
+            "question": "How has Selank been studied in neurotransmission research?",
+            "answer": "<p>Animal research has examined signaling outcomes and changes in the expression of selected genes related to neurotransmission. These observations do not establish effects in humans.</p>"
+          }
+        },
+        "faq_8": {
+          "type": "faq",
+          "settings": {
+            "question": "What is BDNF?",
+            "answer": "<p>Brain-derived neurotrophic factor, or BDNF, is a signaling protein involved in multiple processes associated with neuronal maintenance and plasticity.</p>"
+          }
+        },
+        "faq_9": {
+          "type": "faq",
+          "settings": {
+            "question": "How is Selank studied in relation to BDNF expression?",
+            "answer": "<p>Animal studies have explored whether Selank is associated with changes in BDNF expression. The relevance and precise pathway remain under investigation.</p>"
+          }
+        },
+        "faq_10": {
+          "type": "faq",
+          "settings": {
+            "question": "How is Selank investigated in neural plasticity research?",
+            "answer": "<p>Researchers use preclinical models to examine BDNF-related and neurotransmission-related endpoints associated with neural plasticity; general clinical effects have not been established.</p>"
+          }
+        },
+        "faq_11": {
+          "type": "faq",
+          "settings": {
+            "question": "Has Selank been studied in stress-related experimental models?",
+            "answer": "<p>Yes. Preclinical research has explored stress-response endpoints, but such results do not prove clinical efficacy or safety in humans.</p>"
+          }
+        },
+        "faq_12": {
+          "type": "faq",
+          "settings": {
+            "question": "Has Selank been clinically proven to treat anxiety?",
+            "answer": "<p>No. This product has not been established as a safe or effective treatment for anxiety or any other condition.</p>"
+          }
+        },
+        "faq_13": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Selank an approved medicine in the European Union or the United States?",
+            "answer": "<p>The ELIX LABS Selank product is not presented as an approved medicine in the European Union or the United States. It is supplied only for laboratory research.</p>"
+          }
+        },
+        "faq_14": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the difference between Selank and Semax?",
+            "answer": "<p>Selank is a tuftsin analogue studied mainly in neurotransmission, stress-response and GABAergic research, whereas Semax is derived from an ACTH fragment and is investigated through different research pathways. These distinctions are not usage recommendations.</p>"
+          }
+        },
+        "faq_15": {
+          "type": "faq",
+          "settings": {
+            "question": "How should Selank be stored for laboratory research?",
+            "answer": "<p>Store sealed material according to its batch documentation, protected from light, moisture and unsuitable temperature variation, using validated laboratory handling procedures.</p>"
+          }
+        },
+        "faq_16": {
+          "type": "faq",
+          "settings": {
+            "question": "Is the ELIX LABS Selank product intended for human use?",
+            "answer": "<p>No. For laboratory research use only. Not for human consumption. Human safety and clinical efficacy have not been established.</p>"
+          }
+        },
+        "faq_17": {
+          "type": "faq",
+          "settings": {
+            "question": "What documentation is included with the product?",
+            "answer": "<p>The product includes access to the four listed research resources and available batch-specific analytical documentation, including the Certificate of Analysis.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "badge_lab",
+        "badge_cold",
+        "badge_coa",
+        "checkout_secure",
+        "checkout_pack",
+        "checkout_world",
+        "mechanism_gaba",
+        "mechanism_genes",
+        "mechanism_bdnf",
+        "mechanism_pathways",
+        "app_identity",
+        "app_tuftsin",
+        "app_neuro",
+        "app_plasticity",
+        "app_evidence",
+        "inc_0",
+        "inc_1",
+        "inc_2",
+        "inc_3",
+        "faq_0",
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7",
+        "faq_8",
+        "faq_9",
+        "faq_10",
+        "faq_11",
+        "faq_12",
+        "faq_13",
+        "faq_14",
+        "faq_15",
+        "faq_16",
+        "faq_17"
+      ],
+      "settings": {
+        "products_label": "Nootropics & Cognitive",
+        "subtitle": "Synthetic Tuftsin Analogue | Preclinical Neurotransmission and BDNF Research",
+        "accent_color": "#00E5FF",
+        "accent_secondary": "#00B8D9",
+        "glow_color": "#39FF88",
+        "border_color": "rgba(0,229,255,.28)",
+        "mechanism_title": "Mechanism of Action",
+        "mechanism_intro": "Selank is a synthetic heptapeptide with the sequence Thr-Lys-Pro-Arg-Pro-Gly-Pro and is described as an analogue of tuftsin, a natural peptide studied in immune regulation. Preclinical research has investigated Selank in experimental models of neurotransmission, including possible modulation of GABAergic activity or signaling and changes in selected neurotransmission-related genes. Animal studies have also explored BDNF expression, neural plasticity, stress responses, cognitive processes and immune pathways. The precise mechanisms remain under investigation; a direct GABA-A agonist action and general clinical efficacy have not been established in humans. Safety and clinical efficacy are not established for the ELIX LABS product. For laboratory research use only. Not for human consumption.",
+        "applications_title": "Selank Research Overview",
+        "included_title": "What’s Included",
+        "faq_title": "Selank FAQ"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
