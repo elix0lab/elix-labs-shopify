@@ -1,0 +1,521 @@
+/*
+ * Dedicated Gonadorelin product template. Assign only to the Shopify product with handle gonadorelin.
+ * Suggested product SEO title: Gonadorelin Research Peptide | ELIX LABS
+ * Suggested meta description: Explore ELIX LABS Gonadorelin, a research peptide investigated for pituitary GnRH receptor signaling and downstream LH and FSH pathways. For laboratory research use only.
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product-gonadorelin",
+      "blocks": {
+        "badge_lab": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "flask",
+            "title": "Third-Party Tested"
+          }
+        },
+        "badge_cold": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "snowflake",
+            "title": "Cold Chain Shipping"
+          }
+        },
+        "badge_coa": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "certificate",
+            "title": "COA Included"
+          }
+        },
+        "checkout_secure": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "lock",
+            "title": "Secure Checkout"
+          }
+        },
+        "checkout_pack": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "box",
+            "title": "Discreet Packaging"
+          }
+        },
+        "checkout_world": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "globe",
+            "title": "Worldwide Shipping"
+          }
+        },
+        "inc_0": {
+          "type": "included",
+          "settings": {
+            "icon": "book",
+            "title": "Reconstitution Guide",
+            "text": "How to prepare your peptide safely.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_1": {
+          "type": "included",
+          "settings": {
+            "icon": "dropper",
+            "title": "Research Dosing Guide",
+            "text": "Recommended research dosage protocols.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_2": {
+          "type": "included",
+          "settings": {
+            "icon": "certificate",
+            "title": "Clinical Research Digest",
+            "text": "Latest clinical research and key findings.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_3": {
+          "type": "included",
+          "settings": {
+            "icon": "dna",
+            "title": "Mechanism of Action",
+            "text": "Simple visual explanation of how it works.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "mechanism_receptor": {
+          "type": "receptor",
+          "settings": {
+            "icon": "molecule",
+            "title": "Pituitary GnRHR",
+            "text": "Gonadorelin is studied for direct interaction with GnRH receptors expressed on anterior-pituitary gonadotroph cells."
+          }
+        },
+        "mechanism_cascade": {
+          "type": "receptor",
+          "settings": {
+            "icon": "dna",
+            "title": "Gq/11–PLC Signaling",
+            "text": "GnRHR activation may engage Gq/11, PLC, IP3, DAG, intracellular calcium mobilization, and protein-kinase pathways."
+          }
+        },
+        "mechanism_output": {
+          "type": "receptor",
+          "settings": {
+            "icon": "flask",
+            "title": "LH and FSH Signals",
+            "text": "These intracellular events may influence gonadotroph synthesis and release of LH and FSH in experimental settings."
+          }
+        },
+        "mechanism_timing": {
+          "type": "receptor",
+          "settings": {
+            "icon": "shield",
+            "title": "Temporal Dependence",
+            "text": "Intermittent and continuous receptor stimulation may produce different responses; acute effects do not predict repeated exposure."
+          }
+        },
+        "app_identity": {
+          "type": "application",
+          "settings": {
+            "icon": "molecule",
+            "title": "Natural-Sequence Decapeptide",
+            "text": "Gonadorelin corresponds to the ten-amino-acid sequence of endogenous GnRH, historically known as LHRH."
+          }
+        },
+        "app_signaling": {
+          "type": "application",
+          "settings": {
+            "icon": "dna",
+            "title": "Pituitary Receptor Signaling",
+            "text": "Research investigates GnRHR coupling to Gq/11 and downstream PLC, IP3, DAG, calcium, and protein-kinase signaling."
+          }
+        },
+        "app_axis": {
+          "type": "application",
+          "settings": {
+            "icon": "flask",
+            "title": "Reproductive Endocrinology",
+            "text": "Gonadorelin has been studied in reproductive physiology and functional evaluation of the hypothalamic-pituitary-gonadal axis."
+          }
+        },
+        "app_dynamics": {
+          "type": "application",
+          "settings": {
+            "icon": "clipboard",
+            "title": "Exposure-Pattern Dynamics",
+            "text": "LH and FSH responses depend on temporal signaling and may differ across intermittent, sustained, acute, and repeated-exposure models."
+          }
+        },
+        "app_limits": {
+          "type": "application",
+          "settings": {
+            "icon": "shield",
+            "title": "Distinct Research Material",
+            "text": "It is not interchangeable with Kisspeptin-10, PT-141, or modified long-acting GnRH analogues, and research does not establish therapeutic efficacy."
+          }
+        },
+        "faq_0": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Gonadorelin?",
+            "answer": "<p>Gonadorelin is a synthetic form corresponding to the sequence of the natural hypothalamic peptide GnRH. It is studied in pituitary receptor signaling and reproductive endocrinology.</p>"
+          }
+        },
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Gonadorelin a peptide?",
+            "answer": "<p>Yes. Gonadorelin is a decapeptide composed of ten amino acids.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "What does GnRH mean?",
+            "answer": "<p>GnRH means gonadotropin-releasing hormone, a hypothalamic signaling peptide central to regulation of the hypothalamic-pituitary-gonadal axis.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Is GnRH also known as LHRH?",
+            "answer": "<p>Yes. Luteinizing hormone-releasing hormone, or LHRH, is a historical name for GnRH.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Gonadorelin identical to endogenous GnRH?",
+            "answer": "<p>Gonadorelin corresponds chemically to the endogenous GnRH peptide sequence. Declared sequence identity does not establish pharmaceutical quality, bioequivalence, or regulatory equivalence.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "How many amino acids are present in Gonadorelin?",
+            "answer": "<p>Gonadorelin contains ten amino acids and is therefore classified as a decapeptide.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the GnRH receptor?",
+            "answer": "<p>The GnRH receptor, or GnRHR, is a G-protein-coupled receptor that transduces GnRH signals in experimental models.</p>"
+          }
+        },
+        "faq_7": {
+          "type": "faq",
+          "settings": {
+            "question": "Where is the GnRH receptor primarily expressed?",
+            "answer": "<p>GnRHR is notably expressed on gonadotroph cells of the anterior pituitary, although expression and response depend on the biological model.</p>"
+          }
+        },
+        "faq_8": {
+          "type": "faq",
+          "settings": {
+            "question": "How does Gonadorelin interact with pituitary gonadotroph cells?",
+            "answer": "<p>It has been studied as a ligand for GnRHR on gonadotroph cells. Receptor activation may initiate intracellular signaling; it does not guarantee a biological or therapeutic outcome.</p>"
+          }
+        },
+        "faq_9": {
+          "type": "faq",
+          "settings": {
+            "question": "What intracellular pathways are associated with GnRH receptor activation?",
+            "answer": "<p>GnRHR activation is principally associated with Gq/11 signaling and may engage PLC, IP3, DAG, calcium mobilization, and protein-kinase pathways.</p>"
+          }
+        },
+        "faq_10": {
+          "type": "faq",
+          "settings": {
+            "question": "What roles do PLC, IP3, DAG and intracellular calcium play?",
+            "answer": "<p>PLC can promote IP3 and DAG formation. IP3 is associated with intracellular calcium mobilization, while DAG may participate in protein-kinase-dependent signaling.</p>"
+          }
+        },
+        "faq_11": {
+          "type": "faq",
+          "settings": {
+            "question": "How can GnRH receptor signaling influence LH and FSH?",
+            "answer": "<p>In experimental settings, GnRHR signaling may influence the synthesis and release of the pituitary gonadotrophins LH and FSH. The response is context-dependent.</p>"
+          }
+        },
+        "faq_12": {
+          "type": "faq",
+          "settings": {
+            "question": "Are LH and FSH responses always identical?",
+            "answer": "<p>No. Their response magnitude and timing may differ with the model, physiological context, and temporal pattern of receptor stimulation.</p>"
+          }
+        },
+        "faq_13": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the hypothalamic-pituitary-gonadal axis?",
+            "answer": "<p>It is the signaling axis linking hypothalamic GnRH, pituitary LH and FSH, and downstream gonadal physiology.</p>"
+          }
+        },
+        "faq_14": {
+          "type": "faq",
+          "settings": {
+            "question": "Why is the pulsatile nature of GnRH signaling scientifically important?",
+            "answer": "<p>Endogenous GnRH is normally released in pulses. Signal frequency and timing may differentially shape gonadotroph responses, but these observations are not a usage protocol.</p>"
+          }
+        },
+        "faq_15": {
+          "type": "faq",
+          "settings": {
+            "question": "Can continuous receptor stimulation produce a different response?",
+            "answer": "<p>Yes. Sustained exposure may differ from intermittent stimulation and has been associated with altered or reduced responsiveness in some experimental models.</p>"
+          }
+        },
+        "faq_16": {
+          "type": "faq",
+          "settings": {
+            "question": "What is receptor desensitization?",
+            "answer": "<p>Desensitization is a reduction or alteration in receptor-system responsiveness after sustained or repeated stimulation. Its extent depends on the model and exposure conditions.</p>"
+          }
+        },
+        "faq_17": {
+          "type": "faq",
+          "settings": {
+            "question": "Can an acute Gonadorelin response predict repeated-exposure effects?",
+            "answer": "<p>No. An initial response cannot reliably predict prolonged or repeated-exposure behavior.</p>"
+          }
+        },
+        "faq_18": {
+          "type": "faq",
+          "settings": {
+            "question": "Has Gonadorelin been studied in reproductive endocrinology?",
+            "answer": "<p>Yes. It has been investigated in reproductive physiology and functional assessment of the hypothalamic-pituitary axis. This does not establish therapeutic efficacy.</p>"
+          }
+        },
+        "faq_19": {
+          "type": "faq",
+          "settings": {
+            "question": "Has Gonadorelin been studied in men?",
+            "answer": "<p>Yes. Research has examined endocrine responses in male participants, but findings cannot be extrapolated automatically to this research-grade product.</p>"
+          }
+        },
+        "faq_20": {
+          "type": "faq",
+          "settings": {
+            "question": "Has Gonadorelin been studied in women?",
+            "answer": "<p>Yes. Research has examined responses in female participants across differing hormonal contexts and cycle phases; results are not universally transferable.</p>"
+          }
+        },
+        "faq_21": {
+          "type": "faq",
+          "settings": {
+            "question": "Does Gonadorelin directly increase testosterone?",
+            "answer": "<p>A direct or automatic increase is not established. Any studied downstream response would depend on pituitary and gonadal context.</p>"
+          }
+        },
+        "faq_22": {
+          "type": "faq",
+          "settings": {
+            "question": "Does Gonadorelin directly increase estrogen?",
+            "answer": "<p>A direct or automatic increase is not established. Gonadorelin is studied at pituitary GnRHR rather than as estrogen itself or a direct estrogen stimulus.</p>"
+          }
+        },
+        "faq_23": {
+          "type": "faq",
+          "settings": {
+            "question": "Does Gonadorelin directly stimulate the ovaries or testes?",
+            "answer": "<p>It is principally studied at pituitary GnRH receptors, not as a direct gonadal stimulant. Downstream responses vary by experimental context.</p>"
+          }
+        },
+        "faq_24": {
+          "type": "faq",
+          "settings": {
+            "question": "Does Gonadorelin automatically improve fertility?",
+            "answer": "<p>No. Reproductive-endocrine research does not establish fertility improvement or therapeutic efficacy for the ELIX LABS product.</p>"
+          }
+        },
+        "faq_25": {
+          "type": "faq",
+          "settings": {
+            "question": "Does Gonadorelin directly increase libido?",
+            "answer": "<p>No direct, reliable increase in libido is established. Pituitary signaling research is not evidence of a behavioral effect.</p>"
+          }
+        },
+        "faq_26": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Gonadorelin an aphrodisiac?",
+            "answer": "<p>No. ELIX LABS does not present Gonadorelin as an aphrodisiac or as a product for human use.</p>"
+          }
+        },
+        "faq_27": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Gonadorelin the same as Kisspeptin-10?",
+            "answer": "<p>No. Kisspeptin-10 and Gonadorelin are distinct peptides acting at different receptors and levels of the reproductive axis.</p>"
+          }
+        },
+        "faq_28": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the difference between Gonadorelin and Kisspeptin-10?",
+            "answer": "<p>Kisspeptin-10 is studied at KISS1R upstream of hypothalamic GnRH release. Gonadorelin is synthetic GnRH studied directly at pituitary GnRHR. They are not interchangeable, and this comparison is not a usage recommendation.</p>"
+          }
+        },
+        "faq_29": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the difference between Gonadorelin and PT-141?",
+            "answer": "<p>Gonadorelin is studied in GnRHR and pituitary LH/FSH signaling. PT-141, or bremelanotide, is a melanocortin analogue studied at different receptors and central neural pathways. They are not equivalents, and this comparison is not a usage recommendation.</p>"
+          }
+        },
+        "faq_30": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the difference between Gonadorelin and leuprolide?",
+            "answer": "<p>Gonadorelin corresponds to natural-sequence GnRH. Leuprolide is a structurally modified GnRH analogue designed with different stability and duration properties; they are not chemically identical.</p>"
+          }
+        },
+        "faq_31": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Gonadorelin the same as a long-acting GnRH analogue?",
+            "answer": "<p>No. It should not be described as long-acting without formulation-specific evidence. Modified analogues such as leuprolide, triptorelin, and goserelin have distinct structures and properties.</p>"
+          }
+        },
+        "faq_32": {
+          "type": "faq",
+          "settings": {
+            "question": "Can findings obtained with GnRH analogues be applied directly to Gonadorelin?",
+            "answer": "<p>No. Results from modified or prolonged analogues cannot be attributed automatically to natural-sequence Gonadorelin.</p>"
+          }
+        },
+        "faq_33": {
+          "type": "faq",
+          "settings": {
+            "question": "Does medical research involving Gonadorelin mean that ELIX LABS Gonadorelin is an approved medicine?",
+            "answer": "<p>No. Historical or regulated uses of particular preparations do not extend to this separate product. The ELIX LABS research product is not an approved medicinal product and is not intended for human administration.</p>"
+          }
+        },
+        "faq_34": {
+          "type": "faq",
+          "settings": {
+            "question": "Is the ELIX LABS product pharmaceutically equivalent to a medicinal Gonadorelin preparation?",
+            "answer": "<p>No pharmaceutical, clinical, bioavailability, or regulatory equivalence is established. Declared chemical identity alone does not establish pharmaceutical quality.</p>"
+          }
+        },
+        "faq_35": {
+          "type": "faq",
+          "settings": {
+            "question": "Why can responses vary between experimental models?",
+            "answer": "<p>Responses may vary with sex, age, hormonal state, cycle phase, pituitary function, species, tissue system, exposure timing, and protocol.</p>"
+          }
+        },
+        "faq_36": {
+          "type": "faq",
+          "settings": {
+            "question": "What safety uncertainties are associated with research-grade Gonadorelin?",
+            "answer": "<p>Safety, efficacy, sterility, impurity profile, bioavailability, and repeated-exposure effects are not established for the ELIX LABS research product.</p>"
+          }
+        },
+        "faq_37": {
+          "type": "faq",
+          "settings": {
+            "question": "How should Gonadorelin be stored for laboratory research?",
+            "answer": "<p>Follow the batch-specific documentation supplied with the product and validated laboratory handling procedures. No temperature recommendation should replace the instructions provided with the lot.</p>"
+          }
+        },
+        "faq_38": {
+          "type": "faq",
+          "settings": {
+            "question": "Is ELIX LABS Gonadorelin intended for human use?",
+            "answer": "<p>No. For laboratory research use only. Not for human consumption. It is not intended for human administration.</p>"
+          }
+        },
+        "faq_39": {
+          "type": "faq",
+          "settings": {
+            "question": "What documentation is included with the product?",
+            "answer": "<p>The product includes access to the four listed research resources and available batch-specific analytical documentation, including the Certificate of Analysis.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "badge_lab",
+        "badge_cold",
+        "badge_coa",
+        "checkout_secure",
+        "checkout_pack",
+        "checkout_world",
+        "inc_0",
+        "inc_1",
+        "inc_2",
+        "inc_3",
+        "mechanism_receptor",
+        "mechanism_cascade",
+        "mechanism_output",
+        "mechanism_timing",
+        "app_identity",
+        "app_signaling",
+        "app_axis",
+        "app_dynamics",
+        "app_limits",
+        "faq_0",
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7",
+        "faq_8",
+        "faq_9",
+        "faq_10",
+        "faq_11",
+        "faq_12",
+        "faq_13",
+        "faq_14",
+        "faq_15",
+        "faq_16",
+        "faq_17",
+        "faq_18",
+        "faq_19",
+        "faq_20",
+        "faq_21",
+        "faq_22",
+        "faq_23",
+        "faq_24",
+        "faq_25",
+        "faq_26",
+        "faq_27",
+        "faq_28",
+        "faq_29",
+        "faq_30",
+        "faq_31",
+        "faq_32",
+        "faq_33",
+        "faq_34",
+        "faq_35",
+        "faq_36",
+        "faq_37",
+        "faq_38",
+        "faq_39"
+      ],
+      "settings": {
+        "products_label": "Hormones & Sexual Health",
+        "subtitle": "Synthetic GnRH Decapeptide | Pituitary Receptor Signaling Research",
+        "accent_color": "#FF2E9A",
+        "accent_secondary": "#D9157F",
+        "glow_color": "#FF4FB3",
+        "border_color": "rgba(255,46,154,.30)",
+        "mechanism_title": "Mechanism of Action",
+        "mechanism_intro": "Gonadorelin is a synthetic form corresponding to the ten-amino-acid sequence of the natural hypothalamic peptide gonadotropin-releasing hormone (GnRH), historically called luteinizing hormone-releasing hormone (LHRH). It is studied at GnRHR on anterior-pituitary gonadotroph cells, where this G-protein-coupled receptor is principally associated with Gq/11 signaling. Activation may engage phospholipase C (PLC), generate IP3 and DAG, mobilize intracellular calcium, and activate protein-kinase pathways that may influence LH and FSH synthesis and release. Endogenous GnRH is normally pulsatile; intermittent and continuous exposure can produce different, model-dependent responses, and sustained stimulation has been associated with altered receptor sensitivity in some models. Acute findings cannot predict repeated-exposure effects. Responses may vary with sex, age, hormonal state, cycle phase, pituitary function, model, and protocol. Gonadorelin acts at pituitary GnRHR rather than upstream KISS1R and is not interchangeable with Kisspeptin-10. It also differs from structurally modified, longer-acting analogues such as leuprolide, triptorelin, and goserelin; findings for those analogues cannot be extrapolated automatically to Gonadorelin. Medical data concerning particular Gonadorelin preparations do not establish therapeutic efficacy, safety, sterility, bioavailability, or pharmaceutical equivalence for a separate research-grade product. Declared chemical identity does not establish pharmaceutical quality. The ELIX LABS research product is not an approved medicinal product and is not intended for human administration. For laboratory research use only. Not for human consumption.",
+        "applications_title": "Gonadorelin Research Overview",
+        "included_title": "What’s Included",
+        "faq_title": "Gonadorelin FAQ"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
