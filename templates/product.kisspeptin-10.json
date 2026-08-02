@@ -1,0 +1,433 @@
+/*
+ * Dedicated Kisspeptin-10 product template. Assign only to the Shopify product with handle kisspeptin-10.
+ * Suggested product SEO title: Kisspeptin-10 Research Peptide | ELIX LABS
+ * Suggested meta description: Explore ELIX LABS Kisspeptin-10, a research peptide investigated for KISS1R activation, GnRH signaling and reproductive neuroendocrine pathways. For laboratory research use only.
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product-kisspeptin-10",
+      "blocks": {
+        "badge_lab": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "flask",
+            "title": "Third-Party Tested"
+          }
+        },
+        "badge_cold": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "snowflake",
+            "title": "Cold Chain Shipping"
+          }
+        },
+        "badge_coa": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "certificate",
+            "title": "COA Included"
+          }
+        },
+        "checkout_secure": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "lock",
+            "title": "Secure Checkout"
+          }
+        },
+        "checkout_pack": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "box",
+            "title": "Discreet Packaging"
+          }
+        },
+        "checkout_world": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "globe",
+            "title": "Worldwide Shipping"
+          }
+        },
+        "inc_0": {
+          "type": "included",
+          "settings": {
+            "icon": "book",
+            "title": "Reconstitution Guide",
+            "text": "How to prepare your peptide safely.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_1": {
+          "type": "included",
+          "settings": {
+            "icon": "dropper",
+            "title": "Research Dosing Guide",
+            "text": "Recommended research dosage protocols.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_2": {
+          "type": "included",
+          "settings": {
+            "icon": "certificate",
+            "title": "Clinical Research Digest",
+            "text": "Latest clinical research and key findings.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_3": {
+          "type": "included",
+          "settings": {
+            "icon": "dna",
+            "title": "Mechanism of Action",
+            "text": "Simple visual explanation of how it works.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "mechanism_receptor": {
+          "type": "receptor",
+          "settings": {
+            "icon": "molecule",
+            "title": "KISS1R Activation",
+            "text": "The conserved C-terminal sequence is studied as an agonist at KISS1R, historically called GPR54."
+          }
+        },
+        "mechanism_cascade": {
+          "type": "receptor",
+          "settings": {
+            "icon": "dna",
+            "title": "Gq/11 Signaling",
+            "text": "KISS1R activation is generally associated with Gq/11, PLC, IP3, DAG and intracellular calcium mobilization."
+          }
+        },
+        "mechanism_gnrh": {
+          "type": "receptor",
+          "settings": {
+            "icon": "flask",
+            "title": "Upstream GnRH Signal",
+            "text": "Kisspeptin-10 is principally investigated for its influence upstream of hypothalamic GnRH neurons."
+          }
+        },
+        "mechanism_axis": {
+          "type": "receptor",
+          "settings": {
+            "icon": "shield",
+            "title": "Model-Dependent Axis",
+            "text": "Downstream LH and FSH responses vary with sex, hormonal state, cycle phase, model and protocol."
+          }
+        },
+        "app_identity": {
+          "type": "application",
+          "settings": {
+            "icon": "molecule",
+            "title": "Active Kisspeptin Fragment",
+            "text": "Kisspeptin-10 is a short, biologically active C-terminal fragment derived from the KISS1-encoded kisspeptin family."
+          }
+        },
+        "app_signaling": {
+          "type": "application",
+          "settings": {
+            "icon": "dna",
+            "title": "Receptor Signaling Research",
+            "text": "Experimental work examines KISS1R/GPR54 coupling to Gq/11 and downstream PLC, IP3, DAG and calcium signaling."
+          }
+        },
+        "app_axis": {
+          "type": "application",
+          "settings": {
+            "icon": "flask",
+            "title": "Reproductive Neuroendocrinology",
+            "text": "Research investigates the hypothalamus → GnRH → pituitary → LH/FSH → gonadal axis."
+          }
+        },
+        "app_context": {
+          "type": "application",
+          "settings": {
+            "icon": "clipboard",
+            "title": "Context-Dependent Responses",
+            "text": "Acute findings do not predict repeated-exposure effects, and responses may vary across experimental contexts."
+          }
+        },
+        "app_limits": {
+          "type": "application",
+          "settings": {
+            "icon": "shield",
+            "title": "Research-Only Evidence",
+            "text": "Fertility, ovulation and hypogonadotropic hypogonadism studies do not establish therapeutic efficacy or product equivalence."
+          }
+        },
+        "faq_0": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Kisspeptin-10?",
+            "answer": "<p>Kisspeptin-10 is a short, biologically active C-terminal fragment of the kisspeptin peptide family. It has been studied as a KISS1R agonist in reproductive neuroendocrine research.</p>"
+          }
+        },
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Kisspeptin-10 a peptide?",
+            "answer": "<p>Yes. It is a peptide fragment whose conserved C-terminal sequence retains activity at KISS1R in experimental settings.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the KISS1 gene?",
+            "answer": "<p>KISS1 is the gene that encodes a precursor processed into kisspeptin peptides. These peptides have been associated with regulation of reproductive neuroendocrine signaling.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "What is KISS1R?",
+            "answer": "<p>KISS1R is a G-protein-coupled receptor activated by kisspeptins and studied as a major regulator of reproductive neuroendocrine pathways.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "Is KISS1R the same receptor as GPR54?",
+            "answer": "<p>Yes. GPR54 is the historical name for the receptor now commonly called KISS1R.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "How does Kisspeptin-10 interact with KISS1R?",
+            "answer": "<p>Research suggests that its conserved C-terminal region binds and activates KISS1R. The resulting response depends on the cellular and experimental model.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq",
+          "settings": {
+            "question": "What intracellular signaling pathways are associated with KISS1R?",
+            "answer": "<p>KISS1R activation is generally associated with Gq/11 signaling that may engage phospholipase C, IP3, DAG and intracellular calcium mobilization.</p>"
+          }
+        },
+        "faq_7": {
+          "type": "faq",
+          "settings": {
+            "question": "How is Kisspeptin-10 connected to GnRH signaling?",
+            "answer": "<p>It is principally studied as an upstream signal that may activate hypothalamic GnRH neurons and stimulate GnRH release in experimental settings.</p>"
+          }
+        },
+        "faq_8": {
+          "type": "faq",
+          "settings": {
+            "question": "How can GnRH influence LH and FSH secretion?",
+            "answer": "<p>GnRH can signal at pituitary GnRH receptors and influence secretion of luteinizing hormone and follicle-stimulating hormone. The pattern depends on experimental and biological context.</p>"
+          }
+        },
+        "faq_9": {
+          "type": "faq",
+          "settings": {
+            "question": "Is the LH response generally different from the FSH response?",
+            "answer": "<p>In some human studies, the observed LH response has been more pronounced than the FSH response. This is not universal and does not establish a guaranteed effect.</p>"
+          }
+        },
+        "faq_10": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the hypothalamic-pituitary-gonadal axis?",
+            "answer": "<p>It is the research axis linking hypothalamic GnRH signaling, pituitary LH and FSH secretion, and gonadal responses.</p>"
+          }
+        },
+        "faq_11": {
+          "type": "faq",
+          "settings": {
+            "question": "Has Kisspeptin-10 been studied in reproductive endocrinology?",
+            "answer": "<p>Yes. It has been investigated in fertility, ovulation, hypogonadotropic hypogonadism and broader reproductive-physiology research. This does not establish therapeutic efficacy.</p>"
+          }
+        },
+        "faq_12": {
+          "type": "faq",
+          "settings": {
+            "question": "Has Kisspeptin-10 been studied in men?",
+            "answer": "<p>Yes. Controlled research has examined endocrine responses in male participants, but those findings do not establish safety, efficacy or equivalence for this product.</p>"
+          }
+        },
+        "faq_13": {
+          "type": "faq",
+          "settings": {
+            "question": "Has Kisspeptin-10 been studied in women?",
+            "answer": "<p>Yes. Research has examined responses across different hormonal states and cycle phases. Results are context-dependent and do not authorize this product as a medicine.</p>"
+          }
+        },
+        "faq_14": {
+          "type": "faq",
+          "settings": {
+            "question": "Does Kisspeptin-10 directly increase testosterone?",
+            "answer": "<p>A direct or guaranteed increase is not established. Any downstream change studied would involve a context-dependent neuroendocrine cascade rather than proven direct stimulation.</p>"
+          }
+        },
+        "faq_15": {
+          "type": "faq",
+          "settings": {
+            "question": "Does Kisspeptin-10 directly stimulate the ovaries or testes?",
+            "answer": "<p>It is primarily studied upstream at KISS1R and GnRH neurons, not as a direct gonadal stimulant. Downstream responses vary by model and hormonal context.</p>"
+          }
+        },
+        "faq_16": {
+          "type": "faq",
+          "settings": {
+            "question": "Does Kisspeptin-10 directly increase libido?",
+            "answer": "<p>No direct, reliable increase in libido has been established. Reproductive-axis research should not be interpreted as proof of a behavioral or therapeutic effect.</p>"
+          }
+        },
+        "faq_17": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Kisspeptin-10 an aphrodisiac?",
+            "answer": "<p>No. ELIX LABS does not present Kisspeptin-10 as an aphrodisiac, and it is not intended for human use.</p>"
+          }
+        },
+        "faq_18": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Kisspeptin-10 approved as a medicine?",
+            "answer": "<p>No. ELIX LABS Kisspeptin-10 is an experimental research material, not an approved medicine, and its safety and efficacy are not established.</p>"
+          }
+        },
+        "faq_19": {
+          "type": "faq",
+          "settings": {
+            "question": "Does participation in clinical research mean that Kisspeptin-10 is approved?",
+            "answer": "<p>No. Clinical investigation does not itself confer regulatory approval, and controlled-study results do not automatically validate a separate commercial research product.</p>"
+          }
+        },
+        "faq_20": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the difference between Kisspeptin-10 and Kisspeptin-54?",
+            "answer": "<p>They are different-length members of the kisspeptin family that share a KISS1R-active C-terminal region. Their pharmacokinetic properties and experimental contexts are not identical, so they are not interchangeable without specific data.</p>"
+          }
+        },
+        "faq_21": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the difference between Kisspeptin-10 and Gonadorelin?",
+            "answer": "<p>Kisspeptin-10 is studied upstream of GnRH neurons, while Gonadorelin is synthetic GnRH studied directly at pituitary GnRH receptors. Both may relate to LH and FSH research, but they act at different levels and are not equivalents or substitutes. This is not a usage recommendation.</p>"
+          }
+        },
+        "faq_22": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the difference between Kisspeptin-10 and PT-141?",
+            "answer": "<p>Kisspeptin-10 is studied through KISS1R, GnRH and reproductive-axis regulation. PT-141, or bremelanotide, is a melanocortin analogue studied in different central neural pathways related to motivation and sexual response. Their structures, receptors and research axes differ; this is not a usage recommendation.</p>"
+          }
+        },
+        "faq_23": {
+          "type": "faq",
+          "settings": {
+            "question": "Can findings obtained with Kisspeptin-54 be applied directly to Kisspeptin-10?",
+            "answer": "<p>No. Shared receptor activity does not make their lengths, pharmacokinetics or experimental behavior identical. Findings require form-specific evaluation.</p>"
+          }
+        },
+        "faq_24": {
+          "type": "faq",
+          "settings": {
+            "question": "Why can responses vary between research models?",
+            "answer": "<p>Responses may vary according to sex, hormonal state, cycle phase, species, tissue system, exposure pattern and protocol. An acute response does not predict repeated-exposure effects.</p>"
+          }
+        },
+        "faq_25": {
+          "type": "faq",
+          "settings": {
+            "question": "What safety uncertainties are associated with research-grade Kisspeptin-10?",
+            "answer": "<p>Safety, immunogenicity, impurity profiles, biodistribution and repeated-exposure effects remain uncertain. The FDA has identified concerns for compounded Kisspeptin-10 involving potential immunogenicity, peptide-related impurities and limited safety information; this does not establish the quality of a distinct research product.</p>"
+          }
+        },
+        "faq_26": {
+          "type": "faq",
+          "settings": {
+            "question": "How should Kisspeptin-10 be stored for laboratory research?",
+            "answer": "<p>Follow the batch-specific documentation supplied with the product and validated laboratory handling procedures. No temperature recommendation should replace the instructions provided with the lot.</p>"
+          }
+        },
+        "faq_27": {
+          "type": "faq",
+          "settings": {
+            "question": "Is ELIX LABS Kisspeptin-10 intended for human use?",
+            "answer": "<p>No. For laboratory research use only. Not for human consumption. It is not intended for human administration.</p>"
+          }
+        },
+        "faq_28": {
+          "type": "faq",
+          "settings": {
+            "question": "What documentation is included with the product?",
+            "answer": "<p>The product includes access to the four listed research resources and available batch-specific analytical documentation, including the Certificate of Analysis.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "badge_lab",
+        "badge_cold",
+        "badge_coa",
+        "checkout_secure",
+        "checkout_pack",
+        "checkout_world",
+        "mechanism_receptor",
+        "mechanism_cascade",
+        "mechanism_gnrh",
+        "mechanism_axis",
+        "app_identity",
+        "app_signaling",
+        "app_axis",
+        "app_context",
+        "app_limits",
+        "inc_0",
+        "inc_1",
+        "inc_2",
+        "inc_3",
+        "faq_0",
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7",
+        "faq_8",
+        "faq_9",
+        "faq_10",
+        "faq_11",
+        "faq_12",
+        "faq_13",
+        "faq_14",
+        "faq_15",
+        "faq_16",
+        "faq_17",
+        "faq_18",
+        "faq_19",
+        "faq_20",
+        "faq_21",
+        "faq_22",
+        "faq_23",
+        "faq_24",
+        "faq_25",
+        "faq_26",
+        "faq_27",
+        "faq_28"
+      ],
+      "settings": {
+        "products_label": "Hormones & Sexual Health",
+        "subtitle": "KISS1R Agonist Research Peptide | Reproductive Neuroendocrine Signaling",
+        "accent_color": "#FF2E9A",
+        "accent_secondary": "#D9157F",
+        "glow_color": "#FF4FB3",
+        "border_color": "rgba(255,46,154,.30)",
+        "mechanism_title": "Mechanism of Action",
+        "mechanism_intro": "Kisspeptin-10 is a biologically active fragment derived from the KISS1-encoded kisspeptin family. Its short, conserved C-terminal sequence retains activity at KISS1R, historically called GPR54, a G-protein-coupled receptor generally associated with Gq/11 signaling. In experimental settings, activation may engage PLC, IP3, DAG and intracellular calcium mobilization. Kisspeptin-10 is principally studied upstream of hypothalamic GnRH neurons; GnRH release may then influence pituitary LH and FSH secretion, with some human studies reporting a more marked LH than FSH response. Research has explored fertility, ovulation, hypogonadotropic hypogonadism and reproductive physiology, but responses vary with sex, hormonal state, cycle phase, model and protocol, and acute exposure does not predict repeated-exposure effects. These investigations do not establish therapeutic efficacy, approval, or equivalence to an approved medicinal product. Declared chemical identity alone does not establish pharmaceutical quality. ELIX LABS Kisspeptin-10 is not an approved medicine; its safety, efficacy, bioavailability and pharmaceutical equivalence are not established. For laboratory research use only. Not for human consumption.",
+        "applications_title": "Kisspeptin-10 Research Overview",
+        "included_title": "What’s Included",
+        "faq_title": "Kisspeptin-10 FAQ"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
