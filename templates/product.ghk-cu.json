@@ -1,0 +1,367 @@
+/*
+ * GHK-Cu product template. Assign only to the existing GHK-Cu product.
+ * It intentionally reuses the approved BPC-157 page architecture.
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product-ghk-cu",
+      "blocks": {
+        "badge_lab": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "flask",
+            "title": "Third-Party Tested"
+          }
+        },
+        "badge_cold": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "snowflake",
+            "title": "Cold Chain Shipping"
+          }
+        },
+        "badge_coa": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "certificate",
+            "title": "COA Included"
+          }
+        },
+        "checkout_secure": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "lock",
+            "title": "Secure Checkout"
+          }
+        },
+        "checkout_pack": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "box",
+            "title": "Discreet Packaging"
+          }
+        },
+        "checkout_world": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "globe",
+            "title": "Worldwide Shipping"
+          }
+        },
+        "quality_0": {
+          "type": "quality",
+          "settings": {
+            "icon": "flask",
+            "title": "Third-Party Analytical Testing"
+          }
+        },
+        "quality_1": {
+          "type": "quality",
+          "settings": {
+            "icon": "certificate",
+            "title": "HPLC Verification"
+          }
+        },
+        "quality_2": {
+          "type": "quality",
+          "settings": {
+            "icon": "certificate",
+            "title": "Certificate of Analysis (COA)"
+          }
+        },
+        "quality_3": {
+          "type": "quality",
+          "settings": {
+            "icon": "shield",
+            "title": "Batch Traceability"
+          }
+        },
+        "quality_4": {
+          "type": "quality",
+          "settings": {
+            "icon": "shield",
+            "title": "Sterility Controls"
+          }
+        },
+        "storage_0": {
+          "type": "storage",
+          "settings": {
+            "icon": "snowflake",
+            "title": "Before Reconstitution",
+            "text": "Keep the sealed lyophilized vial refrigerated at 2–8°C, dry and protected from light."
+          }
+        },
+        "storage_1": {
+          "type": "storage",
+          "settings": {
+            "icon": "bottle",
+            "title": "After Reconstitution",
+            "text": "After laboratory reconstitution, follow the batch documentation and the laboratory’s validated stability protocol."
+          }
+        },
+        "storage_2": {
+          "type": "storage",
+          "settings": {
+            "icon": "hand",
+            "title": "General Handling",
+            "text": "For laboratory research only. Use appropriate clean handling procedures and avoid repeated temperature cycling."
+          }
+        },
+        "bottom_0": {
+          "type": "bottom_trust",
+          "settings": {
+            "icon": "molecule",
+            "title": "Precision Science",
+            "text": "Advanced peptide research backed by innovation."
+          }
+        },
+        "bottom_1": {
+          "type": "bottom_trust",
+          "settings": {
+            "icon": "shield",
+            "title": "Premium Quality",
+            "text": "Highest purity peptides with rigorous quality control."
+          }
+        },
+        "bottom_2": {
+          "type": "bottom_trust",
+          "settings": {
+            "icon": "globe",
+            "title": "Global Delivery",
+            "text": "Fast, secure, and discreet worldwide shipping."
+          }
+        },
+        "bottom_3": {
+          "type": "bottom_trust",
+          "settings": {
+            "icon": "star",
+            "title": "Research Excellence",
+            "text": "Committed to advancing peptide science."
+          }
+        },
+        "mechanism_matrix": {
+          "type": "receptor",
+          "settings": {
+            "icon": "molecule",
+            "title": "Extracellular-Matrix Remodelling",
+            "text": "Studied for interactions with matrix metalloproteinases and their inhibitors, which help regulate experimental matrix turnover and organisation."
+          }
+        },
+        "mechanism_fibroblast": {
+          "type": "receptor",
+          "settings": {
+            "icon": "flask",
+            "title": "Fibroblast Activity",
+            "text": "Investigated in cell and tissue models for effects on fibroblast migration and signalling linked to collagen and elastin production."
+          }
+        },
+        "mechanism_defence": {
+          "type": "receptor",
+          "settings": {
+            "icon": "shield",
+            "title": "Inflammatory & Antioxidant Signalling",
+            "text": "Preclinical work explores modulation of selected inflammatory mediators and antioxidant-response pathways under controlled conditions."
+          }
+        },
+        "mechanism_angiogenesis": {
+          "type": "receptor",
+          "settings": {
+            "icon": "dna",
+            "title": "Angiogenesis & Regeneration",
+            "text": "Experimental models examine vascular signalling and tissue-regeneration processes; clinical relevance remains under investigation."
+          }
+        },
+        "app_matrix": {
+          "type": "application",
+          "settings": {
+            "icon": "molecule",
+            "title": "Collagen & Elastin Research",
+            "text": "Synthesis, deposition and structural organisation in extracellular-matrix models."
+          }
+        },
+        "app_repair": {
+          "type": "application",
+          "settings": {
+            "icon": "clipboard",
+            "title": "Tissue-Repair Research",
+            "text": "Cell migration, matrix turnover and repair-associated signalling in experimental systems."
+          }
+        },
+        "app_stress": {
+          "type": "application",
+          "settings": {
+            "icon": "flask",
+            "title": "Cellular Stress Research",
+            "text": "Inflammatory and antioxidant responses studied in controlled laboratory models."
+          }
+        },
+        "app_vascular": {
+          "type": "application",
+          "settings": {
+            "icon": "dna",
+            "title": "Regeneration Research",
+            "text": "Angiogenic signalling and vascular support mechanisms investigated preclinically."
+          }
+        },
+        "app_follicle": {
+          "type": "application",
+          "settings": {
+            "icon": "drop",
+            "title": "Hair-Follicle Research",
+            "text": "Follicle health, dermal signalling and hair-cycle biology in research models."
+          }
+        },
+        "inc_0": {
+          "type": "included",
+          "settings": {
+            "icon": "book",
+            "title": "Reconstitution Guide",
+            "text": "How to prepare your peptide safely.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_1": {
+          "type": "included",
+          "settings": {
+            "icon": "dropper",
+            "title": "Research Dosing Guide",
+            "text": "Recommended research dosage protocols.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_2": {
+          "type": "included",
+          "settings": {
+            "icon": "certificate",
+            "title": "Clinical Research Digest",
+            "text": "Latest clinical research and key findings.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_3": {
+          "type": "included",
+          "settings": {
+            "icon": "dna",
+            "title": "Mechanism of Action",
+            "text": "Simple visual explanation of how it works.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "faq_0": {
+          "type": "faq",
+          "settings": {
+            "question": "What is GHK-Cu?",
+            "answer": "<p>GHK-Cu is a naturally occurring tripeptide, glycyl-L-histidyl-L-lysine, complexed with copper. It is studied as a biochemical research compound rather than an approved medicine.</p>"
+          }
+        },
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "What does the “Cu” in GHK-Cu represent?",
+            "answer": "<p>“Cu” is the chemical symbol for copper. In GHK-Cu, the peptide coordinates a copper ion, a feature relevant to its experimentally investigated biological interactions.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "How is GHK-Cu studied in laboratory research?",
+            "answer": "<p>Researchers examine GHK-Cu in biochemical assays, cell cultures and preclinical models to investigate matrix remodelling, fibroblast behaviour, repair signalling and follicle biology. Such findings do not establish clinical efficacy.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Which biological mechanisms are associated with GHK-Cu?",
+            "answer": "<p>Research associates GHK-Cu with extracellular-matrix turnover, collagen and elastin organisation, selected inflammatory and antioxidant pathways, angiogenic signalling and tissue-regeneration processes.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "How should lyophilized GHK-Cu be stored for research?",
+            "answer": "<p>Keep the sealed lyophilized material refrigerated at 2–8°C, dry and protected from light. Follow the batch documentation and the laboratory’s validated handling procedures.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "Is GHK-Cu intended for human use?",
+            "answer": "<p>No. This product is supplied for laboratory research only and is not intended for human or veterinary use, diagnosis, treatment or consumption.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq",
+          "settings": {
+            "question": "Does GHK-Cu have the same research profile as BPC-157?",
+            "answer": "<p>No. They are distinct compounds with different structures and research profiles. Evidence or proposed mechanisms for one should not be applied to the other.</p>"
+          }
+        },
+        "faq_7": {
+          "type": "faq",
+          "settings": {
+            "question": "What documentation is included with the product?",
+            "answer": "<p>The order includes access to the listed research resources and batch-specific analytical documentation, including the available Certificate of Analysis.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "badge_lab",
+        "badge_cold",
+        "badge_coa",
+        "checkout_secure",
+        "checkout_pack",
+        "checkout_world",
+        "mechanism_matrix",
+        "mechanism_fibroblast",
+        "mechanism_defence",
+        "mechanism_angiogenesis",
+        "app_matrix",
+        "app_repair",
+        "app_stress",
+        "app_vascular",
+        "app_follicle",
+        "inc_0",
+        "inc_1",
+        "inc_2",
+        "inc_3",
+        "quality_0",
+        "quality_1",
+        "quality_2",
+        "quality_3",
+        "quality_4",
+        "storage_0",
+        "storage_1",
+        "storage_2",
+        "faq_0",
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7",
+        "bottom_0",
+        "bottom_1",
+        "bottom_2",
+        "bottom_3"
+      ],
+      "settings": {
+        "subtitle": "Copper Tripeptide-1 | Research Grade | Lyophilized Powder",
+        "accent_color": "#1DA8FF",
+        "accent_secondary": "#3C82FF",
+        "glow_color": "#73D9FF",
+        "border_color": "rgba(29,168,255,.28)",
+        "mechanism_title": "Mechanism of Action",
+        "mechanism_alt": "GHK-Cu (Copper Tripeptide-1) mechanism of action research diagram",
+        "mechanism_intro": "GHK-Cu is a naturally occurring tripeptide complexed with copper. Experimental research examines its interactions with extracellular-matrix remodelling, fibroblast activity, collagen and elastin organisation, tissue-repair signalling, inflammatory and antioxidant pathways, angiogenesis, and hair-follicle biology; these findings should not be interpreted as established clinical outcomes.",
+        "applications_title": "GHK-Cu Research Overview",
+        "included_title": "What’s Included",
+        "faq_title": "GHK-Cu FAQ"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
