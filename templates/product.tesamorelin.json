@@ -1,0 +1,297 @@
+/*
+ * Tesamorelin product template. Assign only to the existing Shopify product with handle tesamorelin.
+ * It intentionally reuses the approved Retatrutide architecture and blue-violet identity.
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product-tesamorelin",
+      "blocks": {
+        "badge_lab": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "flask",
+            "title": "Third-Party Tested"
+          }
+        },
+        "badge_cold": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "snowflake",
+            "title": "Cold Chain Shipping"
+          }
+        },
+        "badge_coa": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "certificate",
+            "title": "COA Included"
+          }
+        },
+        "checkout_secure": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "lock",
+            "title": "Secure Checkout"
+          }
+        },
+        "checkout_pack": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "box",
+            "title": "Discreet Packaging"
+          }
+        },
+        "checkout_world": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "globe",
+            "title": "Worldwide Shipping"
+          }
+        },
+        "inc_0": {
+          "type": "included",
+          "settings": {
+            "icon": "book",
+            "title": "Reconstitution Guide",
+            "text": "How to prepare your peptide safely.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_1": {
+          "type": "included",
+          "settings": {
+            "icon": "dropper",
+            "title": "Research Dosing Guide",
+            "text": "Recommended research dosage protocols.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_2": {
+          "type": "included",
+          "settings": {
+            "icon": "certificate",
+            "title": "Clinical Research Digest",
+            "text": "Latest clinical research and key findings.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_3": {
+          "type": "included",
+          "settings": {
+            "icon": "dna",
+            "title": "Mechanism of Action",
+            "text": "Simple visual explanation of how it works.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "mechanism_receptor": {
+          "type": "receptor",
+          "settings": {
+            "icon": "molecule",
+            "title": "Pituitary GHRH Receptor",
+            "text": "Tesamorelin is studied as a stabilized synthetic GHRH analogue that binds the pituitary GHRH receptor and initiates receptor-linked intracellular signalling."
+          }
+        },
+        "mechanism_gh": {
+          "type": "receptor",
+          "settings": {
+            "icon": "dna",
+            "title": "Pulsatile GH Release",
+            "text": "Receptor activation is investigated for stimulation of endogenous, pulsatile growth-hormone secretion rather than delivery of growth hormone itself."
+          }
+        },
+        "mechanism_igf": {
+          "type": "receptor",
+          "settings": {
+            "icon": "flask",
+            "title": "Downstream IGF-1 Axis",
+            "text": "Research evaluates downstream IGF-1 production within the hypothalamic–pituitary–somatomedin axis and its context-dependent biological effects."
+          }
+        },
+        "mechanism_lipid": {
+          "type": "receptor",
+          "settings": {
+            "icon": "shield",
+            "title": "Lipid Metabolism",
+            "text": "Experimental and clinical research examines lipolysis, lipid mobilization, body composition and visceral adipose tissue without implying guaranteed weight loss."
+          }
+        },
+        "app_axis": {
+          "type": "application",
+          "settings": {
+            "icon": "molecule",
+            "title": "GH/IGF-1 Signalling",
+            "text": "Pituitary GHRH-receptor activation and downstream somatomedin-axis responses."
+          }
+        },
+        "app_pulsatility": {
+          "type": "application",
+          "settings": {
+            "icon": "dna",
+            "title": "Endogenous Pulsatility",
+            "text": "Temporal patterns of endogenous GH release in controlled research models."
+          }
+        },
+        "app_lipid": {
+          "type": "application",
+          "settings": {
+            "icon": "flame",
+            "title": "Lipid Metabolism",
+            "text": "Lipolysis and lipid mobilization assessed under model-specific conditions."
+          }
+        },
+        "app_composition": {
+          "type": "application",
+          "settings": {
+            "icon": "clipboard",
+            "title": "Body Composition",
+            "text": "Compartment-specific observations interpreted separately from total body-weight change."
+          }
+        },
+        "app_visceral": {
+          "type": "application",
+          "settings": {
+            "icon": "flask",
+            "title": "Visceral Adipose Tissue",
+            "text": "Clinical and experimental measurements evaluated within their specific evidence context."
+          }
+        },
+        "faq_0": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Tesamorelin?",
+            "answer": "<p>Tesamorelin is a stabilized synthetic analogue of growth hormone-releasing hormone (GHRH) studied for its effects on pituitary signalling and the endogenous GH/IGF-1 axis. ELIX LABS supplies it exclusively for laboratory research.</p>"
+          }
+        },
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "What is GHRH?",
+            "answer": "<p>GHRH is a hypothalamic signalling peptide that acts at the pituitary gland to regulate pulsatile secretion of endogenous growth hormone.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "How does Tesamorelin interact with the GHRH receptor?",
+            "answer": "<p>Tesamorelin is studied as a ligand of the pituitary GHRH receptor. Receptor engagement activates GHRH-linked intracellular pathways associated with endogenous growth-hormone release.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "How does Tesamorelin influence GH and IGF-1 signalling?",
+            "answer": "<p>Research examines whether pituitary GHRH-receptor activation increases pulsatile endogenous GH secretion, which can influence downstream IGF-1 production. Responses depend on the model and experimental or clinical context.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Tesamorelin the same as growth hormone?",
+            "answer": "<p>No. Tesamorelin is a GHRH analogue investigated for stimulation of endogenous pituitary GH release; it is not directly administered growth hormone.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "Why is Tesamorelin studied in relation to visceral adipose tissue?",
+            "answer": "<p>The GH/IGF-1 axis can influence lipid metabolism, lipolysis and body composition. Studies therefore measure visceral adipose tissue in defined populations and controlled settings, without establishing a universal effect.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq",
+          "settings": {
+            "question": "Does research on visceral fat automatically indicate overall weight loss?",
+            "answer": "<p>No. A change in one fat compartment does not necessarily produce or predict a comparable change in total body weight. Each outcome must be interpreted independently within the study design.</p>"
+          }
+        },
+        "faq_7": {
+          "type": "faq",
+          "settings": {
+            "question": "How does Tesamorelin differ from Retatrutide?",
+            "answer": "<p>Tesamorelin primarily activates the GHRH receptor and modulates endogenous GH/IGF-1 signalling. Retatrutide is investigated as an agonist of GLP-1, GIP and glucagon receptors, so their mechanisms and evidence bases are distinct.</p>"
+          }
+        },
+        "faq_8": {
+          "type": "faq",
+          "settings": {
+            "question": "How does Tesamorelin differ from Cagrilintide?",
+            "answer": "<p>Tesamorelin is a GHRH analogue, whereas Cagrilintide is an amylin analogue studied at amylin-receptor complexes. Tesamorelin is not an amylin analogue, and neither comparison implies equivalent outcomes.</p>"
+          }
+        },
+        "faq_9": {
+          "type": "faq",
+          "settings": {
+            "question": "How should lyophilized Tesamorelin be stored for research?",
+            "answer": "<p>Keep sealed lyophilized material refrigerated at 2–8°C, dry and protected from light. Follow the batch documentation and the laboratory’s validated handling and stability procedures.</p>"
+          }
+        },
+        "faq_10": {
+          "type": "faq",
+          "settings": {
+            "question": "Is the ELIX LABS product intended for human use?",
+            "answer": "<p>No. This ELIX LABS product is exclusively for laboratory research and is not for human or veterinary use, diagnosis, treatment or consumption. It must not be treated as equivalent to an authorized pharmaceutical product.</p>"
+          }
+        },
+        "faq_11": {
+          "type": "faq",
+          "settings": {
+            "question": "What documentation is included with the product?",
+            "answer": "<p>The product includes access to the four listed research resources and available batch-specific analytical documentation, including the Certificate of Analysis.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "badge_lab",
+        "badge_cold",
+        "badge_coa",
+        "checkout_secure",
+        "checkout_pack",
+        "checkout_world",
+        "mechanism_receptor",
+        "mechanism_gh",
+        "mechanism_igf",
+        "mechanism_lipid",
+        "app_axis",
+        "app_pulsatility",
+        "app_lipid",
+        "app_composition",
+        "app_visceral",
+        "inc_0",
+        "inc_1",
+        "inc_2",
+        "inc_3",
+        "faq_0",
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7",
+        "faq_8",
+        "faq_9",
+        "faq_10",
+        "faq_11"
+      ],
+      "settings": {
+        "products_label": "Weight Management",
+        "subtitle": "Stabilized Synthetic GHRH Analogue | Research Grade | Lyophilized Powder",
+        "accent_color": "#a72bff",
+        "accent_secondary": "#087dff",
+        "glow_color": "#ed24bd",
+        "border_color": "rgba(137, 113, 221, .24)",
+        "mechanism_title": "Mechanism of Action",
+        "mechanism_alt": "Tesamorelin mechanism of action research diagram showing pituitary GHRH receptor and GH/IGF-1 signalling",
+        "mechanism_intro": "Tesamorelin is a stabilized synthetic GHRH analogue studied for pituitary GHRH-receptor activation, receptor-linked intracellular signalling, pulsatile endogenous growth-hormone release and downstream IGF-1 production. Preclinical observations on lipid mobilization and clinical measurements of body composition or visceral adipose tissue must be interpreted within their specific models and populations; a change in visceral fat does not automatically indicate general weight loss. Tesamorelin is not a GLP-1, GIP or glucagon receptor agonist, is not an amylin analogue, and is not directly administered growth hormone. Regulated pharmaceutical specialties may have jurisdiction-specific authorized indications, but the ELIX LABS research product is not equivalent to an approved medicine and is supplied exclusively for laboratory research.",
+        "applications_title": "Tesamorelin Research Overview",
+        "included_title": "What’s Included",
+        "faq_title": "Tesamorelin FAQ"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
