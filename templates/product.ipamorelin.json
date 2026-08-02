@@ -1,0 +1,304 @@
+/*
+ * Ipamorelin product template. Assign only to the Shopify product with the ipamorelin handle.
+ * Its isolated section preserves the approved CJC-1295 red visual system.
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product-ipamorelin",
+      "blocks": {
+        "badge_lab": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "flask",
+            "title": "Third-Party Tested"
+          }
+        },
+        "badge_cold": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "snowflake",
+            "title": "Cold Chain Shipping"
+          }
+        },
+        "badge_coa": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "certificate",
+            "title": "COA Included"
+          }
+        },
+        "checkout_secure": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "lock",
+            "title": "Secure Checkout"
+          }
+        },
+        "checkout_pack": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "box",
+            "title": "Discreet Packaging"
+          }
+        },
+        "checkout_world": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "globe",
+            "title": "Worldwide Shipping"
+          }
+        },
+        "mechanism_ghsr": {
+          "type": "receptor",
+          "settings": {
+            "icon": "dna",
+            "title": "GHS-R1a Interaction",
+            "text": "Ipamorelin is studied primarily as an agonist of GHS-R1a, also called the ghrelin receptor."
+          }
+        },
+        "mechanism_pituitary": {
+          "type": "receptor",
+          "settings": {
+            "icon": "molecule",
+            "title": "Pulsatile GH Release",
+            "text": "Experimental models examine receptor signalling associated with pulsatile pituitary growth-hormone release."
+          }
+        },
+        "mechanism_somatotropic": {
+          "type": "receptor",
+          "settings": {
+            "icon": "flask",
+            "title": "Somatotropic Axis",
+            "text": "Research evaluates downstream GH and possible indirect IGF-1 signalling without equating either with a clinical outcome."
+          }
+        },
+        "mechanism_selectivity": {
+          "type": "receptor",
+          "settings": {
+            "icon": "shield",
+            "title": "Reported Selectivity",
+            "text": "Pharmacology studies report greater receptor-response selectivity than some earlier GH secretagogues; significance remains model-dependent."
+          }
+        },
+        "app_receptor": {
+          "type": "application",
+          "settings": {
+            "icon": "molecule",
+            "title": "Ghrelin-Receptor Signalling",
+            "text": "In vitro work characterizes binding and signalling at GHS-R1a; these mechanistic observations do not establish an approved medical indication."
+          }
+        },
+        "app_axis": {
+          "type": "application",
+          "settings": {
+            "icon": "dna",
+            "title": "GH–IGF-1 Axis Research",
+            "text": "Preclinical and limited human research may measure GH release and downstream IGF-1-related signals under controlled conditions."
+          }
+        },
+        "app_metabolism": {
+          "type": "application",
+          "settings": {
+            "icon": "flame",
+            "title": "Metabolic Models",
+            "text": "Energy metabolism and body-composition markers are research endpoints, not evidence of guaranteed fat loss or muscle gain."
+          }
+        },
+        "app_tissues": {
+          "type": "application",
+          "settings": {
+            "icon": "clipboard",
+            "title": "Tissue Research",
+            "text": "Preclinical models explore tissue renewal and recovery hypotheses; direct repair effects in humans should not be inferred."
+          }
+        },
+        "app_comparison": {
+          "type": "application",
+          "settings": {
+            "icon": "flask",
+            "title": "Distinct from CJC-1295",
+            "text": "Ipamorelin targets the ghrelin-receptor pathway. CJC-1295 is associated with GHRH signalling, so the compounds do not act at the same receptor."
+          }
+        },
+        "inc_reconstitution": {
+          "type": "included",
+          "settings": {
+            "icon": "book",
+            "title": "Reconstitution Guide",
+            "text": "How to prepare your peptide safely.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_dosing": {
+          "type": "included",
+          "settings": {
+            "icon": "dropper",
+            "title": "Research Dosing Guide",
+            "text": "Recommended research dosage protocols.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_digest": {
+          "type": "included",
+          "settings": {
+            "icon": "certificate",
+            "title": "Clinical Research Digest",
+            "text": "Latest clinical research and key findings.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_mechanism": {
+          "type": "included",
+          "settings": {
+            "icon": "dna",
+            "title": "Mechanism of Action",
+            "text": "Simple visual explanation of how it works.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "faq_0": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Ipamorelin?",
+            "answer": "<p>Ipamorelin is a synthetic pentapeptide studied as a growth-hormone secretagogue and selective agonist of GHS-R1a. ELIX LABS supplies it exclusively as an experimental research compound.</p>"
+          }
+        },
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the GHS-R1a receptor?",
+            "answer": "<p>GHS-R1a is the growth-hormone secretagogue receptor, commonly called the ghrelin receptor. It is a signalling receptor involved in neuroendocrine and metabolic research.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "How does Ipamorelin interact with the ghrelin receptor?",
+            "answer": "<p>Mechanistic studies examine Ipamorelin binding to and activating GHS-R1a. The resulting intracellular signalling can be associated with pituitary GH release in experimental systems.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "How is Ipamorelin studied in growth-hormone research?",
+            "answer": "<p>Researchers may evaluate receptor activity, the timing and magnitude of pulsatile GH release, and downstream somatotropic markers. Results vary by model, design and evidence quality.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Ipamorelin the same as growth hormone?",
+            "answer": "<p>No. Ipamorelin is a receptor agonist studied for stimulating endogenous GH release; it is not growth hormone administered directly.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Ipamorelin a GHRH analogue?",
+            "answer": "<p>No. Ipamorelin is studied through GHS-R1a, whereas GHRH analogues act through the GHRH receptor.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq",
+          "settings": {
+            "question": "How does Ipamorelin differ from CJC-1295?",
+            "answer": "<p>Ipamorelin is associated with the ghrelin-receptor pathway. CJC-1295 is associated with the GHRH pathway, so they do not act on the same receptor.</p>"
+          }
+        },
+        "faq_7": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the relationship between Ipamorelin, GH and IGF-1?",
+            "answer": "<p>GHS-R1a activation may stimulate experimental GH release, which can influence downstream IGF-1 signalling. That sequence is indirect and depends on the biological model and study conditions.</p>"
+          }
+        },
+        "faq_8": {
+          "type": "faq",
+          "settings": {
+            "question": "Does growth-hormone release automatically indicate muscle growth?",
+            "answer": "<p>No. A measured increase in GH release does not by itself demonstrate increased muscle mass. Body-composition outcomes require separate, appropriately controlled evidence.</p>"
+          }
+        },
+        "faq_9": {
+          "type": "faq",
+          "settings": {
+            "question": "What does the reported selectivity of Ipamorelin mean?",
+            "answer": "<p>It refers to pharmacology findings suggesting a more focused GH-secretagogue response than some earlier compounds. It does not establish safety, efficacy or an approved therapeutic use.</p>"
+          }
+        },
+        "faq_10": {
+          "type": "faq",
+          "settings": {
+            "question": "How should lyophilized Ipamorelin be stored for research?",
+            "answer": "<p>Keep the sealed lyophilized material refrigerated at 2–8°C, protected from light and moisture, and follow the batch documentation and laboratory handling requirements.</p>"
+          }
+        },
+        "faq_11": {
+          "type": "faq",
+          "settings": {
+            "question": "Is the ELIX LABS product intended for human use?",
+            "answer": "<p>No. It is supplied exclusively for laboratory research and is not intended for human or veterinary use, diagnosis, treatment or any approved medical indication.</p>"
+          }
+        },
+        "faq_12": {
+          "type": "faq",
+          "settings": {
+            "question": "What documentation is included with the product?",
+            "answer": "<p>The order includes the four listed research resources and batch-related analytical documentation where applicable. Consult the supplied documents for laboratory handling and traceability information.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "badge_lab",
+        "badge_cold",
+        "badge_coa",
+        "checkout_secure",
+        "checkout_pack",
+        "checkout_world",
+        "mechanism_ghsr",
+        "mechanism_pituitary",
+        "mechanism_somatotropic",
+        "mechanism_selectivity",
+        "app_receptor",
+        "app_axis",
+        "app_metabolism",
+        "app_tissues",
+        "app_comparison",
+        "inc_reconstitution",
+        "inc_dosing",
+        "inc_digest",
+        "inc_mechanism",
+        "faq_0",
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7",
+        "faq_8",
+        "faq_9",
+        "faq_10",
+        "faq_11",
+        "faq_12"
+      ],
+      "settings": {
+        "products_label": "Muscle & Performance",
+        "subtitle": "Selective GHS-R1a Agonist | Research Grade | Lyophilized Pentapeptide",
+        "accent_color": "#E31B23",
+        "accent_secondary": "#B51218",
+        "glow_color": "#FF4A52",
+        "border_color": "rgba(227,27,35,.28)",
+        "mechanism_title": "Mechanism of Action",
+        "mechanism_intro": "Ipamorelin is a synthetic pentapeptide studied as a selective growth-hormone secretagogue receptor agonist. It acts primarily through GHS-R1a, the ghrelin receptor, and is not a GHRH analogue or directly administered growth hormone. Research examines pulsatile pituitary GH release and downstream somatotropic signalling; findings depend on the model, experimental conditions and quality of the available evidence.",
+        "applications_title": "Ipamorelin Research Overview",
+        "included_title": "What’s Included",
+        "faq_title": "Ipamorelin FAQ"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
