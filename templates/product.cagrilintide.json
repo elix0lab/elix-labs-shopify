@@ -1,0 +1,289 @@
+/*
+ * Cagrilintide product template. Assign only to the existing Shopify product with handle cagrilintide.
+ * It intentionally reuses the approved Retatrutide architecture and blue-violet identity.
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product-cagrilintide",
+      "blocks": {
+        "badge_lab": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "flask",
+            "title": "Third-Party Tested"
+          }
+        },
+        "badge_cold": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "snowflake",
+            "title": "Cold Chain Shipping"
+          }
+        },
+        "badge_coa": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "certificate",
+            "title": "COA Included"
+          }
+        },
+        "checkout_secure": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "lock",
+            "title": "Secure Checkout"
+          }
+        },
+        "checkout_pack": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "box",
+            "title": "Discreet Packaging"
+          }
+        },
+        "checkout_world": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "globe",
+            "title": "Worldwide Shipping"
+          }
+        },
+        "mechanism_receptor": {
+          "type": "receptor",
+          "settings": {
+            "icon": "molecule",
+            "title": "Amylin-Receptor Signalling",
+            "text": "Cagrilintide is studied at amylin-receptor complexes formed by the calcitonin receptor and receptor-activity-modifying proteins (RAMPs)."
+          }
+        },
+        "mechanism_satiety": {
+          "type": "receptor",
+          "settings": {
+            "icon": "dna",
+            "title": "Central Satiety Pathways",
+            "text": "Experimental research examines signalling in brain regions involved in satiation and the regulation of food intake."
+          }
+        },
+        "mechanism_gastric": {
+          "type": "receptor",
+          "settings": {
+            "icon": "flask",
+            "title": "Gastric-Emptying Research",
+            "text": "Studies assess effects on gastric emptying as one component of the broader amylin-associated research profile."
+          }
+        },
+        "mechanism_duration": {
+          "type": "receptor",
+          "settings": {
+            "icon": "shield",
+            "title": "Prolonged Activity",
+            "text": "Acylation was developed to extend exposure and activity relative to endogenous amylin under investigated conditions."
+          }
+        },
+        "app_signalling": {
+          "type": "application",
+          "settings": {
+            "icon": "molecule",
+            "title": "Amylin Signalling",
+            "text": "Calcitonin-receptor and RAMP complexes in biochemical and cellular models."
+          }
+        },
+        "app_satiety": {
+          "type": "application",
+          "settings": {
+            "icon": "dna",
+            "title": "Satiation Research",
+            "text": "Central pathways associated with satiation and experimental food-intake regulation."
+          }
+        },
+        "app_gastric": {
+          "type": "application",
+          "settings": {
+            "icon": "flask",
+            "title": "Gastric Physiology",
+            "text": "Gastric-emptying effects assessed under controlled research conditions."
+          }
+        },
+        "app_weight": {
+          "type": "application",
+          "settings": {
+            "icon": "clipboard",
+            "title": "Body-Weight Research",
+            "text": "Preclinical findings and clinical-trial data evaluated separately from approved indications."
+          }
+        },
+        "app_combination": {
+          "type": "application",
+          "settings": {
+            "icon": "drop",
+            "title": "Complementary Pathways",
+            "text": "Scientific study of amylin pathways alongside GLP-1-based mechanisms."
+          }
+        },
+        "inc_0": {
+          "type": "included",
+          "settings": {
+            "icon": "book",
+            "title": "Reconstitution Guide",
+            "text": "How to prepare your peptide safely.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_1": {
+          "type": "included",
+          "settings": {
+            "icon": "dropper",
+            "title": "Research Dosing Guide",
+            "text": "Recommended research dosage protocols.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_2": {
+          "type": "included",
+          "settings": {
+            "icon": "certificate",
+            "title": "Clinical Research Digest",
+            "text": "Latest clinical research and key findings.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_3": {
+          "type": "included",
+          "settings": {
+            "icon": "dna",
+            "title": "Mechanism of Action",
+            "text": "Simple visual explanation of how it works.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "faq_0": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Cagrilintide?",
+            "answer": "<p>Cagrilintide is a long-acting acylated analogue of amylin developed for scientific investigation. It remains experimental, and the ELIX LABS material is supplied exclusively for laboratory research.</p>"
+          }
+        },
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "What is amylin?",
+            "answer": "<p>Amylin is a peptide hormone co-secreted with insulin by pancreatic beta cells. It participates in physiological signalling related to satiation, food intake and gastric emptying.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "How does Cagrilintide interact with amylin receptors?",
+            "answer": "<p>Research indicates that Cagrilintide primarily activates amylin-receptor complexes assembled from the calcitonin receptor and receptor-activity-modifying proteins, or RAMPs. The biological consequences remain an active area of study.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "How is Cagrilintide studied in weight-management research?",
+            "answer": "<p>Preclinical models examine food intake, satiation, gastric physiology and body-weight regulation, while clinical trials evaluate outcomes in people under controlled protocols. Neither evidence category makes this research product an approved treatment.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Cagrilintide a GLP-1 receptor agonist?",
+            "answer": "<p>No. Cagrilintide acts primarily as an amylin analogue rather than a GLP-1 receptor agonist. Research may combine it with GLP-1-based compounds to examine complementary pathways.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "How does Cagrilintide differ from Retatrutide?",
+            "answer": "<p>Cagrilintide primarily targets amylin-receptor signalling. Retatrutide is studied as an agonist of GIP, GLP-1 and glucagon receptors, so the compounds have distinct mechanisms and evidence bases.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq",
+          "settings": {
+            "question": "Why is Cagrilintide studied in combination with GLP-1-based compounds?",
+            "answer": "<p>Researchers investigate whether amylin-associated satiation pathways and GLP-1-based signalling may provide complementary biological effects. Combination-trial observations do not establish an approved use for this product.</p>"
+          }
+        },
+        "faq_7": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the current research status of Cagrilintide?",
+            "answer": "<p>Cagrilintide remains an investigational compound studied in preclinical work and clinical trials. Regulatory status and any authorized indications can vary by jurisdiction and should be verified with the relevant authority.</p>"
+          }
+        },
+        "faq_8": {
+          "type": "faq",
+          "settings": {
+            "question": "How should lyophilized Cagrilintide be stored for research?",
+            "answer": "<p>Keep the sealed lyophilized material refrigerated at 2–8°C, dry and protected from light. Follow the batch documentation and the laboratory’s validated handling and stability procedures.</p>"
+          }
+        },
+        "faq_9": {
+          "type": "faq",
+          "settings": {
+            "question": "Is this product intended for human use?",
+            "answer": "<p>No. This ELIX LABS product is intended exclusively for laboratory research and is not for human or veterinary use, diagnosis, treatment or consumption.</p>"
+          }
+        },
+        "faq_10": {
+          "type": "faq",
+          "settings": {
+            "question": "What documentation is included with the product?",
+            "answer": "<p>The product includes access to the four listed research resources and available batch-specific analytical documentation, including the Certificate of Analysis.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "badge_lab",
+        "badge_cold",
+        "badge_coa",
+        "checkout_secure",
+        "checkout_pack",
+        "checkout_world",
+        "mechanism_receptor",
+        "mechanism_satiety",
+        "mechanism_gastric",
+        "mechanism_duration",
+        "app_signalling",
+        "app_satiety",
+        "app_gastric",
+        "app_weight",
+        "app_combination",
+        "inc_0",
+        "inc_1",
+        "inc_2",
+        "inc_3",
+        "faq_0",
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7",
+        "faq_8",
+        "faq_9",
+        "faq_10"
+      ],
+      "settings": {
+        "products_label": "Weight Management",
+        "subtitle": "Long-Acting Acylated Amylin Analogue | Research Grade | Lyophilized Powder",
+        "accent_color": "#a72bff",
+        "accent_secondary": "#087dff",
+        "glow_color": "#ed24bd",
+        "border_color": "rgba(137, 113, 221, .24)",
+        "mechanism_title": "Mechanism of Action",
+        "mechanism_alt": "Cagrilintide mechanism of action research diagram showing amylin-receptor signalling",
+        "mechanism_intro": "Cagrilintide is a long-acting acylated amylin analogue developed to prolong activity relative to endogenous amylin. Research examines amylin-receptor signalling, central satiety pathways, satiation, food-intake regulation and gastric emptying. Proposed biological mechanisms, preclinical findings and clinical-trial observations are distinct evidence categories and do not constitute an officially approved medical indication.",
+        "applications_title": "Cagrilintide Research Overview",
+        "included_title": "What’s Included",
+        "faq_title": "Cagrilintide FAQ"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
