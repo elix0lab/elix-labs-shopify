@@ -1,0 +1,319 @@
+/*
+ * Dedicated DIHEXA product template. Assign only to the Shopify product with handle dihexa.
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product-dihexa",
+      "blocks": {
+        "badge_lab": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "flask",
+            "title": "Third-Party Tested"
+          }
+        },
+        "badge_cold": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "snowflake",
+            "title": "Cold Chain Shipping"
+          }
+        },
+        "badge_coa": {
+          "type": "trust_badge",
+          "settings": {
+            "icon": "certificate",
+            "title": "COA Included"
+          }
+        },
+        "checkout_secure": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "lock",
+            "title": "Secure Checkout"
+          }
+        },
+        "checkout_pack": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "box",
+            "title": "Discreet Packaging"
+          }
+        },
+        "checkout_world": {
+          "type": "checkout_trust",
+          "settings": {
+            "icon": "globe",
+            "title": "Worldwide Shipping"
+          }
+        },
+        "mechanism_hgf": {
+          "type": "receptor",
+          "settings": {
+            "icon": "molecule",
+            "title": "HGF/c-Met Modulation",
+            "text": "Dihexa has been studied as a positive modulator of HGF/c-Met signaling in preclinical experimental systems."
+          }
+        },
+        "mechanism_met": {
+          "type": "receptor",
+          "settings": {
+            "icon": "dna",
+            "title": "c-Met Receptor",
+            "text": "c-Met is a receptor tyrosine kinase associated with cellular growth, survival, motility and differentiation signaling."
+          }
+        },
+        "mechanism_pi3k": {
+          "type": "receptor",
+          "settings": {
+            "icon": "flask",
+            "title": "PI3K/AKT Signaling",
+            "text": "Research has explored PI3K/AKT as one downstream pathway associated with HGF-driven c-Met activation."
+          }
+        },
+        "mechanism_mapk": {
+          "type": "receptor",
+          "settings": {
+            "icon": "shield",
+            "title": "MAPK/ERK Signaling",
+            "text": "MAPK/ERK signaling is also investigated downstream of c-Met in model-dependent cellular responses."
+          }
+        },
+        "app_origin": {
+          "type": "application",
+          "settings": {
+            "icon": "molecule",
+            "title": "Angiotensin IV Derivative",
+            "text": "A synthetic research compound developed from angiotensin IV-related chemistry."
+          }
+        },
+        "app_synapses": {
+          "type": "application",
+          "settings": {
+            "icon": "dna",
+            "title": "Synaptogenesis Research",
+            "text": "Preclinical models suggest associations with the formation of new synaptic connections."
+          }
+        },
+        "app_spines": {
+          "type": "application",
+          "settings": {
+            "icon": "flask",
+            "title": "Dendritic Spine Models",
+            "text": "Research has explored changes in neuronal protrusions involved in synaptic connectivity."
+          }
+        },
+        "app_plasticity": {
+          "type": "application",
+          "settings": {
+            "icon": "clipboard",
+            "title": "Neural Plasticity Research",
+            "text": "Experimental work investigates model-specific adaptation of neuronal structure and signaling."
+          }
+        },
+        "app_evidence": {
+          "type": "application",
+          "settings": {
+            "icon": "shield",
+            "title": "Preclinical Evidence",
+            "text": "Human clinical efficacy and safety have not been established."
+          }
+        },
+        "inc_0": {
+          "type": "included",
+          "settings": {
+            "icon": "book",
+            "title": "Reconstitution Guide",
+            "text": "How to prepare your peptide safely.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_1": {
+          "type": "included",
+          "settings": {
+            "icon": "dropper",
+            "title": "Research Dosing Guide",
+            "text": "Recommended research dosage protocols.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_2": {
+          "type": "included",
+          "settings": {
+            "icon": "certificate",
+            "title": "Clinical Research Digest",
+            "text": "Latest clinical research and key findings.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "inc_3": {
+          "type": "included",
+          "settings": {
+            "icon": "dna",
+            "title": "Mechanism of Action",
+            "text": "Simple visual explanation of how it works.",
+            "link_label": "PDF Guide"
+          }
+        },
+        "faq_0": {
+          "type": "faq",
+          "settings": {
+            "question": "What is Dihexa?",
+            "answer": "<p>Dihexa is a synthetic angiotensin IV-derived compound investigated in preclinical research involving HGF/c-Met signaling, synaptic biology and neural plasticity.</p>"
+          }
+        },
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Dihexa a peptide?",
+            "answer": "<p>Dihexa is commonly described as a synthetic peptidomimetic compound derived from angiotensin IV chemistry rather than a conventional therapeutic peptide product.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "How is Dihexa related to angiotensin IV?",
+            "answer": "<p>Its molecular design was developed from angiotensin IV-related research, with modifications studied for distinct stability and signaling properties in experimental models.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "What is hepatocyte growth factor (HGF)?",
+            "answer": "<p>HGF is a signaling protein that binds c-Met and participates in context-dependent pathways involving cell growth, survival, motility and differentiation.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the c-Met receptor?",
+            "answer": "<p>c-Met is a receptor tyrosine kinase. HGF binding can activate intracellular signaling networks, including PI3K/AKT and MAPK/ERK, depending on the model and cell type.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "How is Dihexa studied in relation to HGF/c-Met signaling?",
+            "answer": "<p>Preclinical research has investigated Dihexa as a positive modulator of HGF/c-Met signaling. These findings do not establish a clinical effect in humans.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq",
+          "settings": {
+            "question": "What is synaptogenesis?",
+            "answer": "<p>Synaptogenesis is the formation of new connections between neurons. It is measured through defined structural and functional endpoints in experimental research.</p>"
+          }
+        },
+        "faq_7": {
+          "type": "faq",
+          "settings": {
+            "question": "How is Dihexa studied in neural plasticity research?",
+            "answer": "<p>Laboratory and animal models have explored Dihexa in relation to synaptic formation, dendritic structure and adaptive neuronal signaling. The evidence remains primarily preclinical.</p>"
+          }
+        },
+        "faq_8": {
+          "type": "faq",
+          "settings": {
+            "question": "What are dendritic spines?",
+            "answer": "<p>Dendritic spines are small neuronal protrusions that receive many excitatory synaptic inputs and are studied as structural markers of synaptic organization and plasticity.</p>"
+          }
+        },
+        "faq_9": {
+          "type": "faq",
+          "settings": {
+            "question": "What is the relationship between Dihexa and PI3K/AKT signaling?",
+            "answer": "<p>PI3K/AKT is one pathway associated with c-Met activation. Research has examined whether Dihexa-related modulation of HGF/c-Met signaling influences this pathway under controlled preclinical conditions.</p>"
+          }
+        },
+        "faq_10": {
+          "type": "faq",
+          "settings": {
+            "question": "Has Dihexa been clinically proven to improve cognition in humans?",
+            "answer": "<p>No. A cognitive benefit, clinical efficacy and clinical safety have not been established in humans. Available findings are predominantly preclinical.</p>"
+          }
+        },
+        "faq_11": {
+          "type": "faq",
+          "settings": {
+            "question": "Is Dihexa an approved medicine?",
+            "answer": "<p>No. The ELIX LABS research compound is not presented as an approved medicine and must not be used to diagnose, treat, cure or prevent disease.</p>"
+          }
+        },
+        "faq_12": {
+          "type": "faq",
+          "settings": {
+            "question": "How should Dihexa be stored for laboratory research?",
+            "answer": "<p>Store the sealed research material as directed by its batch documentation, protected from light, moisture and inappropriate temperature variation. Laboratories should follow validated handling procedures.</p>"
+          }
+        },
+        "faq_13": {
+          "type": "faq",
+          "settings": {
+            "question": "Is the ELIX LABS product intended for human use?",
+            "answer": "<p>No. For laboratory research use only. Not for human consumption. Human clinical efficacy and safety have not been established.</p>"
+          }
+        },
+        "faq_14": {
+          "type": "faq",
+          "settings": {
+            "question": "What documentation is included with the product?",
+            "answer": "<p>The product includes access to the four listed research resources and available batch-specific analytical documentation, including the Certificate of Analysis.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "badge_lab",
+        "badge_cold",
+        "badge_coa",
+        "checkout_secure",
+        "checkout_pack",
+        "checkout_world",
+        "mechanism_hgf",
+        "mechanism_met",
+        "mechanism_pi3k",
+        "mechanism_mapk",
+        "app_origin",
+        "app_synapses",
+        "app_spines",
+        "app_plasticity",
+        "app_evidence",
+        "inc_0",
+        "inc_1",
+        "inc_2",
+        "inc_3",
+        "faq_0",
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7",
+        "faq_8",
+        "faq_9",
+        "faq_10",
+        "faq_11",
+        "faq_12",
+        "faq_13",
+        "faq_14"
+      ],
+      "settings": {
+        "products_label": "Nootropics & Cognitive",
+        "subtitle": "Angiotensin IV-Derived Research Compound | Preclinical HGF/c-Met Signaling Research",
+        "accent_color": "#00E5FF",
+        "accent_secondary": "#00B8D9",
+        "glow_color": "#39FF88",
+        "border_color": "rgba(0,229,255,.28)",
+        "mechanism_title": "Mechanism of Action",
+        "mechanism_intro": "Dihexa is a synthetic compound derived from angiotensin IV and studied as a positive modulator of hepatocyte growth factor (HGF)/c-Met signaling. The c-Met receptor participates in context-dependent cellular signaling, including pathways involving PI3K/AKT and MAPK/ERK. Preclinical research has explored synaptogenesis, dendritic spines and neural plasticity; however, clinical efficacy and safety have not been established in humans. DIHEXA is not presented as a medicine. For laboratory research use only. Not for human consumption.",
+        "applications_title": "Dihexa Research Overview",
+        "included_title": "What’s Included",
+        "faq_title": "Dihexa FAQ"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

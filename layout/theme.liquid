@@ -15,16 +15,21 @@
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
 
-    <title>
-      {{ page_title }}
-      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
-      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
-      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
-    </title>
+    {%- if request.page_type == 'product' and product.handle == 'dihexa' -%}
+      <title>Dihexa Research Compound | ELIX LABS</title>
+      <meta name="description" content="Explore ELIX LABS Dihexa, a research compound investigated in preclinical HGF/c-Met signaling, synaptogenesis and neural plasticity studies. For laboratory research use only.">
+    {%- else -%}
+      <title>
+        {{ page_title }}
+        {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+        {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+        {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+      </title>
 
-    {% if page_description %}
-      <meta name="description" content="{{ page_description | escape }}">
-    {% endif %}
+      {% if page_description %}
+        <meta name="description" content="{{ page_description | escape }}">
+      {% endif %}
+    {%- endif -%}
 
     {% render 'meta-tags' %}
 
