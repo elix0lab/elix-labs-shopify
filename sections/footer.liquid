@@ -25,12 +25,43 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  .elix-premium-footer {
+    position: relative;
+    overflow: hidden;
+    color: #aeb8d1;
+    background: radial-gradient(circle at 82% 5%, rgba(77, 57, 145, .18), transparent 32%), linear-gradient(135deg, #050811 0%, #080d19 52%, #100b1d 100%);
+    border-top: 1px solid rgba(112, 128, 255, .42);
+    box-shadow: 0 -8px 30px rgba(49, 62, 143, .12);
+  }
+  .elix-premium-footer .footer-block__heading { color: #f5f7ff; letter-spacing: .04em; }
+  .elix-premium-footer .footer-block__details-content,
+  .elix-premium-footer .copyright__content,
+  .elix-premium-footer .copyright__content a { color: #aeb8d1; }
+  .elix-premium-footer .list-menu__item--link:hover,
+  .elix-premium-footer .copyright__content a:hover { color: #aeb8ff; text-decoration-color: rgba(145, 135, 255, .7); }
+  .elix-premium-footer .footer-block__brand-info { max-width: 34rem; }
+  .elix-premium-footer .elix-footer__logo { display: block; width: min(100%, 22rem); margin-bottom: 1.8rem; color: #fff; text-decoration: none; }
+  .elix-premium-footer .elix-footer__logo img { display: block; width: 100%; height: auto; max-height: 8rem; object-fit: contain; object-position: left center; }
+  .elix-premium-footer .elix-footer__brand-name { color: #fff; font-size: 2.4rem; font-weight: 700; letter-spacing: .12em; }
+  .elix-premium-footer .elix-footer__tagline { margin: 0 0 1rem; color: #dbe1f2; }
+  .elix-premium-footer .elix-footer__notice { margin: 0; color: #9ca8c4; font-size: 1.35rem; line-height: 1.55; }
+  .elix-premium-footer .elix-footer__social-title { margin: 0 0 1.4rem; color: #f5f7ff; font-size: 1.6rem; }
+  .elix-premium-footer .list-social__link { width: 4.4rem; height: 4.4rem; margin: .3rem; border: 1px solid rgba(119, 128, 255, .44); border-radius: 50%; transition: color .2s ease, border-color .2s ease, box-shadow .2s ease; }
+  .elix-premium-footer .list-social__link:hover { color: #c4c8ff; border-color: rgba(157, 145, 255, .8); box-shadow: 0 0 16px rgba(100, 105, 255, .28); }
+  .elix-premium-footer .list-social__link:focus-visible { outline: 2px solid #aeb8ff; outline-offset: 3px; }
+  .elix-premium-footer .footer__content-bottom { border-top-color: rgba(126, 137, 201, .18); }
+  @media screen and (max-width: 749px) {
+    .elix-premium-footer .footer-block.grid__item { margin: 0 0 2.8rem; }
+    .elix-premium-footer .footer-block__details-content .list-menu__item--link { padding-block: .7rem; }
+    .elix-premium-footer .footer-block--newsletter { align-items: flex-start; }
+  }
 {%- endstyle -%}
 
-<footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+<footer class="footer elix-premium-footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
   {%- liquid
     assign has_social_icons = true
-    if settings.social_facebook_link == blank and settings.social_instagram_link == blank and settings.social_youtube_link == blank and settings.social_tiktok_link == blank and settings.social_twitter_link == blank and settings.social_pinterest_link == blank and settings.social_snapchat_link == blank and settings.social_tumblr_link == blank and settings.social_vimeo_link == blank
+    if settings.social_facebook_link == blank and settings.social_instagram_link == blank and settings.social_youtube_link == blank and settings.social_tiktok_link == blank and settings.social_twitter_link == blank and settings.social_linkedin_link == blank and settings.social_pinterest_link == blank and settings.social_snapchat_link == blank and settings.social_tumblr_link == blank and settings.social_vimeo_link == blank
       assign has_social_icons = false
     endif
 
@@ -103,31 +134,20 @@
                     {%- endif -%}
                   {%- when 'brand_information' -%}
                     <div class="footer-block__brand-info">
-                      {%- if settings.brand_image != blank -%}
-                        {%- assign brand_image_height = settings.brand_image_width
-                          | divided_by: settings.brand_image.aspect_ratio
-                        -%}
-                        <div
-                          class="footer-block__image-wrapper"
-                          style="max-width: min(100%, {{ settings.brand_image_width }}px);"
-                        >
+                      <a class="elix-footer__logo" href="{{ routes.root_url }}" aria-label="{{ shop.name | escape }}">
+                        {%- if settings.logo != blank -%}
                           {{
-                            settings.brand_image
+                            settings.logo
                             | image_url: width: 1100
                             | image_tag:
                               loading: 'lazy',
                               widths: '50, 100, 150, 200, 300, 400, 550, 800, 1100',
-                              height: brand_image_height,
-                              width: settings.brand_image_width
+                              alt: shop.name
                           }}
-                        </div>
-                      {%- endif -%}
-                      {%- if settings.brand_headline != blank -%}
-                        <h2 class="footer-block__heading rte">{{ settings.brand_headline }}</h2>
-                      {%- endif -%}
-                      {%- if settings.brand_description != blank -%}
-                        <div class="rte">{{ settings.brand_description }}</div>
-                      {%- endif -%}
+                        {%- else -%}<span class="elix-footer__brand-name">ELIX LABS</span>{%- endif -%}
+                      </a>
+                      <p class="elix-footer__tagline">Advanced Biotechnology &amp; Precision Peptide Science</p>
+                      <p class="elix-footer__notice">For laboratory research use only. Not for human consumption.</p>
                       {%- if block.settings.show_social and has_social_icons -%}
                         {%- render 'social-icons', class: 'footer__list-social' -%}
                       {%- endif -%}
@@ -169,6 +189,9 @@
             <div class="footer-block__newsletter">
               {%- if section.settings.newsletter_heading != blank -%}
                 <h2 class="footer-block__heading inline-richtext">{{ section.settings.newsletter_heading }}</h2>
+              {%- endif -%}
+              {%- if section.settings.newsletter_text != blank -%}
+                <p class="elix-footer__newsletter-text">{{ section.settings.newsletter_text | escape }}</p>
               {%- endif -%}
               {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
                 <input type="hidden" name="contact[tags]" value="newsletter">
@@ -243,6 +266,7 @@
           {%- endif -%}
 
           {%- if section.settings.show_social and has_social_icons -%}
+            <h2 class="elix-footer__social-title">Follow ELIX LABS</h2>
             {%- render 'social-icons', class: 'footer__list-social' -%}
           {%- endif -%}
         </div>
@@ -300,7 +324,7 @@
     <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
       <div class="footer__copyright caption">
         <small class="copyright__content"
-          >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
+          >&copy; {{ 'now' | date: '%Y' }} {{ shop.name | link_to: routes.root_url }}. All rights reserved.
         </small>
         <small class="copyright__content">{{ powered_by_link }}</small>
         {%- if section.settings.show_policy -%}
@@ -446,6 +470,12 @@
       "id": "newsletter_heading",
       "default": "t:sections.footer.settings.newsletter_heading.default",
       "label": "t:sections.footer.settings.newsletter_heading.label"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_text",
+      "label": "Newsletter text",
+      "default": "Receive ELIX LABS research updates and catalogue news."
     },
     {
       "type": "header",

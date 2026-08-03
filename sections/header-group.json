@@ -17,7 +17,7 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "🧬 ADVANCED BIOTECHNOLOGY & PRECISION PEPTIDE SCIENCE • 🔬 FOR LABORATORY RESEARCH USE ONLY • 🧪 NOT FOR HUMAN CONSUMPTION • ✨ EXPLORE THE ELIX LABS RESEARCH CATALOGUE",
             "link": ""
           }
         }
@@ -26,8 +26,9 @@
         "announcement-bar-0"
       ],
       "settings": {
-        "auto_rotate": false,
-        "change_slides_speed": 5,
+        "enabled": true,
+        "animate": true,
+        "speed": 28,
         "color_scheme": "scheme-1",
         "show_line_separator": true,
         "show_social": false,

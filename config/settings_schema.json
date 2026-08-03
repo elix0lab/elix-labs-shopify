@@ -1304,34 +1304,39 @@
     "name": "t:settings_schema.social-media.name",
     "settings": [
       {
-        "type": "text",
+        "type": "url",
         "id": "social_facebook_link",
         "label": "t:settings_schema.social-media.settings.social_facebook_link.label",
         "placeholder": "t:settings_schema.social-media.settings.social_facebook_link.info"
       },
       {
-        "type": "text",
+        "type": "url",
         "id": "social_instagram_link",
         "label": "t:settings_schema.social-media.settings.social_instagram_link.label",
         "placeholder": "t:settings_schema.social-media.settings.social_instagram_link.info"
       },
       {
-        "type": "text",
+        "type": "url",
         "id": "social_youtube_link",
         "label": "t:settings_schema.social-media.settings.social_youtube_link.label",
         "placeholder": "t:settings_schema.social-media.settings.social_youtube_link.info"
       },
       {
-        "type": "text",
+        "type": "url",
         "id": "social_tiktok_link",
         "label": "t:settings_schema.social-media.settings.social_tiktok_link.label",
         "placeholder": "t:settings_schema.social-media.settings.social_tiktok_link.info"
       },
       {
-        "type": "text",
+        "type": "url",
         "id": "social_twitter_link",
         "label": "t:settings_schema.social-media.settings.social_twitter_link.label",
         "placeholder": "t:settings_schema.social-media.settings.social_twitter_link.info"
+      },
+      {
+        "type": "url",
+        "id": "social_linkedin_link",
+        "label": "LinkedIn"
       },
       {
         "type": "text",
