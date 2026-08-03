@@ -1,0 +1,118 @@
+{{ 'elix-rewards.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'elix-rewards.js' | asset_url }}" defer="defer"></script>
+
+<elix-rewards class="elix-rewards" style="--er-blue: {{ section.settings.accent_blue }}; --er-violet: {{ section.settings.accent_violet }}; --er-gold: {{ section.settings.accent_gold }}; --er-bg: {{ section.settings.background }};">
+  <header class="elix-rewards__hero elix-rewards__wrap">
+    <p class="elix-rewards__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+    <h1>{{ section.settings.hero_title | escape }}</h1>
+    <p class="elix-rewards__lead">{{ section.settings.hero_text | escape }}</p>
+    <a class="elix-rewards__button" href="#your-elix-rewards">{{ section.settings.cta_label | escape }}</a>
+    <ul class="elix-rewards__benefits" aria-label="ELIX Rewards benefits">
+      <li><strong>10%</strong> OFF FOR FRIENDS</li><li><strong>10%</strong> BACK FOR YOU</li><li><strong>∞</strong> NO REWARD LIMIT</li>
+    </ul>
+  </header>
+
+  <main>
+    <section class="elix-rewards__section elix-rewards__wrap" aria-labelledby="how-title">
+      <div class="elix-rewards__heading"><p class="elix-rewards__eyebrow">THE REFERRAL PROGRAMME</p><h2 id="how-title">HOW IT WORKS</h2></div>
+      <ol class="elix-rewards__steps">
+        <li class="elix-rewards__card"><span>01</span><div><h3>ORDER</h3><p>Complete your first eligible ELIX order to unlock your personal referral code.</p></div></li>
+        <li class="elix-rewards__card"><span>02</span><div><h3>SHARE</h3><p>Send your personal code or referral link to friends who have never ordered from ELIX.</p></div></li>
+        <li class="elix-rewards__card"><span>03</span><div><h3>EARN</h3><p>Your friend receives 10% off their first eligible order. After validation, you receive 10% of the amount they paid in ELIX Credit.</p></div></li>
+      </ol>
+      <p class="elix-rewards__explanation">Once your first eligible order is completed, your personal referral code becomes available in your ELIX account. Share it with a friend who has never ordered from ELIX before. Your friend receives 10% off their first eligible purchase. Once the order has been paid, completed and validated, 10% of the amount actually paid is added to your ELIX Credit. Cancelled, refunded, fraudulent or self-referred orders do not generate rewards.</p>
+    </section>
+
+    <section class="elix-rewards__section elix-rewards__wrap" id="your-elix-rewards" aria-labelledby="rewards-title">
+      <div class="elix-rewards__heading"><p class="elix-rewards__eyebrow">MEMBER PREVIEW</p><h2 id="rewards-title">YOUR ELIX REWARDS</h2></div>
+      <div class="elix-rewards__dashboard elix-rewards__card">
+        <div class="elix-rewards__member"><span>Member</span><strong>SARA B.</strong><small>DEMO MEMBER</small></div>
+        <div class="elix-rewards__code"><span>Referral code</span><strong>SARA10</strong><button type="button" data-elix-copy="SARA10" data-success-message="Code copied." data-error-message="Copy unavailable. Select SARA10 above.">COPY CODE</button><span class="elix-rewards__status" aria-live="polite" data-elix-copy-status></span></div>
+        <dl class="elix-rewards__stats"><div><dt>Available credit</dt><dd>47,50 €</dd></div><div><dt>Friends invited</dt><dd>6</dd></div><div><dt>Pending</dt><dd>2</dd></div><div><dt>Validated referrals</dt><dd>4</dd></div></dl>
+        <a class="elix-rewards__button elix-rewards__button--secondary" href="mailto:?subject=Discover%20ELIX%20LABS&amp;body=Use%20my%20demo%20referral%20code%20SARA10">SHARE LINK</a>
+        <p class="elix-rewards__demo">Demo account — Live rewards will appear here once the referral programme is activated.</p>
+      </div>
+    </section>
+
+    {% if section.settings.show_leaderboard %}
+      <section class="elix-rewards__section elix-rewards__wrap" aria-labelledby="leaderboard-title">
+        <div class="elix-rewards__heading"><h2 id="leaderboard-title">{{ section.settings.leaderboard_title | escape }}</h2><p>See who is leading the ELIX community this month.</p>{% if section.settings.show_example_label %}<strong class="elix-rewards__preview">Preview Leaderboard — Example Data</strong>{% endif %}</div>
+        <div class="elix-rewards__leaderboard elix-rewards__card">
+          <table><caption class="visually-hidden">Fictitious monthly ELIX leaderboard preview</caption><thead><tr><th scope="col">Rank</th><th scope="col">Ambassador</th><th scope="col">Country</th><th scope="col">Validated referrals</th><th scope="col">ELIX Credit</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">#1</th><td>Alex M.</td><td><span role="img" aria-label="Germany flag">🇩🇪</span> Germany</td><td>86</td><td>1 247 €</td></tr>
+            <tr><th scope="row">#2</th><td>Sofia R.</td><td><span role="img" aria-label="France flag">🇫🇷</span> France</td><td>68</td><td>952 €</td></tr>
+            <tr><th scope="row">#3</th><td>Daniel K.</td><td><span role="img" aria-label="Netherlands flag">🇳🇱</span> Netherlands</td><td>52</td><td>754 €</td></tr>
+            <tr><th scope="row">#4</th><td>Marco L.</td><td><span role="img" aria-label="Italy flag">🇮🇹</span> Italy</td><td>39</td><td>546 €</td></tr>
+            <tr><th scope="row">#5</th><td>Samir B.</td><td><span role="img" aria-label="Belgium flag">🇧🇪</span> Belgium</td><td>31</td><td>434 €</td></tr>
+          </tbody></table>
+        </div>
+        <div class="elix-rewards__bonuses" aria-label="Monthly bonus ELIX Credit"><div><span>1ST PLACE</span><strong>€{{ section.settings.first_bonus }} BONUS</strong></div><div><span>2ND PLACE</span><strong>€{{ section.settings.second_bonus }} BONUS</strong></div><div><span>3RD PLACE</span><strong>€{{ section.settings.third_bonus }} BONUS</strong></div></div>
+        <p class="elix-rewards__note">Example data only. Monthly bonuses are additional ELIX Credit and remain subject to order validation.</p>
+      </section>
+    {% endif %}
+
+    <section class="elix-rewards__ambassador" aria-labelledby="ambassador-title">
+      <div class="elix-rewards__wrap">
+        <p class="elix-rewards__eyebrow">SELECTIVE PARTNERSHIPS</p><h2 id="ambassador-title">{{ section.settings.ambassador_title | newline_to_br }}</h2>
+        <p class="elix-rewards__lead">ELIX Ambassador is a selective programme for creators, educators and community leaders who want to build a long-term partnership with ELIX. Approved ambassadors can earn real commission payments by bank transfer instead of ELIX Credit.</p>
+        <div class="elix-rewards__paths"><article><h3>AUTOMATIC ELIGIBILITY</h3><p>Reach {{ section.settings.threshold }} validated referred orders within one calendar month and your account becomes eligible for an Ambassador review.</p></article><article><h3>APPLY DIRECTLY</h3><p>Already have an engaged audience? Submit your email and social media profiles. Our team will review your application and contact you to discuss a personalised collaboration.</p></article></div>
+        <form class="elix-rewards__form" data-elix-ambassador-form data-recipient="{{ section.settings.ambassador_email | escape }}" data-subject="ELIX Ambassador Programme" data-email-body="Name:&#10;Email: [EMAIL]&#10;Country:&#10;Social profiles: [SOCIALS]&#10;Community size and type:&#10;Collaboration proposal:">
+          <div><label for="AmbassadorEmail-{{ section.id }}">Email address</label><input id="AmbassadorEmail-{{ section.id }}" name="email" type="email" autocomplete="email" required></div>
+          <div><label for="AmbassadorSocials-{{ section.id }}">Instagram / TikTok / YouTube / other social links</label><textarea id="AmbassadorSocials-{{ section.id }}" name="socials" rows="3" required></textarea></div>
+          <button type="submit">APPLY TO BECOME AN AMBASSADOR</button>
+          <p>Submitting opens your email application; nothing is stored on this page.</p>
+        </form>
+        <div class="elix-rewards__direct"><strong>Prefer to contact us directly?</strong><p>Email <a href="mailto:{{ section.settings.ambassador_email | escape }}?subject=ELIX%20Ambassador%20Programme">{{ section.settings.ambassador_email | escape }}</a> with the subject “ELIX Ambassador Programme” and include links to your social media profiles. We are open to discussing personalised collaborations.</p><small>Commission rates, conditions and payment arrangements are discussed individually after acceptance.</small></div>
+      </div>
+    </section>
+
+    <section class="elix-rewards__section elix-rewards__wrap" aria-labelledby="faq-title">
+      <div class="elix-rewards__heading"><p class="elix-rewards__eyebrow">CLEAR &amp; TRANSPARENT</p><h2 id="faq-title">FREQUENTLY ASKED QUESTIONS</h2></div>
+      <div class="elix-rewards__faqs">
+        <div><h3>FAQ ELIX REWARDS</h3>
+          <details><summary>Who can join ELIX Rewards?</summary><p>Customers become eligible after completing a first eligible ELIX order, subject to the programme terms.</p></details>
+          <details><summary>When do I receive my referral code?</summary><p>It becomes available in your ELIX account after your first eligible order is completed.</p></details>
+          <details><summary>How is my 10% ELIX Credit calculated?</summary><p>It is 10% of the amount your friend actually pays on their eligible first order, after discounts and excluding refunded amounts.</p></details>
+          <details><summary>When does pending credit become available?</summary><p>After the referred order is paid, completed and validated outside the applicable cancellation and refund checks.</p></details>
+          <details><summary>Can I refer myself?</summary><p>No. Self-referrals, duplicate accounts and fraudulent activity are ineligible.</p></details>
+          <details><summary>What happens if an order is cancelled or refunded?</summary><p>No reward is issued; previously pending or awarded credit may be removed.</p></details>
+          <details><summary>Can ELIX Credit be withdrawn as cash?</summary><p>No. ELIX Credit can only be used toward eligible ELIX purchases and is not convertible into money.</p></details>
+          <details><summary>Can the 10% discount be combined with other offers?</summary><p>Only where the terms of the other offer expressly permit it. Checkout will show whether codes can be combined.</p></details>
+        </div>
+        <div><h3>FAQ ELIX AMBASSADOR</h3>
+          <details><summary>Who can become an ELIX Ambassador?</summary><p>Creators, educators and community leaders with an authentic, relevant audience may be considered.</p></details>
+          <details><summary>Is everyone automatically accepted?</summary><p>No. Every profile is reviewed and acceptance is not guaranteed. ELIX may refuse or remove profiles for fraud or breaches of programme terms.</p></details>
+          <details><summary>How can I apply?</summary><p>Use the email form above or contact our team directly with the required subject line.</p></details>
+          <details><summary>What should I include in my application?</summary><p>Your name, email, country, social links, community size and type, and a brief collaboration proposal.</p></details>
+          <details><summary>Can Ambassadors receive bank-transfer payments?</summary><p>Yes, only approved Ambassadors may receive real commission payments under their agreed terms.</p></details>
+          <details><summary>What commission rate will I receive?</summary><p>Rates, conditions and payment arrangements are defined individually after acceptance.</p></details>
+          <details><summary>What does the {{ section.settings.threshold }}-order threshold mean?</summary><p>All {{ section.settings.threshold }} referred orders must be paid, validated and not refunded within the same calendar month. Reaching it triggers a review, not automatic acceptance.</p></details>
+          <details><summary>When are Ambassador commissions paid?</summary><p>The schedule and validation period are set in each approved Ambassador’s individual agreement.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+</elix-rewards>
+
+{% schema %}
+{"name":"ELIX Rewards","tag":"section","class":"section","settings":[
+  {"type":"text","id":"eyebrow","label":"Hero eyebrow","default":"ELIX REWARDS"},
+  {"type":"text","id":"hero_title","label":"Hero title","default":"GIVE 10% OFF. GET 10%."},
+  {"type":"textarea","id":"hero_text","label":"Hero text","default":"Share ELIX with your friends. They receive 10% off their first eligible order, and you earn 10% of the amount they pay back in ELIX Credit."},
+  {"type":"text","id":"cta_label","label":"Hero button","default":"GET MY REFERRAL CODE"},
+  {"type":"text","id":"leaderboard_title","label":"Leaderboard title","default":"ELIX GLOBAL LEADERBOARD"},
+  {"type":"checkbox","id":"show_leaderboard","label":"Show demo leaderboard","default":true},
+  {"type":"checkbox","id":"show_example_label","label":"Show Example Data label","default":true},
+  {"type":"range","id":"first_bonus","label":"First-place bonus (€)","min":0,"max":100,"step":5,"default":50},
+  {"type":"range","id":"second_bonus","label":"Second-place bonus (€)","min":0,"max":100,"step":5,"default":30},
+  {"type":"range","id":"third_bonus","label":"Third-place bonus (€)","min":0,"max":100,"step":5,"default":15},
+  {"type":"textarea","id":"ambassador_title","label":"Ambassador title","default":"HAVE A COMMUNITY?\nBECOME AN ELIX AMBASSADOR."},
+  {"type":"range","id":"threshold","label":"Automatic review threshold","min":10,"max":100,"step":5,"default":50},
+  {"type":"text","id":"ambassador_email","label":"Ambassador email","default":"contact.elixlab@gmail.com"},
+  {"type":"color","id":"background","label":"Background","default":"#03050a"},
+  {"type":"color","id":"accent_blue","label":"Blue accent","default":"#2878ff"},
+  {"type":"color","id":"accent_violet","label":"Violet accent","default":"#b54cff"},
+  {"type":"color","id":"accent_gold","label":"Ambassador gold","default":"#d99a32"}
+],"presets":[{"name":"ELIX Rewards"}]}
+{% endschema %}

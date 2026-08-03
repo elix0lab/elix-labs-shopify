@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "main": {
+      "type": "elix-rewards",
+      "settings": {}
+    }
+  },
+  "order": ["main"]
+}
