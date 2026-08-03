@@ -20,10 +20,7 @@ class ElixRewards extends HTMLElement {
   openApplication(event) {
     event.preventDefault();
     const email = this.form.elements.email.value.trim();
-    const socials = this.form.elements.socials.value.trim();
-    const body = this.form.dataset.emailBody
-      .replace('[EMAIL]', email || '—')
-      .replace('[SOCIALS]', socials || '—');
+    const body = this.form.dataset.emailBody.replace('[EMAIL]', email || '—');
     window.location.href = `mailto:${this.form.dataset.recipient}?subject=${encodeURIComponent(this.form.dataset.subject)}&body=${encodeURIComponent(body)}`;
   }
 }
