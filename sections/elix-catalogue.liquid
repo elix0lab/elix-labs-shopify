@@ -1,3 +1,4 @@
+{%- if collection.handle == 'all' -%}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'section-elix-catalogue.css' | asset_url | stylesheet_tag }}
@@ -61,6 +62,7 @@
     {%- endfor -%}
   </div>
 </main>
+{%- endif -%}
 
 {% schema %}
 {
