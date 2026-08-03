@@ -22,6 +22,7 @@
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,
+        "columns_mobile": "2",
         "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "image_shape": "default",
@@ -32,7 +33,6 @@
         "enable_filtering": true,
         "filter_type": "horizontal",
         "enable_sorting": true,
-        "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -40,20 +40,109 @@
     "elix-catalogue": {
       "type": "elix-catalogue",
       "blocks": {
-        "weight": { "type": "collection", "settings": { "heading": "Weight Management", "description": "Research products organised around metabolic and weight-management fields.", "palette": "weight", "product_limit": 4, "show_link": true } },
-        "recovery": { "type": "collection", "settings": { "heading": "Recovery & Healing", "description": "Research products for recovery and tissue-response study fields.", "palette": "recovery", "product_limit": 4, "show_link": true } },
-        "muscle": { "type": "collection", "settings": { "heading": "Muscle & Performance", "description": "Research products organised around muscle and performance study fields.", "palette": "muscle", "product_limit": 4, "show_link": true } },
-        "cognitive": { "type": "collection", "settings": { "heading": "Nootropics & Cognitive", "description": "Research products for cognitive and neurological study fields.", "palette": "cognitive", "product_limit": 4, "show_link": true } },
-        "longevity": { "type": "collection", "settings": { "heading": "Longevity", "description": "Research products organised around longevity and cellular study fields.", "palette": "longevity", "product_limit": 4, "show_link": true } },
-        "immune": { "type": "collection", "settings": { "heading": "Immune & Anti-inflammatory", "description": "Research products for immune-response and inflammation study fields.", "palette": "immune", "product_limit": 4, "show_link": true } },
-        "tanning": { "type": "collection", "settings": { "heading": "Tanning & Pigmentation", "description": "Research products organised around melanocyte and pigmentation study fields.", "palette": "tanning", "product_limit": 4, "show_link": true } },
-        "hormones": { "type": "collection", "settings": { "heading": "Hormones & Sexual Health", "description": "Research products for hormonal and reproductive study fields.", "palette": "hormones", "product_limit": 4, "show_link": true } }
+        "weight": {
+          "type": "collection",
+          "settings": {
+            "collection": "⚖️-weight-management",
+            "heading": "Weight Management",
+            "description": "Research products organised around metabolic and weight-management fields.",
+            "palette": "weight",
+            "product_limit": 4,
+            "show_link": true
+          }
+        },
+        "recovery": {
+          "type": "collection",
+          "settings": {
+            "collection": "recovery-healing",
+            "heading": "Recovery & Healing",
+            "description": "Research products for recovery and tissue-response study fields.",
+            "palette": "recovery",
+            "product_limit": 4,
+            "show_link": true
+          }
+        },
+        "muscle": {
+          "type": "collection",
+          "settings": {
+            "collection": "💪-muscle-performance",
+            "heading": "Muscle & Performance",
+            "description": "Research products organised around muscle and performance study fields.",
+            "palette": "muscle",
+            "product_limit": 4,
+            "show_link": true
+          }
+        },
+        "cognitive": {
+          "type": "collection",
+          "settings": {
+            "collection": "cognitive",
+            "heading": "Nootropics & Cognitive",
+            "description": "Research products for cognitive and neurological study fields.",
+            "palette": "cognitive",
+            "product_limit": 4,
+            "show_link": true
+          }
+        },
+        "hormones": {
+          "type": "collection",
+          "settings": {
+            "collection": "❤️-hormones-sexual-health",
+            "heading": "Hormones & Sexual Health",
+            "description": "Research products for hormonal and reproductive study fields.",
+            "palette": "hormones",
+            "product_limit": 3,
+            "show_link": true
+          }
+        },
+        "tanning": {
+          "type": "collection",
+          "settings": {
+            "collection": "☀️-tanning-pigmentation",
+            "heading": "Tanning & Pigmentation",
+            "description": "Research products organised around melanocyte and pigmentation study fields.",
+            "palette": "tanning",
+            "product_limit": 4,
+            "show_link": true
+          }
+        },
+        "longevity": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "heading": "Longevity",
+            "description": "Research products organised around longevity and cellular study fields.",
+            "palette": "longevity",
+            "product_limit": 4,
+            "show_link": true
+          }
+        },
+        "immune": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "heading": "Immune & Anti-inflammatory",
+            "description": "Research products for immune-response and inflammation study fields.",
+            "palette": "immune",
+            "product_limit": 4,
+            "show_link": true
+          }
+        }
       },
-      "block_order": ["weight", "recovery", "muscle", "cognitive", "longevity", "immune", "tanning", "hormones"],
+      "block_order": [
+        "weight",
+        "recovery",
+        "muscle",
+        "cognitive",
+        "hormones",
+        "tanning",
+        "longevity",
+        "immune"
+      ],
       "settings": {
         "eyebrow": "ELIX LABS RESEARCH CATALOGUE",
         "heading": "Explore Our Research Collections",
-        "intro": "Discover the ELIX LABS catalogue, organised by research field for clear and efficient navigation.",
+        "intro": "Discover the ELIX LABS catalogue,\n organised by research field for clear and efficient navigation.",
         "show_notice": true
       }
     }

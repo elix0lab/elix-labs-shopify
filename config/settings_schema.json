@@ -1304,39 +1304,34 @@
     "name": "t:settings_schema.social-media.name",
     "settings": [
       {
-        "type": "url",
+        "type": "text",
         "id": "social_facebook_link",
-        "label": "t:settings_schema.social-media.settings.social_facebook_link.label"
+        "label": "t:settings_schema.social-media.settings.social_facebook_link.label",
+        "placeholder": "t:settings_schema.social-media.settings.social_facebook_link.info"
       },
       {
-        "type": "url",
+        "type": "text",
         "id": "social_instagram_link",
-        "label": "t:settings_schema.social-media.settings.social_instagram_link.label"
+        "label": "t:settings_schema.social-media.settings.social_instagram_link.label",
+        "placeholder": "t:settings_schema.social-media.settings.social_instagram_link.info"
       },
       {
-        "type": "url",
+        "type": "text",
         "id": "social_youtube_link",
-        "label": "t:settings_schema.social-media.settings.social_youtube_link.label"
+        "label": "t:settings_schema.social-media.settings.social_youtube_link.label",
+        "placeholder": "t:settings_schema.social-media.settings.social_youtube_link.info"
       },
       {
-        "type": "url",
+        "type": "text",
         "id": "social_tiktok_link",
-        "label": "t:settings_schema.social-media.settings.social_tiktok_link.label"
+        "label": "t:settings_schema.social-media.settings.social_tiktok_link.label",
+        "placeholder": "t:settings_schema.social-media.settings.social_tiktok_link.info"
       },
       {
-        "type": "url",
+        "type": "text",
         "id": "social_twitter_link",
-        "label": "t:settings_schema.social-media.settings.social_twitter_link.label"
-      },
-      {
-        "type": "url",
-        "id": "social_linkedin_link",
-        "label": "LinkedIn"
-      },
-      {
-        "type": "url",
-        "id": "social_linkedin_link",
-        "label": "LinkedIn"
+        "label": "t:settings_schema.social-media.settings.social_twitter_link.label",
+        "placeholder": "t:settings_schema.social-media.settings.social_twitter_link.info"
       },
       {
         "type": "text",

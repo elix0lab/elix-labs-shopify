@@ -28,12 +28,7 @@
       "settings": {
         "enabled": true,
         "animate": true,
-        "speed": 28,
-        "color_scheme": "scheme-1",
-        "show_line_separator": true,
-        "show_social": false,
-        "enable_country_selector": false,
-        "enable_language_selector": false
+        "speed": 28
       }
     },
     "header": {
