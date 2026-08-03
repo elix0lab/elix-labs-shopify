@@ -13,10 +13,26 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "elix-brand": {
+          "type": "brand_information",
+          "settings": { "show_social": false }
+        },
+        "explore-menu": {
+          "type": "link_list",
+          "settings": { "heading": "Explore", "menu": "footer" }
+        },
+        "information-menu": {
+          "type": "link_list",
+          "settings": { "heading": "Information", "menu": "footer" }
+        }
+      },
+      "block_order": ["elix-brand", "explore-menu", "information-menu"],
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": true,
-        "newsletter_heading": "Subscribe to our emails",
+        "newsletter_heading": "Stay Connected",
+        "newsletter_text": "Receive ELIX LABS research updates and catalogue news.",
         "enable_follow_on_shop": true,
         "show_social": true,
         "enable_country_selector": true,
