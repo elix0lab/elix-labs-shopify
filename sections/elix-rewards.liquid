@@ -14,7 +14,6 @@
   </defs></svg>
 
   <header class="er__hero">
-    <svg class="er__dna er__dna--hero" aria-hidden="true"><use href="#er-dna"/></svg><svg class="er__net er__net--hero" aria-hidden="true"><use href="#er-net"/></svg>
     <div class="er__wrap er__hero-content"><h1>GIVE 10% OFF. GET 10%.</h1><p>Your friend gets 10% off. You earn 10% back in ELIX Credit.</p><a class="er__button" href="#your-elix-rewards">GET MY REFERRAL CODE</a></div>
   </header>
 
@@ -42,7 +41,7 @@
       <aside class="er__panel er__bonus"><h2>TOP 3 MONTHLY BONUS</h2><div><p><b>1<sup>ST</sup></b><strong>€{{ section.settings.first_bonus }}</strong></p><p><b>2<sup>ND</sup></b><strong>€{{ section.settings.second_bonus }}</strong></p><p><b>3<sup>RD</sup></b><strong>€{{ section.settings.third_bonus }}</strong></p></div><small>Extra ELIX Credit awarded each month.</small></aside>
     </div>{% endif %}
 
-    <section class="er__panel er__ambassador" aria-labelledby="ambassador-title"><svg class="er__crown" aria-hidden="true"><use href="#er-crown"/></svg><svg class="er__net er__net--gold" aria-hidden="true"><use href="#er-net"/></svg><div class="er__ambassador-copy"><h2 id="ambassador-title">ELIX AMBASSADOR</h2><h3>Have a community on social media?</h3><p>Approved ambassadors earn cash commissions paid by bank transfer — not ELIX Credit.</p></div>
+    <section class="er__panel er__ambassador" aria-labelledby="ambassador-title"><div class="er__ambassador-copy"><h2 id="ambassador-title">ELIX AMBASSADOR</h2><h3>Have a community on social media?</h3><p>Approved ambassadors earn cash commissions paid by bank transfer — not ELIX Credit.</p></div>
       <div class="er__paths"><div><svg aria-hidden="true"><use href="#er-people"/></svg><b>{{ section.settings.threshold }} VALIDATED ORDERS<br>IN ONE MONTH</b></div><span>OR</span><div><svg aria-hidden="true"><use href="#er-person"/></svg><b>APPLY DIRECTLY</b></div></div>
       <form class="er__form" data-elix-ambassador-form data-recipient="{{ section.settings.ambassador_email | escape }}" data-subject="ELIX Ambassador Programme" data-email-body="Email: [EMAIL]&#10;&#10;Include links to your social profiles."><label class="visually-hidden" for="AmbassadorEmail-{{ section.id }}">Your email address</label><input id="AmbassadorEmail-{{ section.id }}" name="email" type="email" autocomplete="email" placeholder="Your email address" required><button type="submit">SEND MY APPLICATION</button></form>
       <p class="er__contact">Or contact us at <a href="mailto:{{ section.settings.ambassador_email | escape }}?subject=ELIX%20Ambassador%20Programme">{{ section.settings.ambassador_email | escape }}</a><br>Subject: ELIX Ambassador Programme<br>Include links to your social profiles. We’re open to discussion.</p><p class="er__terms">ⓘ &nbsp; Applications are reviewed, and commission/payout terms are agreed after approval.</p>
