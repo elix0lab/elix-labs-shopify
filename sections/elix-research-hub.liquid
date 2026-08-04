@@ -1,28 +1,205 @@
 {{ 'elix-research-hub.css' | asset_url | stylesheet_tag }}
-{% liquid
-  assign s = section.settings
-  assign max_width = s.max_width | default: 1500
-%}
-<section class="erh" style="--erh-bg:{{ s.background_color }};--erh-max:{{ max_width }}px;--erh-pt:{{ s.padding_top }}px;--erh-pb:{{ s.padding_bottom }}px;--erh-border-alpha:{{ s.border_intensity | divided_by: 100.0 }};" data-research-hub>
-  <div class="erh-hero{% if s.enable_halos %} erh-halos{% endif %}" style="--hero-min:{{ s.hero_height }}px;--overlay:{{ s.hero_overlay | divided_by: 100.0 }};{% if s.hero_image != blank %}--hero-image:url('{{ s.hero_image | image_url: width: 2400 }}');--hero-position:{{ s.hero_image_position }};{% endif %}">
-    <div class="erh-hero__media" aria-hidden="true"></div><div class="erh-hero__overlay" aria-hidden="true"></div>
-    <div class="erh-hero__inner"><div class="erh-hero__copy">
-      <p class="erh-eyebrow">{{ s.hero_eyebrow }}</p>
-      <h1><span>{{ s.hero_title_elix }}</span> <span class="erh-gradient">{{ s.hero_title_gradient }}</span></h1>
-      <h2>{{ s.hero_subtitle | newline_to_br }}</h2>
-      <div class="erh-hero__text">{{ s.hero_body }}</div>
-      {% if s.hero_button_label != blank %}<a class="erh-btn" href="{{ s.hero_button_link | default: '#research-hub-categories' }}">{{ s.hero_button_label }} <span aria-hidden="true">→</span></a>{% endif %}
-    </div></div>
+
+<section class="erh" data-research-hub>
+  <div class="erh__hero">
+    <div class="erh__hero-overlay" aria-hidden="true"></div>
+    <div class="erh__hero-inner">
+      <div class="erh__hero-copy">
+        <p class="erh__eyebrow">{{ section.settings.hero_eyebrow }}</p>
+        <h1 class="erh__title">
+          <span class="erh__title-elix">{{ section.settings.hero_title_elix }}</span>
+          <span class="erh__title-gradient">{{ section.settings.hero_title_gradient }}</span>
+        </h1>
+        <h2 class="erh__subtitle">{{ section.settings.hero_subtitle | newline_to_br }}</h2>
+        <div class="erh__hero-text rte">{{ section.settings.hero_body }}</div>
+        {% if section.settings.hero_button_label != blank %}
+          <a class="erh__button" href="{{ section.settings.hero_button_link | default: '#research-hub-categories' }}">
+            {{ section.settings.hero_button_label }}
+            <span aria-hidden="true">→</span>
+          </a>
+        {% endif %}
+      </div>
+    </div>
   </div>
-  <div class="erh-wrap">
-    {% if s.search_enabled %}<div class="erh-search" id="research-hub-search"><label class="visually-hidden" for="ResearchHubSearch-{{ section.id }}">{{ s.search_placeholder }}</label><div class="erh-search__field"><span aria-hidden="true">⌕</span><input id="ResearchHubSearch-{{ section.id }}" type="search" placeholder="{{ s.search_placeholder }}" aria-label="{{ s.search_placeholder }}" data-erh-search></div>{% if s.show_badges %}<div class="erh-badges">{% for block in section.blocks %}{% if block.type == 'category' and block.settings.enabled %}{% liquid assign title = block.settings.title assign url = block.settings.fallback_link if block.settings.collection != blank assign title = block.settings.collection.title assign url = block.settings.collection.url endif %}<a class="erh-badge erh-theme-{{ block.settings.color_theme }}" href="{{ url | default: routes.collections_url }}" {{ block.shopify_attributes }}><span class="erh-badge__icon">{{ block.settings.icon }}</span>{{ title }}</a>{% endif %}{% endfor %}</div>{% endif %}</div>{% endif %}
-    <div class="erh-why"><div class="erh-why__copy"><div class="erh-section-title"><span class="erh-svg" aria-hidden="true">☊</span><h2>Pourquoi<br><span>ELIX</span> Research Hub ?</h2></div><div class="rte">{{ s.why_text }}</div><p class="erh-accent">{{ s.why_accent }}</p><p class="erh-final">{{ s.why_final | newline_to_br }}</p></div><div class="erh-feature-grid">{% assign cards='1,2,3' | split:',' %}{% for i in cards %}{% assign en='why_card_' | append:i | append:'_enabled' %}{% if s[en] %}{% assign title='why_card_' | append:i | append:'_title' %}{% assign text='why_card_' | append:i | append:'_text' %}{% assign icon='why_card_' | append:i | append:'_icon' %}<article class="erh-feature erh-feature--{{ i }}"><div class="erh-feature__icon" aria-hidden="true">{{ s[icon] }}</div><h3>{{ s[title] }}</h3><p>{{ s[text] }}</p></article>{% endif %}{% endfor %}</div></div>
-    <div class="erh-categories" id="research-hub-categories"><div class="erh-heading-row"><span aria-hidden="true">▦</span><h2>{{ s.categories_title }}</h2></div><div class="erh-category-grid">{% for block in section.blocks %}{% if block.type == 'category' and block.settings.enabled %}{% liquid assign title=block.settings.title assign url=block.settings.fallback_link if block.settings.collection != blank assign title=block.settings.collection.title assign url=block.settings.collection.url endif %}<article class="erh-category erh-theme-{{ block.settings.color_theme }}" data-erh-card data-title="{{ title | escape }} {{ block.settings.description | escape }}" {{ block.shopify_attributes }}><div class="erh-category__icon" aria-hidden="true">{{ block.settings.icon }}</div><h3>{{ title }}</h3><p>{{ block.settings.description }}</p><a href="{{ url | default: routes.collections_url }}">Voir les recherches <span aria-hidden="true">→</span></a></article>{% endif %}{% endfor %}</div><p class="erh-empty" hidden data-erh-empty>Aucun résultat pour cette recherche.</p></div>
-    {% if s.final_enabled %}<div class="erh-closing"><div><span class="erh-closing__icon" aria-hidden="true">◎</span><h2>La science n’a pas de frontières.<br><span>La connaissance appartient à tous.</span></h2><p>{{ s.final_left_text }}</p></div><div><span class="erh-closing__icon" aria-hidden="true">♒</span><h2>{{ s.final_right_title | newline_to_br }}</h2><p class="erh-accent">{{ s.final_right_accent }}</p></div></div>{% endif %}
-    {% if s.legal_enabled %}<p class="erh-legal">{{ s.legal_text }}</p>{% endif %}
+
+  <div class="erh__content">
+    <div class="erh__search-card">
+      <label class="visually-hidden" for="ResearchHubSearch-{{ section.id }}">{{ section.settings.search_placeholder }}</label>
+      <div class="erh__search-field">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.15a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg>
+        <input id="ResearchHubSearch-{{ section.id }}" type="search" placeholder="{{ section.settings.search_placeholder | escape }}" data-erh-search>
+      </div>
+
+      <div class="erh__badge-row" aria-label="Research categories">
+        {% for block in section.blocks %}
+          {% if block.type == 'category' and block.settings.enabled %}
+            {% assign badge_title = block.settings.title %}
+            {% assign badge_url = block.settings.fallback_link %}
+            {% if block.settings.collection != blank %}
+              {% assign badge_title = block.settings.collection.title %}
+              {% assign badge_url = block.settings.collection.url %}
+            {% endif %}
+            <a class="erh__badge erh--{{ block.settings.color_theme }}" href="{{ badge_url | default: routes.collections_url }}" {{ block.shopify_attributes }}>
+              <span class="erh__badge-icon">{{ block.settings.icon }}</span>
+              <span>{{ badge_title }}</span>
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="erh__why-card">
+      <div class="erh__why-copy">
+        <div class="erh__why-heading">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 64 64"><circle cx="32" cy="32" r="6"/><ellipse cx="32" cy="32" rx="27" ry="10"/><ellipse cx="32" cy="32" rx="27" ry="10" transform="rotate(60 32 32)"/><ellipse cx="32" cy="32" rx="27" ry="10" transform="rotate(120 32 32)"/></svg>
+          <h2>Pourquoi<br><span>ELIX</span> Research Hub&nbsp;?</h2>
+        </div>
+        <div class="erh__why-text rte">{{ section.settings.why_text }}</div>
+        <p class="erh__accent">{{ section.settings.why_accent }}</p>
+        <p class="erh__why-final">{{ section.settings.why_final | newline_to_br }}</p>
+      </div>
+
+      <div class="erh__feature-grid">
+        <article class="erh__feature erh__feature--purple">
+          <div class="erh__feature-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M9 15c11 0 18 3 23 9 5-6 12-9 23-9v35c-11 0-18 3-23 9-5-6-12-9-23-9Z"/><path d="M32 24v35"/></svg></div>
+          <h3>{{ section.settings.why_card_1_title }}</h3>
+          <p>{{ section.settings.why_card_1_text }}</p>
+        </article>
+        <article class="erh__feature erh__feature--blue">
+          <div class="erh__feature-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M16 12c23 8 32 17 36 40M12 47c23-7 34-18 40-35M20 20h24M25 29h23M16 38h23M25 47h19"/></svg></div>
+          <h3>{{ section.settings.why_card_2_title }}</h3>
+          <p>{{ section.settings.why_card_2_text }}</p>
+        </article>
+        <article class="erh__feature erh__feature--green">
+          <div class="erh__feature-icon" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M16 7h23l10 10v40H16Z"/><path d="M38 7v13h11M24 31h17M24 41h17M24 50h11"/></svg></div>
+          <h3>{{ section.settings.why_card_3_title }}</h3>
+          <p>{{ section.settings.why_card_3_text }}</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="erh__categories" id="research-hub-categories">
+      <div class="erh__section-heading">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><rect x="3" y="3" width="6" height="6"/><rect x="15" y="3" width="6" height="6"/><rect x="3" y="15" width="6" height="6"/><rect x="15" y="15" width="6" height="6"/></svg>
+        <h2>{{ section.settings.categories_title }}</h2>
+      </div>
+
+      <div class="erh__category-grid">
+        {% for block in section.blocks %}
+          {% if block.type == 'category' and block.settings.enabled %}
+            {% assign category_title = block.settings.title %}
+            {% assign category_url = block.settings.fallback_link %}
+            {% if block.settings.collection != blank %}
+              {% assign category_title = block.settings.collection.title %}
+              {% assign category_url = block.settings.collection.url %}
+            {% endif %}
+            <article class="erh__category-card erh--{{ block.settings.color_theme }}" data-erh-card data-title="{{ category_title | escape }} {{ block.settings.description | escape }}" {{ block.shopify_attributes }}>
+              <div class="erh__category-icon" aria-hidden="true">{{ block.settings.icon }}</div>
+              <h3>{{ category_title }}</h3>
+              <p>{{ block.settings.description }}</p>
+              <a href="{{ category_url | default: routes.collections_url }}">Voir les recherches <span aria-hidden="true">→</span></a>
+            </article>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <p class="erh__empty" hidden data-erh-empty>Aucun résultat pour cette recherche.</p>
+    </div>
+
+    <div class="erh__closing">
+      <div class="erh__closing-panel erh__closing-panel--left">
+        <svg class="erh__closing-icon" aria-hidden="true" focusable="false" viewBox="0 0 72 72"><path d="M8 55c0-9 7-16 16-16s16 7 16 16M32 55c0-9 7-16 16-16s16 7 16 16M24 31a10 10 0 1 0 0-20 10 10 0 0 0 0 20Zm24 0a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/><circle cx="36" cy="46" r="18"/><path d="M18 46h36M36 28c7 8 7 28 0 36M36 28c-7 8-7 28 0 36"/></svg>
+        <div>
+          <h2>La science n’a pas de frontières.<br><span>La connaissance appartient à tous.</span></h2>
+          <p>{{ section.settings.final_left_text | newline_to_br }}</p>
+        </div>
+      </div>
+      <div class="erh__closing-panel erh__closing-panel--right">
+        <svg class="erh__closing-icon" aria-hidden="true" focusable="false" viewBox="0 0 64 64"><path d="M18 6c27 16 30 36 28 52M46 6C19 22 16 42 18 58M20 17h22M15 28h34M15 39h34M22 50h22"/></svg>
+        <div>
+          <h2>{{ section.settings.final_right_title | newline_to_br }}</h2>
+          <p class="erh__accent">{{ section.settings.final_right_accent }}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
-<script>document.addEventListener('input',function(e){if(!e.target.matches('[data-erh-search]'))return;var root=e.target.closest('[data-research-hub]'),q=e.target.value.toLowerCase(),shown=0;root.querySelectorAll('[data-erh-card]').forEach(function(c){var ok=c.dataset.title.toLowerCase().indexOf(q)>-1;c.hidden=!ok;if(ok)shown++;});var empty=root.querySelector('[data-erh-empty]');if(empty)empty.hidden=shown!==0||q==='';});</script>
+
+<script>
+  document.addEventListener('input', function(event) {
+    if (!event.target.matches('[data-erh-search]')) return;
+
+    var hub = event.target.closest('[data-research-hub]');
+    var query = event.target.value.toLowerCase();
+    var visibleCards = 0;
+
+    hub.querySelectorAll('[data-erh-card]').forEach(function(card) {
+      var isMatch = card.dataset.title.toLowerCase().indexOf(query) !== -1;
+      card.hidden = !isMatch;
+      if (isMatch) visibleCards += 1;
+    });
+
+    var emptyMessage = hub.querySelector('[data-erh-empty]');
+    if (emptyMessage) emptyMessage.hidden = visibleCards !== 0 || query === '';
+  });
+</script>
+
 {% schema %}
-{"name":"ELIX Research Hub","tag":"section","class":"section","settings":[{"type":"range","id":"max_width","min":1100,"max":1600,"step":50,"unit":"px","label":"Largeur maximale","default":1500},{"type":"color","id":"background_color","label":"Couleur du fond","default":"#02040b"},{"type":"range","id":"padding_top","min":0,"max":120,"step":4,"unit":"px","label":"Espacement supérieur","default":0},{"type":"range","id":"padding_bottom","min":40,"max":160,"step":4,"unit":"px","label":"Espacement inférieur","default":80},{"type":"checkbox","id":"enable_halos","label":"Activer les halos","default":true},{"type":"range","id":"border_intensity","min":10,"max":100,"step":5,"unit":"%","label":"Intensité des bordures","default":45},{"type":"header","content":"Hero"},{"type":"text","id":"hero_eyebrow","label":"Surtitre","default":"BIENVENUE SUR"},{"type":"text","id":"hero_title_elix","label":"Titre blanc","default":"ELIX"},{"type":"text","id":"hero_title_gradient","label":"Titre dégradé","default":"Research Hub"},{"type":"textarea","id":"hero_subtitle","label":"Sous-titre","default":"La connaissance d’aujourd’hui,\nla médecine de demain."},{"type":"richtext","id":"hero_body","label":"Paragraphes","default":"<p>Grâce aux peptides et à la recherche, l’être humain va évoluer.<br>Des maladies seront éradiquées. Des performances optimisées.<br>Une meilleure qualité de vie pour tous.</p><p>Mais avant d’atteindre ce futur, une étape est essentielle : la recherche.<br>Explorer. Tester. Comprendre. Décrypter.</p><p><strong>ELIX Research Hub</strong> regroupe les recherches scientifiques du monde entier<br>pour libérer le plein potentiel des peptides et construire un avenir<br>meilleur pour l’humanité.</p>"},{"type":"text","id":"hero_button_label","label":"Texte du bouton","default":"Explorer les recherches"},{"type":"url","id":"hero_button_link","label":"Lien du bouton"},{"type":"image_picker","id":"hero_image","label":"Image de fond facultative"},{"type":"select","id":"hero_image_position","label":"Position de l’image","default":"center right","options":[{"value":"center right","label":"Centre droite"},{"value":"center center","label":"Centre"},{"value":"top right","label":"Haut droite"}]},{"type":"range","id":"hero_height","min":560,"max":820,"step":20,"unit":"px","label":"Hauteur du hero","default":700},{"type":"range","id":"hero_overlay","min":30,"max":90,"step":5,"unit":"%","label":"Overlay","default":70},{"type":"header","content":"Recherche"},{"type":"checkbox","id":"search_enabled","label":"Activer la recherche","default":true},{"type":"text","id":"search_placeholder","label":"Placeholder","default":"Rechercher un peptide..."},{"type":"checkbox","id":"show_badges","label":"Afficher les badges","default":true},{"type":"header","content":"Pourquoi ELIX"},{"type":"richtext","id":"why_text","label":"Contenu","default":"<p>Le potentiel des peptides est immense. Ils peuvent transformer la médecine, la santé et les performances humaines. Mais leur véritable pouvoir ne peut être révélé qu’à travers la recherche scientifique rigoureuse.</p><p>Des milliers de scientifiques, de laboratoires et d’institutions à travers le monde travaillent chaque jour pour comprendre, prouver et améliorer ces molécules.</p><p>ELIX Research Hub est né de cette vision : centraliser, simplifier et partager les connaissances pour que chacun puisse comprendre, apprendre et participer à cette révolution.</p>"},{"type":"text","id":"why_accent","label":"Phrase violette","default":"S’informer. Comprendre. Partager. Collaborer."},{"type":"textarea","id":"why_final","label":"Phrase finale","default":"Ensemble, libérons le plein potentiel\nde la science pour un avenir sans limites."},{"type":"checkbox","id":"why_card_1_enabled","label":"Activer carte 1","default":true},{"type":"text","id":"why_card_1_icon","label":"Icône carte 1","default":"▱"},{"type":"text","id":"why_card_1_title","label":"Titre carte 1","default":"Connaissances accessibles"},{"type":"textarea","id":"why_card_1_text","label":"Texte carte 1","default":"Des explications claires et structurées pour rendre la science des peptides compréhensible, sans simplifier excessivement les données."},{"type":"checkbox","id":"why_card_2_enabled","label":"Activer carte 2","default":true},{"type":"text","id":"why_card_2_icon","label":"Icône carte 2","default":"⌁"},{"type":"text","id":"why_card_2_title","label":"Titre carte 2","default":"Mécanismes expliqués"},{"type":"textarea","id":"why_card_2_text","label":"Texte carte 2","default":"Des mécanismes d’action détaillés et des illustrations scientifiques pour comprendre comment chaque peptide agit."},{"type":"checkbox","id":"why_card_3_enabled","label":"Activer carte 3","default":true},{"type":"text","id":"why_card_3_icon","label":"Icône carte 3","default":"▤"},{"type":"text","id":"why_card_3_title","label":"Titre carte 3","default":"Documents & recherches"},{"type":"textarea","id":"why_card_3_text","label":"Texte carte 3","default":"Un accès centralisé aux guides, résumés scientifiques, résultats expérimentaux et principales publications disponibles."},{"type":"header","content":"Catégories"},{"type":"text","id":"categories_title","label":"Titre","default":"Browse by category"},{"type":"header","content":"Bandeau final"},{"type":"checkbox","id":"final_enabled","label":"Activer","default":true},{"type":"textarea","id":"final_left_text","label":"Texte gauche","default":"Chaque découverte nous rapproche d’un futur où l’être humain vivra plus longtemps, en meilleure santé, avec davantage d’énergie et de possibilités.\nContinuons à chercher, à comprendre et à avancer. Ensemble."},{"type":"textarea","id":"final_right_title","label":"Titre droite","default":"Le futur se construit\naujourd’hui."},{"type":"text","id":"final_right_accent","label":"Phrase violette","default":"Et il commence par la recherche."},{"type":"header","content":"Mention légale"},{"type":"checkbox","id":"legal_enabled","label":"Activer","default":true},{"type":"textarea","id":"legal_text","label":"Texte","default":"Les informations présentées dans le Research Hub sont fournies à des fins éducatives et documentaires et ne constituent pas un avis médical."}],"blocks":[{"type":"category","name":"Carte catégorie","settings":[{"type":"checkbox","id":"enabled","label":"Activer","default":true},{"type":"collection","id":"collection","label":"Collection"},{"type":"text","id":"title","label":"Nom fallback","default":"Weight Management"},{"type":"text","id":"icon","label":"Badge / icône officielle","default":"⚖️"},{"type":"select","id":"color_theme","label":"Couleur","default":"weight","options":[{"value":"weight","label":"Weight violet"},{"value":"muscle","label":"Muscle rouge"},{"value":"recovery","label":"Recovery bleu"},{"value":"cognitive","label":"Cognitive cyan"},{"value":"longevity","label":"Longevity vert"},{"value":"immune","label":"Immune lime"},{"value":"tanning","label":"Tanning orange"},{"value":"hormones","label":"Hormones rose"}]},{"type":"textarea","id":"description","label":"Description"},{"type":"url","id":"fallback_link","label":"Lien fallback"}]}],"presets":[{"name":"ELIX Research Hub"}]}
+{
+  "name": "ELIX Research Hub",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "hero_eyebrow", "label": "Surtitre", "default": "BIENVENUE SUR" },
+    { "type": "text", "id": "hero_title_elix", "label": "Titre blanc", "default": "ELIX" },
+    { "type": "text", "id": "hero_title_gradient", "label": "Titre dégradé", "default": "Research Hub" },
+    { "type": "textarea", "id": "hero_subtitle", "label": "Sous-titre", "default": "La connaissance d’aujourd’hui,\nla médecine de demain." },
+    { "type": "richtext", "id": "hero_body", "label": "Paragraphes", "default": "<p>Grâce aux peptides et à la recherche, l’être humain va évoluer.<br>Des maladies seront éradiquées. Des performances optimisées.<br>Une meilleure qualité de vie pour tous.</p><p>Mais avant d’atteindre ce futur, une étape est essentielle : la recherche.<br>Explorer. Tester. Comprendre. Décrypter.</p><p><strong>ELIX Research Hub</strong> regroupe les recherches scientifiques du monde entier<br>pour libérer le plein potentiel des peptides et construire un avenir<br>meilleur pour l’humanité.</p>" },
+    { "type": "text", "id": "hero_button_label", "label": "Texte du bouton", "default": "Explorer les recherches" },
+    { "type": "url", "id": "hero_button_link", "label": "Lien du bouton" },
+    { "type": "text", "id": "search_placeholder", "label": "Placeholder recherche", "default": "Rechercher un peptide..." },
+    { "type": "richtext", "id": "why_text", "label": "Texte Pourquoi", "default": "<p>Le potentiel des peptides est immense. Ils peuvent transformer la médecine, la santé et les performances humaines. Mais leur véritable pouvoir ne peut être révélé qu’à travers la recherche scientifique rigoureuse.</p><p>Des milliers de scientifiques, de laboratoires et d’institutions à travers le monde travaillent chaque jour pour comprendre, prouver et améliorer ces molécules.</p><p>ELIX Research Hub est né de cette vision : centraliser, simplifier et partager les connaissances pour que chacun puisse comprendre, apprendre et participer à cette révolution.</p>" },
+    { "type": "text", "id": "why_accent", "label": "Phrase accent", "default": "S’informer. Comprendre. Partager. Collaborer." },
+    { "type": "textarea", "id": "why_final", "label": "Phrase finale", "default": "Ensemble, libérons le plein potentiel\nde la science pour un avenir sans limites." },
+    { "type": "textarea", "id": "why_card_1_title", "label": "Carte 1 titre", "default": "Connaissances\naccessibles" },
+    { "type": "textarea", "id": "why_card_1_text", "label": "Carte 1 texte", "default": "Des explications claires et simples pour comprendre la science sans jargon." },
+    { "type": "textarea", "id": "why_card_2_title", "label": "Carte 2 titre", "default": "Mécanismes\nexpliqués" },
+    { "type": "textarea", "id": "why_card_2_text", "label": "Carte 2 texte", "default": "Des mécanismes d’action détaillés et des illustrations exclusives pour tout comprendre en profondeur." },
+    { "type": "textarea", "id": "why_card_3_title", "label": "Carte 3 titre", "default": "Documents &\nrecherches" },
+    { "type": "textarea", "id": "why_card_3_text", "label": "Carte 3 texte", "default": "Accès rapide aux guides, résumés scientifiques et dernières données expérimentales." },
+    { "type": "text", "id": "categories_title", "label": "Titre catégories", "default": "Browse by category" },
+    { "type": "textarea", "id": "final_left_text", "label": "Bandeau gauche", "default": "Chaque découverte nous rapproche d’un futur où l’humain vivra plus longtemps, en meilleure santé, avec plus d’énergie et de possibilités.\nContinuons à chercher, à comprendre et à avancer. Ensemble." },
+    { "type": "textarea", "id": "final_right_title", "label": "Titre droite", "default": "Le futur se construit\naujourd’hui." },
+    { "type": "text", "id": "final_right_accent", "label": "Phrase droite", "default": "Et il commence par la recherche." }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Catégorie",
+      "settings": [
+        { "type": "checkbox", "id": "enabled", "label": "Afficher", "default": true },
+        { "type": "collection", "id": "collection", "label": "Collection Shopify" },
+        { "type": "text", "id": "title", "label": "Nom fallback", "default": "Weight Management" },
+        { "type": "text", "id": "icon", "label": "Icône officielle", "default": "⚖️" },
+        {
+          "type": "select",
+          "id": "color_theme",
+          "label": "Couleur officielle",
+          "default": "weight",
+          "options": [
+            { "value": "weight", "label": "Weight violet" },
+            { "value": "recovery", "label": "Recovery blue" },
+            { "value": "performance", "label": "Performance red" },
+            { "value": "cognitive", "label": "Cognitive purple" },
+            { "value": "hormonal", "label": "Hormonal pink" },
+            { "value": "pigmentation", "label": "Pigmentation orange" },
+            { "value": "longevity", "label": "Longevity green" }
+          ]
+        },
+        { "type": "textarea", "id": "description", "label": "Description" },
+        { "type": "url", "id": "fallback_link", "label": "Lien fallback" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "ELIX Research Hub" }]
+}
 {% endschema %}
