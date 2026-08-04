@@ -1,0 +1,20 @@
+{
+  "sections": {
+    "main": {
+      "type": "elix-research-hub",
+      "blocks": {
+        "cat_weight": {"type":"category","settings":{"enabled":true,"icon":"⚖️","color_theme":"weight","title":"Weight Management","description":"Explorer les données de recherche liées au métabolisme, à la composition corporelle et aux axes d'étude associés.","collection":"","fallback_link":""}},
+        "cat_muscle": {"type":"category","settings":{"enabled":true,"icon":"💪","color_theme":"muscle","title":"Muscle & Performance","description":"Consulter les ressources dédiées à la performance, à l'adaptation musculaire et aux protocoles de recherche.","collection":"","fallback_link":""}},
+        "cat_recovery": {"type":"category","settings":{"enabled":true,"icon":"🩹","color_theme":"recovery","title":"Recovery & Healing","description":"Accéder aux informations scientifiques sur la réparation tissulaire, la récupération et les mécanismes étudiés.","collection":"","fallback_link":""}},
+        "cat_cognitive": {"type":"category","settings":{"enabled":true,"icon":"🧠","color_theme":"cognitive","title":"Nootropics & Cognitive","description":"Parcourir les recherches autour de la mémoire, de la concentration et des mécanismes neurologiques.","collection":"","fallback_link":""}},
+        "cat_longevity": {"type":"category","settings":{"enabled":true,"icon":"🧬","color_theme":"longevity","title":"Longevity & Healthy Aging","description":"Découvrir les axes documentaires sur le vieillissement sain, la vitalité cellulaire et la longévité.","collection":"","fallback_link":""}},
+        "cat_immune": {"type":"category","settings":{"enabled":true,"icon":"🛡️","color_theme":"immune","title":"Immune & Anti-inflammatory","description":"Regrouper les publications et résumés liés à l'immunité, à l'inflammation et aux réponses biologiques.","collection":"","fallback_link":""}},
+        "cat_tanning": {"type":"category","settings":{"enabled":true,"icon":"☀️","color_theme":"tanning","title":"Tanning & Pigmentation","description":"Comprendre les recherches sur les mélanocytes, la pigmentation et les voies biologiques cutanées.","collection":"","fallback_link":""}},
+        "cat_hormones": {"type":"category","settings":{"enabled":true,"icon":"❤️","color_theme":"hormones","title":"Hormones & Sexual Health","description":"Explorer les ressources autour des axes hormonaux et de la recherche en santé sexuelle.","collection":"","fallback_link":""}}
+      },
+      "block_order": ["cat_weight","cat_muscle","cat_recovery","cat_cognitive","cat_longevity","cat_immune","cat_tanning","cat_hormones"],
+      "settings": {}
+    }
+  },
+  "order": ["main"]
+}
