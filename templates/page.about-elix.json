@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "main": {
+      "type": "elix-about-page",
+      "settings": {}
+    }
+  },
+  "order": ["main"]
+}
