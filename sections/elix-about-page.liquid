@@ -1,0 +1,189 @@
+{{ 'elix-about-page.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign hero_overlay = section.settings.hero_overlay | divided_by: 100.0
+  assign research_url = section.settings.research_link | default: '/pages/research-hub'
+  assign products_url = section.settings.products_link | default: routes.all_products_collection_url
+  assign hero_alt = section.settings.hero_image.alt | default: 'ELIX LABS biotechnology laboratory'
+-%}
+
+<section class="elix-about" style="--elix-about-hero-overlay: {{ hero_overlay }}; --elix-about-section-space: {{ section.settings.section_spacing }}px;" data-elix-about{% if section.settings.enable_animations %} data-elix-about-animate{% endif %}>
+  <div class="elix-about-hero">
+    {% if section.settings.hero_image != blank %}
+      {{ section.settings.hero_image | image_url: width: 2200 | image_tag: class: 'elix-about-hero__image', widths: '750, 1100, 1500, 1800, 2200', sizes: '(min-width: 990px) 58vw, 100vw', loading: 'eager', fetchpriority: 'high', alt: hero_alt }}
+    {% endif %}
+    <div class="elix-about-hero__shade" aria-hidden="true"></div>
+    <div class="elix-about-hero__inner elix-about-container">
+      <div class="elix-about-hero__copy elix-about-reveal">
+        <p class="elix-about-eyebrow">{{ section.settings.hero_eyebrow }}</p>
+        <h1 class="elix-about-hero__title">
+          <span>{{ section.settings.hero_title_primary | newline_to_br }}</span>
+          <span class="elix-about-gradient">{{ section.settings.hero_title_gradient | newline_to_br }}</span>
+        </h1>
+        <blockquote class="elix-about-hero__quote">{{ section.settings.hero_quote | newline_to_br }}</blockquote>
+      </div>
+    </div>
+  </div>
+
+  <div class="elix-about-body">
+    <section class="elix-about-text-section elix-about-container elix-about-reveal">
+      <p class="elix-about-eyebrow">{{ section.settings.story_eyebrow }}</p>
+      <h2>{{ section.settings.story_title }}</h2>
+      <div class="elix-about-rte">{{ section.settings.story_text | newline_to_br }}</div>
+    </section>
+
+    <section class="elix-about-letter elix-about-container elix-about-panel elix-about-reveal">
+      <span class="elix-about-letter__mark" aria-hidden="true">“</span>
+      <h2 class="elix-about-panel-title">{{ section.settings.letter_title }}</h2>
+      <div class="elix-about-letter__text">{{ section.settings.letter_text | newline_to_br }}</div>
+      <div class="elix-about-letter__signature" aria-hidden="true">With purpose</div>
+    </section>
+
+    <section class="elix-about-team elix-about-container elix-about-panel elix-about-reveal">
+      <p class="elix-about-eyebrow">{{ section.settings.team_eyebrow }}</p>
+      <h2>{{ section.settings.team_title }}</h2>
+      <div class="elix-about-team__intro">{{ section.settings.team_intro | newline_to_br }}</div>
+      <div class="elix-about-team__founder">
+        <article class="elix-about-member elix-about-member--featured">
+          <div class="elix-about-member__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="17" r="8"/><path d="M10 42c2.5-9 8-14 14-14s11.5 5 14 14"/></svg></div>
+          <h3>{{ section.settings.founder_name }}</h3>
+          <p class="elix-about-member__status">{{ section.settings.founder_status }}</p>
+          <p class="elix-about-member__role">{{ section.settings.founder_role }}</p>
+          <p>{{ section.settings.founder_text }}</p>
+        </article>
+      </div>
+      <div class="elix-about-team__grid">
+        <article class="elix-about-member">
+          <div class="elix-about-member__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="17" r="8"/><path d="M10 42c2.5-9 8-14 14-14s11.5 5 14 14"/></svg></div>
+          <h3>{{ section.settings.member_1_name }}</h3>
+          <p class="elix-about-member__status">{{ section.settings.member_1_status }}</p>
+          <p class="elix-about-member__role">{{ section.settings.member_1_role }}</p>
+          <p>{{ section.settings.member_1_text }}</p>
+        </article>
+        <article class="elix-about-member">
+          <div class="elix-about-member__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="17" r="8"/><path d="M10 42c2.5-9 8-14 14-14s11.5 5 14 14"/></svg></div>
+          <h3>{{ section.settings.member_2_name }}</h3>
+          <p class="elix-about-member__status">{{ section.settings.member_2_status }}</p>
+          <p class="elix-about-member__role">{{ section.settings.member_2_role }}</p>
+          <p>{{ section.settings.member_2_text }}</p>
+        </article>
+        <article class="elix-about-member">
+          <div class="elix-about-member__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="17" r="8"/><path d="M10 42c2.5-9 8-14 14-14s11.5 5 14 14"/></svg></div>
+          <h3>{{ section.settings.member_3_name }}</h3>
+          <p class="elix-about-member__status">{{ section.settings.member_3_status }}</p>
+          <p class="elix-about-member__role">{{ section.settings.member_3_role }}</p>
+          <p>{{ section.settings.member_3_text }}</p>
+        </article>
+        <article class="elix-about-member">
+          <div class="elix-about-member__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="17" r="8"/><path d="M10 42c2.5-9 8-14 14-14s11.5 5 14 14"/></svg></div>
+          <h3>{{ section.settings.member_4_name }}</h3>
+          <p class="elix-about-member__status">{{ section.settings.member_4_status }}</p>
+          <p class="elix-about-member__role">{{ section.settings.member_4_role }}</p>
+          <p>{{ section.settings.member_4_text }}</p>
+        </article>
+      </div>
+      <div class="elix-about-team__closing">{{ section.settings.team_closing | newline_to_br }}</div>
+    </section>
+
+    <section class="elix-about-bigquote elix-about-container elix-about-reveal" aria-label="ELIX LABS philosophy">
+      <span aria-hidden="true">“</span>
+      <p>Knowledge <strong>creates confidence.</strong><br>Transparency <strong>creates trust.</strong></p>
+      <span aria-hidden="true">”</span>
+    </section>
+
+    <section class="elix-about-text-section elix-about-container elix-about-reveal"><h2>{{ section.settings.era_title }}</h2><div class="elix-about-rte">{{ section.settings.era_text | newline_to_br }}</div></section>
+    <section class="elix-about-text-section elix-about-container elix-about-reveal"><h2>{{ section.settings.exist_title }}</h2><div class="elix-about-rte">{{ section.settings.exist_text | newline_to_br }}</div></section>
+
+    <section class="elix-about-duo elix-about-container elix-about-reveal">
+      <article><h2>{{ section.settings.mission_title }}</h2><div>{{ section.settings.mission_text | newline_to_br }}</div></article>
+      <article><h2>{{ section.settings.vision_title }}</h2><div>{{ section.settings.vision_text | newline_to_br }}</div></article>
+    </section>
+
+    <section class="elix-about-commitment elix-about-container elix-about-reveal">
+      <h2>{{ section.settings.commitment_title }}</h2>
+      <div class="elix-about-commitment__grid">
+        <article class="elix-about-commitment-card">
+          <div class="elix-about-commitment-card__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 5 40 12v11c0 10-6.5 16.5-16 20C14.5 39.5 8 33 8 23V12Z"/><path d="m17 24 5 5 10-12"/></svg></div>
+          <h3>{{ section.settings.commitment_1_title }}</h3><p>{{ section.settings.commitment_1_text | newline_to_br }}</p>
+        </article>
+        <article class="elix-about-commitment-card">
+          <div class="elix-about-commitment-card__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M7 11c7-1 12 1 17 6 5-5 10-7 17-6v28c-7-1-12 1-17 6-5-5-10-7-17-6Z"/><path d="M24 17v28"/></svg></div>
+          <h3>{{ section.settings.commitment_2_title }}</h3><p>{{ section.settings.commitment_2_text | newline_to_br }}</p>
+        </article>
+        <article class="elix-about-commitment-card">
+          <div class="elix-about-commitment-card__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M4 24s7-12 20-12 20 12 20 12-7 12-20 12S4 24 4 24Z"/><circle cx="24" cy="24" r="6"/></svg></div>
+          <h3>{{ section.settings.commitment_3_title }}</h3><p>{{ section.settings.commitment_3_text | newline_to_br }}</p>
+        </article>
+        <article class="elix-about-commitment-card">
+          <div class="elix-about-commitment-card__icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M38 17a15 15 0 1 0 1 14"/><path d="M38 8v9h-9"/><path d="M24 14v10l7 4"/></svg></div>
+          <h3>{{ section.settings.commitment_4_title }}</h3><p>{{ section.settings.commitment_4_text | newline_to_br }}</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="elix-about-text-section elix-about-container elix-about-reveal"><h2>{{ section.settings.beyond_title }}</h2><div class="elix-about-rte">{{ section.settings.beyond_text | newline_to_br }}</div></section>
+
+    <section class="elix-about-final elix-about-container elix-about-panel elix-about-reveal">
+      <h2>{{ section.settings.join_title }}</h2>
+      <blockquote>{{ section.settings.join_quote | newline_to_br }}</blockquote>
+      <div>{{ section.settings.join_text | newline_to_br }}</div>
+      <div class="elix-about-final__buttons">
+        <a class="elix-about-button elix-about-button--primary" href="{{ research_url }}">{{ section.settings.research_label }} <span aria-hidden="true">→</span></a>
+        <a class="elix-about-button elix-about-button--secondary" href="{{ products_url }}">{{ section.settings.products_label }} <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "ELIX About Page",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "image_picker", "id": "hero_image", "label": "Hero image" },
+    { "type": "range", "id": "hero_overlay", "label": "Hero overlay", "min": 0, "max": 90, "step": 5, "unit": "%", "default": 55 },
+    { "type": "range", "id": "section_spacing", "label": "Main vertical spacing", "min": 56, "max": 150, "step": 2, "unit": "px", "default": 96 },
+    { "type": "checkbox", "id": "enable_animations", "label": "Enable subtle scroll animations", "default": true },
+    { "type": "text", "id": "hero_eyebrow", "label": "Hero eyebrow", "default": "ABOUT ELIX LABS" },
+    { "type": "textarea", "id": "hero_title_primary", "label": "Hero title first part", "default": "MORE THAN A LABORATORY." },
+    { "type": "textarea", "id": "hero_title_gradient", "label": "Hero title gradient part", "default": "A VISION FOR THE FUTURE\nOF BIOTECHNOLOGY." },
+    { "type": "textarea", "id": "hero_quote", "label": "Hero quote", "default": "“Science only changes the world\nwhen knowledge becomes accessible.”" },
+    { "type": "text", "id": "story_eyebrow", "label": "Story eyebrow", "default": "OUR STORY" },
+    { "type": "text", "id": "story_title", "label": "Story title", "default": "Une conviction devenue une mission." },
+    { "type": "textarea", "id": "story_text", "label": "Story text", "default": "Pendant des décennies, la recherche sur les peptides est restée essentiellement confinée aux laboratoires, aux universités et aux centres de recherche spécialisés.\n\nPour la plupart des personnes, ces molécules demeuraient méconnues. Les informations étaient dispersées. Les publications scientifiques étaient difficiles à comprendre. Les données étaient souvent réservées à ceux qui possédaient les connaissances nécessaires pour les interpréter.\n\nComprendre le fonctionnement d’un peptide pouvait demander des dizaines d’heures de lecture scientifique. Pourtant, derrière cette complexité se cache un domaine de recherche fascinant. Un domaine qui évolue rapidement. Un domaine qui participe à une période exceptionnelle pour les biotechnologies.\n\nC’est de cette conviction qu’est né ELIX LABS.\n\nNous croyons que la science ne devrait jamais être inaccessible. Nous croyons qu’une information fiable, expliquée avec rigueur et pédagogie, permet à chacun de mieux comprendre les découvertes scientifiques.\n\nFondé par un médecin passionné par les biotechnologies et la recherche médicale, ELIX LABS a été imaginé comme un pont entre la recherche moderne et toutes les personnes désireuses d’en apprendre davantage.\n\nNotre objectif n’a jamais été de simplifier la science. Notre objectif est de la rendre compréhensible.\n\nParce que lorsque la connaissance devient accessible, elle inspire de nouvelles idées.\n\nEt les nouvelles idées sont à l’origine des plus grandes avancées de l’humanité." },
+    { "type": "text", "id": "letter_title", "label": "Letter title", "default": "A LETTER FROM THE FOUNDER" },
+    { "type": "textarea", "id": "letter_text", "label": "Letter text", "default": "Dear Reader,\n\nIf you are reading these words, thank you.\n\nELIX LABS did not begin with a business plan.\n\nIt began with a simple observation.\n\nThroughout my medical journey, I realized that some of the most fascinating scientific discoveries remain inaccessible to most people. Not because they lack curiosity, but because the information is often scattered across complex publications, written for specialists and rarely explained in a way that everyone can understand.\n\nI have always believed that knowledge should never be a privilege.\n\nIt should be shared.\n\nExplained.\n\nQuestioned.\n\nAnd continuously improved.\n\nThat belief became the foundation of ELIX LABS.\n\nFrom the beginning, my vision was never to create just another company.\n\nI wanted to build a place where science comes before marketing, where transparency comes before promises, and where education is considered just as important as innovation.\n\nYou may notice that my name does not appear anywhere on this website.\n\nThat choice is intentional.\n\nAs a medical doctor, I have chosen to remain anonymous in order to preserve the independence of my medical career and to maintain a clear ethical separation between my clinical practice and ELIX LABS.\n\nI have never wanted this project to revolve around one individual.\n\nI want it to be defined by its values.\n\nBy its integrity.\n\nBy the quality of its educational resources.\n\nAnd by the trust it earns over time.\n\nIf ELIX LABS succeeds one day, I hope it will not be because people remember the name of its founder.\n\nI hope it will be because they remember how it made science easier to understand.\n\nHow it encouraged curiosity.\n\nHow it inspired people to keep learning.\n\nAnd how it always chose transparency over shortcuts.\n\nWhether you are here to explore, to learn, or simply because you are curious about the future of biotechnology...\n\nThank you for being part of this journey.\n\nThis is only the beginning.\n\n— The Founder" },
+    { "type": "text", "id": "team_eyebrow", "label": "Team eyebrow", "default": "OUR TEAM" },
+    { "type": "text", "id": "team_title", "label": "Team title", "default": "Built with a vision. Growing with people." },
+    { "type": "textarea", "id": "team_intro", "label": "Team intro", "default": "ELIX LABS was founded in Germany in 2025 by a medical doctor with a passion for biotechnology, peptide research and scientific education.\n\nTo preserve the independence of his medical career and maintain a clear separation between his clinical practice and ELIX LABS, the founder has chosen to remain anonymous for professional and ethical reasons.\n\nAt ELIX LABS, we believe the focus should always remain on the quality of our educational resources, our scientific standards and our commitment to transparency—not on the individual behind the company.\n\nAs ELIX LABS continues to grow, our ambition is to build a multidisciplinary team dedicated to scientific education, customer experience and operational excellence." },
+    { "type": "text", "id": "founder_name", "label": "Founder name", "default": "Founder" }, { "type": "text", "id": "founder_status", "label": "Founder status", "default": "Anonymous Physician" }, { "type": "text", "id": "founder_role", "label": "Founder role", "default": "Founder & Scientific Director" }, { "type": "textarea", "id": "founder_text", "label": "Founder text", "default": "Medical doctor and founder of ELIX LABS, responsible for the company’s long-term vision, scientific direction, educational strategy and quality standards." },
+    { "type": "text", "id": "member_1_name", "label": "Member 1 name", "default": "Noémie" }, { "type": "text", "id": "member_1_status", "label": "Member 1 status", "default": "Planned" }, { "type": "text", "id": "member_1_role", "label": "Member 1 role", "default": "Customer Experience Lead" }, { "type": "textarea", "id": "member_1_text", "label": "Member 1 text", "default": "Dedicated to customer support, WhatsApp assistance, email communication and ensuring every customer receives a fast, professional and personalized experience." },
+    { "type": "text", "id": "member_2_name", "label": "Member 2 name", "default": "Sarra" }, { "type": "text", "id": "member_2_status", "label": "Member 2 status", "default": "Planned" }, { "type": "text", "id": "member_2_role", "label": "Member 2 role", "default": "Brand & Community Manager" }, { "type": "textarea", "id": "member_2_text", "label": "Member 2 text", "default": "Responsible for social media, visual communication, community engagement, partnerships and representing the ELIX LABS brand across digital platforms." },
+    { "type": "text", "id": "member_3_name", "label": "Member 3 name", "default": "Julie" }, { "type": "text", "id": "member_3_status", "label": "Member 3 status", "default": "Planned" }, { "type": "text", "id": "member_3_role", "label": "Member 3 role", "default": "Operations Manager" }, { "type": "textarea", "id": "member_3_text", "label": "Member 3 text", "default": "Oversees day-to-day operations, supplier coordination, quality control, internal organization and helps ensure every order meets ELIX LABS standards." },
+    { "type": "text", "id": "member_4_name", "label": "Member 4 name", "default": "Lukas" }, { "type": "text", "id": "member_4_status", "label": "Member 4 status", "default": "Planned" }, { "type": "text", "id": "member_4_role", "label": "Member 4 role", "default": "Logistics Coordinator" }, { "type": "textarea", "id": "member_4_text", "label": "Member 4 text", "default": "Responsible for inventory management, shipping operations, order fulfillment and maintaining efficient logistics to ensure reliable delivery worldwide." },
+    { "type": "textarea", "id": "team_closing", "label": "Team closing", "default": "Together, we share one mission.\n\nTo make scientific knowledge more accessible, more understandable and more transparent for everyone interested in the future of biotechnology." },
+    { "type": "text", "id": "era_title", "label": "Era title", "default": "A NEW SCIENTIFIC ERA" },
+    { "type": "textarea", "id": "era_text", "label": "Era text", "default": "Nous vivons une période unique. Rarement dans l’histoire de la médecine, autant de disciplines n’ont progressé simultanément.\n\nL’intelligence artificielle transforme la recherche. Le séquençage génétique devient plus rapide et plus accessible. La médecine personnalisée progresse. Les biotechnologies ouvrent des perspectives inédites.\n\nLes peptides, la médecine régénérative, les thérapies ciblées et d’autres domaines de recherche continuent d’être explorés par des équipes scientifiques dans le monde entier.\n\nNous sommes peut-être au début d’une nouvelle étape de l’innovation biomédicale. Une époque où la médecine cherche à comprendre les mécanismes du vivant avec une précision toujours plus grande. Une époque où les découvertes s’accélèrent.\n\nComprendre avant de croire. Comprendre avant de partager. Comprendre avant d’interpréter.\n\nChez ELIX LABS, nous pensons que l’accès à une information claire, rigoureuse et accessible sera l’un des plus grands défis de cette nouvelle ère scientifique.\n\nParce que la véritable révolution ne réside pas uniquement dans les découvertes. Elle réside dans notre capacité collective à les comprendre." },
+    { "type": "text", "id": "exist_title", "label": "Why title", "default": "WHY WE EXIST" },
+    { "type": "textarea", "id": "exist_text", "label": "Why text", "default": "Chaque année, des milliers d’études scientifiques sont publiées. Des centaines de nouvelles molécules sont étudiées. Les connaissances évoluent à une vitesse sans précédent.\n\nPourtant, une question demeure.\n\nPourquoi est-il toujours aussi difficile de trouver une information fiable, compréhensible et transparente ?\n\nChez ELIX LABS, nous voulons réduire cette distance. Nous voulons transformer des données complexes en connaissances accessibles.\n\nNous voulons créer un espace où chacun peut apprendre, explorer et développer son esprit critique.\n\nParce que comprendre la science est le premier pas vers une meilleure compréhension du monde." },
+    { "type": "text", "id": "mission_title", "label": "Mission title", "default": "OUR MISSION" },
+    { "type": "textarea", "id": "mission_text", "label": "Mission text", "default": "Notre mission est simple.\n\nConstruire la plateforme éducative consacrée aux peptides la plus complète, la plus transparente et la plus accessible.\n\nNous voulons que chaque personne puisse comprendre ce qu’est un peptide, comment il agit, pourquoi il est étudié, quelles recherches existent, quelles sont les connaissances actuelles, quelles sont leurs limites et quelles questions restent encore ouvertes.\n\nNous croyons que la connaissance doit être structurée, accessible, claire et toujours fondée sur les données disponibles.\n\nParce que chaque grande innovation commence par une meilleure compréhension." },
+    { "type": "text", "id": "vision_title", "label": "Vision title", "default": "OUR VISION" },
+    { "type": "textarea", "id": "vision_text", "label": "Vision text", "default": "Nous croyons que les prochaines décennies seront marquées par une accélération majeure des biotechnologies.\n\nLes peptides ne représentent qu’une partie de cette évolution. L’intelligence artificielle, la médecine personnalisée, la biologie computationnelle, la médecine régénérative et les thérapies ciblées participent toutes à transformer progressivement notre compréhension du vivant.\n\nNotre ambition est d’accompagner cette évolution en construisant l’une des plateformes éducatives les plus complètes dans le domaine des peptides.\n\nFaire d’ELIX LABS une référence pour celles et ceux qui souhaitent apprendre, comprendre et suivre les avancées scientifiques.\n\nNon pas parce que nous prétendons détenir toutes les réponses, mais parce que nous croyons profondément que les bonnes questions font progresser la science." },
+    { "type": "text", "id": "commitment_title", "label": "Commitment title", "default": "OUR COMMITMENT" },
+    { "type": "text", "id": "commitment_1_title", "label": "Commitment 1 title", "default": "Scientific Integrity" }, { "type": "textarea", "id": "commitment_1_text", "label": "Commitment 1 text", "default": "Chaque information publiée est élaborée à partir de la littérature scientifique disponible.\n\nNotre priorité est la rigueur, la précision et la transparence." },
+    { "type": "text", "id": "commitment_2_title", "label": "Commitment 2 title", "default": "Education First" }, { "type": "textarea", "id": "commitment_2_text", "label": "Commitment 2 text", "default": "Nous croyons qu’une communauté mieux informée est une communauté plus responsable.\n\nNotre objectif est d’expliquer des concepts complexes avec des mots simples, sans perdre leur profondeur scientifique." },
+    { "type": "text", "id": "commitment_3_title", "label": "Commitment 3 title", "default": "Transparency" }, { "type": "textarea", "id": "commitment_3_text", "label": "Commitment 3 text", "default": "La confiance ne se construit pas avec des slogans.\n\nElle se construit avec des faits.\n\nNous préférons expliquer plutôt que promettre. Informer plutôt qu’impressionner." },
+    { "type": "text", "id": "commitment_4_title", "label": "Commitment 4 title", "default": "Continuous Innovation" }, { "type": "textarea", "id": "commitment_4_text", "label": "Commitment 4 text", "default": "La science ne s’arrête jamais.\n\nNous non plus.\n\nNotre bibliothèque éducative évolue en permanence afin d’intégrer les nouvelles publications, les nouvelles connaissances et les nouveaux outils pédagogiques." },
+    { "type": "text", "id": "beyond_title", "label": "Beyond title", "default": "BEYOND PRODUCTS" },
+    { "type": "textarea", "id": "beyond_text", "label": "Beyond text", "default": "Chez ELIX LABS, nous ne voulons pas simplement proposer un catalogue.\n\nNous voulons construire un véritable écosystème scientifique.\n\nUn espace où chaque peptide est accompagné de ressources permettant d’en comprendre le contexte de recherche : des explications détaillées, des illustrations pédagogiques, des synthèses scientifiques, des guides éducatifs et des ressources accessibles au plus grand nombre.\n\nParce qu’un produit prend une autre dimension lorsqu’il s’accompagne de connaissances." },
+    { "type": "text", "id": "join_title", "label": "Join title", "default": "JOIN THE MISSION" },
+    { "type": "textarea", "id": "join_quote", "label": "Join quote", "default": "“The future of biotechnology won’t be built by a single laboratory.\n\nIt will be built by millions of curious minds willing to learn.”" },
+    { "type": "textarea", "id": "join_text", "label": "Join text", "default": "L’avenir de la biotechnologie ne sera pas construit par un seul laboratoire.\n\nIl sera construit par des millions de personnes qui choisissent d’apprendre, de comprendre et de transmettre.\n\nParce que chaque révolution scientifique commence toujours par une idée.\n\nEt chaque idée commence par une simple question." },
+    { "type": "text", "id": "research_label", "label": "Research CTA label", "default": "EXPLORE ELIX RESEARCH HUB" }, { "type": "url", "id": "research_link", "label": "Research Hub link" },
+    { "type": "text", "id": "products_label", "label": "Products CTA label", "default": "DISCOVER ELIX PRODUCTS" }, { "type": "url", "id": "products_link", "label": "Products link" }
+  ],
+  "presets": [{ "name": "ELIX About Page" }]
+}
+{% endschema %}
