@@ -129,7 +129,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center right;
+  object-position: 72% center;
   opacity: 0.9;
   filter: saturate(1.06) contrast(1.05);
 }
@@ -286,11 +286,12 @@
   font-family: Georgia, serif;
 }
 .elix-about-letter__text {
-  column-count: 3;
-  column-gap: clamp(42px, 5vw, 76px);
-  color: rgba(235, 241, 255, 0.82);
-  font-size: 1.52rem;
-  line-height: 1.86;
+  max-width: 1020px;
+  margin-inline: auto;
+  color: rgba(235, 241, 255, 0.86);
+  font-size: clamp(1.58rem, 1.08vw, 1.82rem);
+  line-height: 1.9;
+  text-align: left;
 }
 .elix-about-letter__signature {
   margin-top: 40px;
@@ -590,9 +591,6 @@
   .elix-about-container {
     width: min(100% - 48px, 920px);
   }
-  .elix-about-letter__text {
-    column-count: 2;
-  }
   .elix-about-team__grid,
   .elix-about-commitment__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -616,7 +614,7 @@
   }
   .elix-about-hero__image {
     opacity: 0.42;
-    object-position: center;
+    object-position: 66% center;
   }
   .elix-about-hero__shade {
     background: linear-gradient(
@@ -645,17 +643,13 @@
     border-radius: 18px;
   }
   .elix-about-letter__text {
-    column-count: 1;
-    font-size: 1.44rem;
-    line-height: 1.82;
+    font-size: 1.5rem;
+    line-height: 1.84;
   }
   .elix-about-letter__mark {
     right: 18px;
     top: 8px;
     opacity: 0.75;
-  }
-  .elix-about-letter__signature {
-    text-align: left;
   }
   .elix-about-team__founder {
     margin: 44px 0 34px;
